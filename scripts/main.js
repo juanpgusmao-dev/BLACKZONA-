@@ -51,18 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function toggleMenu() {
+    function toggleMenu(e) {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
         mobileOverlay.classList.toggle('active');
         body.classList.toggle('menu-open');
         
-        // Animação do ícone burguer (se existir)
         const icon = mobileMenuBtn.querySelector('span');
         if (icon) {
-            if (mobileOverlay.classList.contains('active')) {
-                icon.textContent = 'close';
-            } else {
-                icon.textContent = 'menu';
-            }
+            icon.textContent = mobileOverlay.classList.contains('active') ? 'close' : 'menu';
         }
     }
 
