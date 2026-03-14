@@ -214,7 +214,7 @@
 
 @media (max-width: 768px) {
     .ticker {
-        animation-duration: 15s !important;
+        animation-duration: 7.5s !important;
     }
 }
 
