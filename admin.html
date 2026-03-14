@@ -5,165 +5,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLACKZONA — Painel Admin</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { primary: '#C9A84C' },
-          fontFamily: {
-            bebas: ['"Bebas Neue"', 'cursive'],
-            space: ['"Space Mono"', 'monospace']
-          }
-        }
-      }
-    }
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
-    body { background: #0a0a0a; color: #fff; }
-    .input-field { background: #1a1a1a; border: 1px solid rgba(201,168,76,0.2); color: #fff; padding: 10px 14px; width: 100%; font-family: 'Space Mono', monospace; font-size: 13px; transition: border-color 0.2s; }
-    .input-field:focus { outline: none; border-color: #C9A84C; }
-    .btn-primary { background: transparent; border: 1px solid #C9A84C; color: #C9A84C; padding: 12px 32px; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; }
-    .btn-primary:hover { background: #C9A84C; color: #0a0a0a; }
-    .btn-danger { background: transparent; border: 1px solid rgba(255,50,50,0.4); color: rgba(255,80,80,0.8); padding: 8px 20px; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; }
-    .btn-danger:hover { background: rgba(255,50,50,0.15); border-color: rgba(255,80,80,0.7); }
-    .product-card { background: #111; border: 1px solid rgba(255,255,255,0.05); padding: 16px; transition: border-color 0.3s; }
-    .product-card:hover { border-color: rgba(201,168,76,0.3); }
-    #toast { position: fixed; bottom: 32px; right: 32px; background: #C9A84C; color: #0a0a0a; padding: 14px 24px; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; display: none; z-index: 9999; }
-    .photo-preview { width: 80px; height: 80px; object-fit: cover; border: 1px solid rgba(201,168,76,0.2); }
-    #loading-overlay { position: fixed; inset: 0; background: rgba(10,10,10,0.9); display: none; align-items: center; justify-content: center; z-index: 9998; }
-    @keyframes spin { to { transform: rotate(360deg); } }
+    body { background:#0a0a0a; color:#f0ece4; font-family:'Space Mono',monospace; }
+    input, select, textarea { background:#18181b; border:1px solid #3f3f46; color:#f0ece4; border-radius:8px; padding:10px 14px; width:100%; margin-bottom:10px; font-family:'Space Mono',monospace; font-size:14px; }
+    input:focus, select:focus, textarea:focus { outline:none; border-color:#C9A84C; }
+    .btn-gold { background:#C9A84C; color:#000; font-weight:700; padding:12px 24px; border-radius:8px; cursor:pointer; border:none; transition:filter .2s; font-family:'Space Mono',monospace; }
+    .btn-gold:hover { filter:brightness(1.15); }
+    .btn-outline { background:transparent; color:#C9A84C; border:1px solid #C9A84C; font-weight:700; padding:10px 20px; border-radius:8px; cursor:pointer; transition:all .2s; font-family:'Space Mono',monospace; }
+    .btn-outline:hover { background:#C9A84C; color:#000; }
+    .tab-btn { background:transparent; color:#a1a1aa; border-bottom:2px solid transparent; padding:10px 20px; cursor:pointer; font-family:'Space Mono',monospace; font-weight:700; transition:all .2s; border-top:none; border-left:none; border-right:none; }
+    .tab-btn.active { color:#C9A84C; border-bottom-color:#C9A84C; }
+    .toast { position:fixed; bottom:24px; right:24px; background:#C9A84C; color:#000; padding:12px 24px; border-radius:8px; font-weight:700; z-index:9999; display:none; font-family:'Space Mono',monospace; }
+    #loading-overlay { position:fixed; inset:0; background:rgba(0,0,0,.75); display:none; align-items:center; justify-content:center; z-index:9998; flex-direction:column; gap:12px; }
   </style>
 </head>
-<body>
+<body class="min-h-screen p-4">
 
-<div id="loading-overlay">
-  <div style="text-align:center">
-    <div style="width:40px;height:40px;border:2px solid rgba(201,168,76,0.2);border-top-color:#C9A84C;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px;"></div>
-    <p style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.2em;color:rgba(201,168,76,0.7);">CARREGANDO...</p>
-  </div>
+<div id="toast" class="toast"></div>
+<div id="loading-overlay" style="display:none;">
+  <div style="color:#C9A84C;font-size:3rem;">⏳</div>
+  <p style="color:#C9A84C;font-weight:700;">Salvando...</p>
 </div>
 
 <!-- LOGIN -->
-<div id="login-screen" class="min-h-screen flex items-center justify-center px-6">
-  <div style="width:100%;max-width:400px;">
-    <div class="text-center mb-12">
-      <h1 class="font-bebas text-5xl tracking-widest text-primary">BLACKZONA</h1>
-      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.3em;color:rgba(255,255,255,0.3);margin-top:8px;">PAINEL ADMINISTRATIVO</p>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <div>
-        <label style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;color:rgba(255,255,255,0.4);display:block;margin-bottom:6px;">E-MAIL</label>
-        <input type="email" id="login-email" class="input-field" placeholder="seu@email.com" />
-      </div>
-      <div>
-        <label style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;color:rgba(255,255,255,0.4);display:block;margin-bottom:6px;">SENHA</label>
-        <input type="password" id="login-password" class="input-field" placeholder="••••••••" />
-      </div>
-      <p id="login-error" style="font-family:'Space Mono',monospace;font-size:10px;color:rgba(255,80,80,0.8);display:none;">E-mail ou senha incorretos.</p>
-      <button class="btn-primary" onclick="loginAdmin()" style="width:100%;margin-top:8px;">ENTRAR</button>
+<div id="login-section" class="min-h-screen flex items-center justify-center">
+  <div style="width:100%;max-width:380px;">
+    <h1 style="font-family:'Bebas Neue',sans-serif;font-size:3rem;text-align:center;color:#C9A84C;margin-bottom:8px;letter-spacing:2px;">BLACKZONA</h1>
+    <p style="text-align:center;color:#a1a1aa;font-size:.75rem;margin-bottom:2rem;letter-spacing:4px;">PAINEL ADMINISTRATIVO</p>
+    <div style="background:#18181b;border-radius:16px;padding:2rem;border:1px solid #3f3f46;">
+      <input id="email" type="email" placeholder="E-mail" />
+      <input id="senha" type="password" placeholder="Senha" />
+      <button id="btn-entrar" class="btn-gold" style="width:100%;margin-top:4px;font-size:1rem;letter-spacing:2px;">ENTRAR</button>
+      <p id="erro-login" style="color:#f87171;font-size:.8rem;text-align:center;margin-top:12px;display:none;"></p>
     </div>
   </div>
 </div>
 
-<!-- PAINEL -->
-<div id="admin-panel" style="display:none;">
-  <header style="background:#0a0a0a;border-bottom:1px solid rgba(201,168,76,0.15);padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;">
-    <h1 class="font-bebas text-2xl tracking-widest text-primary">BLACKZONA <span style="color:rgba(255,255,255,0.3);font-size:14px;letter-spacing:0.3em;font-family:'Space Mono',monospace;font-weight:400;">ADMIN</span></h1>
-    <div style="display:flex;align-items:center;gap:24px;">
-      <span id="user-email" style="font-family:'Space Mono',monospace;font-size:10px;color:rgba(255,255,255,0.3);"></span>
-      <button class="btn-danger" onclick="logoutAdmin()">SAIR</button>
-    </div>
-  </header>
+<!-- ADMIN PANEL -->
+<div id="admin-panel" style="display:none;max-width:900px;margin:0 auto;">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid #3f3f46;">
+    <h1 style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:#C9A84C;letter-spacing:2px;">BLACKZONA ADMIN</h1>
+    <button class="btn-outline" id="btn-logout">SAIR</button>
+  </div>
 
-  <div style="max-width:1200px;margin:0 auto;padding:48px 32px;">
-    <div style="display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,0.05);margin-bottom:48px;">
-      <button id="tab-add" onclick="showTab('add')" style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:12px 32px;background:transparent;border:none;color:#C9A84C;cursor:pointer;border-bottom:2px solid #C9A84C;">ADICIONAR PRODUTO</button>
-      <button id="tab-list" onclick="showTab('list')" style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:12px 32px;background:transparent;border:none;color:rgba(255,255,255,0.3);cursor:pointer;border-bottom:2px solid transparent;">GERENCIAR PRODUTOS</button>
-    </div>
+  <div style="display:flex;border-bottom:1px solid #3f3f46;margin-bottom:2rem;">
+    <button class="tab-btn active" id="tab-add">+ NOVO PRODUTO</button>
+    <button class="tab-btn" id="tab-list">GERENCIAR PRODUTOS</button>
+  </div>
 
-    <!-- ADICIONAR -->
-    <div id="content-add">
-      <h2 class="font-bebas text-3xl tracking-wider text-white mb-8">NOVO PRODUTO</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
-        <div style="display:flex;flex-direction:column;gap:20px;">
-          <div>
-            <label style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;color:rgba(255,255,255,0.4);display:block;margin-bottom:6px;">NOME *</label>
-            <input type="text" id="prod-nome" class="input-field" placeholder="Ex: Mochila Candace" />
-          </div>
-          <div>
-            <label style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;color:rgba(255,255,255,0.4);display:block;margin-bottom:6px;">CATEGORIA *</label>
-            <select id="prod-categoria" class="input-field">
-              <option value="">Selecione...</option>
-              <option value="candaces">Candaces</option>
-              <option value="mochilas">Mochilas</option>
-              <option value="cartucheiras">Cartucheiras</option>
-              <option value="adornos">Adornos</option>
-            </select>
-          </div>
-          <div>
-            <label style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;color:rgba(255,255,255,0.4);display:block;margin-bottom:6px;">TAMANHO</label>
-            <input type="text" id="prod-tamanho" class="input-field" placeholder="P, M, G, Único" />
-          </div>
-          <div>
-            <label style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;color:rgba(255,255,255,0.4);display:block;margin-bottom:6px;">PREÇO (R$)</label>
-            <input type="text" id="prod-preco" class="input-field" placeholder="Ex: 350 ou vazio = SOB CONSULTA" />
-          </div>
-          <div>
-            <label style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;color:rgba(255,255,255,0.4);display:block;margin-bottom:6px;">STATUS</label>
-            <select id="prod-status" class="input-field">
-              <option value="disponivel">Disponível</option>
-              <option value="encomenda">Sob Encomenda</option>
-              <option value="esgotado">Esgotado</option>
-            </select>
-          </div>
-          <div>
-            <label style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;color:rgba(255,255,255,0.4);display:block;margin-bottom:6px;">DESCRIÇÃO</label>
-            <textarea id="prod-descricao" class="input-field" rows="4" placeholder="Materiais, técnica, detalhes..."></textarea>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:20px;">
-          <div>
-            <label style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;color:rgba(255,255,255,0.4);display:block;margin-bottom:6px;">FOTOS (até 5)</label>
-            <input type="file" id="prod-fotos" accept="image/*" multiple style="display:none;" onchange="previewFotos(event)" />
-            <div onclick="document.getElementById('prod-fotos').click()" style="border:1px dashed rgba(201,168,76,0.3);padding:40px;text-align:center;cursor:pointer;" onmouseover="this.style.borderColor='rgba(201,168,76,0.7)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.3)'">
-              <p style="font-family:'Space Mono',monospace;font-size:11px;color:rgba(255,255,255,0.3);">CLIQUE PARA SELECIONAR</p>
-              <p style="font-family:'Space Mono',monospace;font-size:9px;color:rgba(201,168,76,0.4);margin-top:8px;">JPG, PNG, WEBP • máx 5MB cada</p>
-            </div>
-            <div id="fotos-preview" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;"></div>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <input type="checkbox" id="prod-autoral" checked style="width:16px;height:16px;accent-color:#C9A84C;" />
-            <label for="prod-autoral" style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;color:rgba(255,255,255,0.6);">PEÇA AUTORAL</label>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <input type="checkbox" id="prod-destaque" style="width:16px;height:16px;accent-color:#C9A84C;" />
-            <label for="prod-destaque" style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;color:rgba(255,255,255,0.6);">DESTAQUE NA HOME</label>
-          </div>
-          <button class="btn-primary" onclick="salvarProduto()" style="margin-top:16px;width:100%;">PUBLICAR PRODUTO</button>
-        </div>
+  <!-- TAB ADICIONAR -->
+  <div id="content-add">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div>
+        <label style="font-size:.7rem;color:#a1a1aa;letter-spacing:2px;display:block;margin-bottom:4px;">NOME DO PRODUTO</label>
+        <input id="p-nome" type="text" placeholder="Ex: Mochila Quilombo" />
+      </div>
+      <div>
+        <label style="font-size:.7rem;color:#a1a1aa;letter-spacing:2px;display:block;margin-bottom:4px;">CATEGORIA</label>
+        <select id="p-categoria">
+          <option value="candaces">Bolsas Candaces</option>
+          <option value="mochilas">Mochilas</option>
+          <option value="cartucheiras">Cartucheiras</option>
+          <option value="adornos">Adornos & Brincos</option>
+          <option value="criacao">Bolsa Criação</option>
+          <option value="pochetes">Pochetes</option>
+        </select>
+      </div>
+      <div>
+        <label style="font-size:.7rem;color:#a1a1aa;letter-spacing:2px;display:block;margin-bottom:4px;">TAMANHO</label>
+        <input id="p-tamanho" type="text" placeholder="Ex: M, G, Único" />
+      </div>
+      <div>
+        <label style="font-size:.7rem;color:#a1a1aa;letter-spacing:2px;display:block;margin-bottom:4px;">PREÇO (R$) — vazio = Sob Consulta</label>
+        <input id="p-preco" type="text" placeholder="Ex: 145.00" />
       </div>
     </div>
+    <div style="margin-top:4px;">
+      <label style="font-size:.7rem;color:#a1a1aa;letter-spacing:2px;display:block;margin-bottom:4px;">DESCRIÇÃO</label>
+      <textarea id="p-descricao" rows="3" placeholder="Descrição do produto..."></textarea>
+    </div>
+    <div>
+      <label style="font-size:.7rem;color:#a1a1aa;letter-spacing:2px;display:block;margin-bottom:4px;">STATUS</label>
+      <select id="p-status">
+        <option value="disponivel">Disponível</option>
+        <option value="encomenda">Sob Encomenda</option>
+        <option value="esgotado">Esgotado</option>
+      </select>
+    </div>
+    <div style="display:flex;gap:2rem;margin:16px 0;">
+      <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:.85rem;">
+        <input id="p-autoral" type="checkbox" style="width:18px;height:18px;margin:0;accent-color:#C9A84C;" /> Peça Autoral
+      </label>
+      <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:.85rem;">
+        <input id="p-destaque" type="checkbox" style="width:18px;height:18px;margin:0;accent-color:#C9A84C;" /> Destaque na Home
+      </label>
+    </div>
+    <div>
+      <label style="font-size:.7rem;color:#a1a1aa;letter-spacing:2px;display:block;margin-bottom:4px;">FOTOS (até 5 imagens)</label>
+      <input id="p-fotos" type="file" multiple accept="image/*" style="background:transparent;border:1px dashed #3f3f46;cursor:pointer;" />
+      <div id="foto-preview" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;"></div>
+    </div>
+    <button id="btn-salvar" class="btn-gold" style="margin-top:20px;width:100%;font-size:1rem;letter-spacing:2px;">SALVAR PRODUTO</button>
+  </div>
 
-    <!-- LISTAR -->
-    <div id="content-list" style="display:none;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;">
-        <h2 class="font-bebas text-3xl tracking-wider text-white">PRODUTOS CADASTRADOS</h2>
-        <button class="btn-primary" onclick="carregarProdutos()">↻ ATUALIZAR</button>
-      </div>
-      <div id="products-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;">
-        <p style="font-family:'Space Mono',monospace;font-size:11px;color:rgba(255,255,255,0.3);">Carregando produtos...</p>
-      </div>
+  <!-- TAB GERENCIAR -->
+  <div id="content-list" style="display:none;">
+    <div id="lista-produtos" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;">
+      <p style="color:#a1a1aa;">Carregando produtos...</p>
     </div>
   </div>
 </div>
-
-<div id="toast"></div>
 
 <script type="module">
   import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
-  import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
-  import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
   import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
   import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
   import { getStorage, ref, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js';
@@ -181,168 +136,163 @@
   const auth = getAuth(app);
   const db = getFirestore(app);
   const storage = getStorage(app);
-  let selectedFiles = [];
 
+  // AUTH STATE
   onAuthStateChanged(auth, user => {
     if (user) {
-      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('login-section').style.display = 'none';
       document.getElementById('admin-panel').style.display = 'block';
-      document.getElementById('user-email').textContent = user.email;
-      carregarProdutos();
     } else {
-      document.getElementById('login-screen').style.display = 'flex';
+      document.getElementById('login-section').style.display = 'flex';
       document.getElementById('admin-panel').style.display = 'none';
     }
   });
 
-  window.loginAdmin = async function() {
-    const email = document.getElementById('login-email').value;
-    const password = document.getElementById('login-password').value;
-    const errEl = document.getElementById('login-error');
-    errEl.style.display = 'none';
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-    } catch(e) {
-      errEl.style.display = 'block';
+  // LOGIN
+  document.getElementById('btn-entrar').addEventListener('click', async () => {
+    const email = document.getElementById('email').value.trim();
+    const senha = document.getElementById('senha').value;
+    const erro = document.getElementById('erro-login');
+    erro.style.display = 'none';
+    if (!email || !senha) {
+      erro.textContent = 'Preencha e-mail e senha.';
+      erro.style.display = 'block';
+      return;
     }
-  };
+    try {
+      await signInWithEmailAndPassword(auth, email, senha);
+    } catch(e) {
+      erro.textContent = 'E-mail ou senha incorretos.';
+      erro.style.display = 'block';
+    }
+  });
 
-  window.logoutAdmin = async function() {
-    await signOut(auth);
-  };
+  // LOGIN COM ENTER
+  document.getElementById('senha').addEventListener('keydown', e => {
+    if (e.key === 'Enter') document.getElementById('btn-entrar').click();
+  });
 
-  window.showTab = function(tab) {
-    document.getElementById('content-add').style.display = tab === 'add' ? 'block' : 'none';
-    document.getElementById('content-list').style.display = tab === 'list' ? 'block' : 'none';
-    document.getElementById('tab-add').style.color = tab === 'add' ? '#C9A84C' : 'rgba(255,255,255,0.3)';
-    document.getElementById('tab-add').style.borderBottomColor = tab === 'add' ? '#C9A84C' : 'transparent';
-    document.getElementById('tab-list').style.color = tab === 'list' ? '#C9A84C' : 'rgba(255,255,255,0.3)';
-    document.getElementById('tab-list').style.borderBottomColor = tab === 'list' ? '#C9A84C' : 'transparent';
-    if (tab === 'list') carregarProdutos();
-  };
+  // LOGOUT
+  document.getElementById('btn-logout').addEventListener('click', () => signOut(auth));
 
-  window.previewFotos = function(e) {
-    selectedFiles = Array.from(e.target.files).slice(0, 5);
-    const preview = document.getElementById('fotos-preview');
+  // TABS
+  document.getElementById('tab-add').addEventListener('click', () => {
+    document.getElementById('content-add').style.display = 'block';
+    document.getElementById('content-list').style.display = 'none';
+    document.getElementById('tab-add').classList.add('active');
+    document.getElementById('tab-list').classList.remove('active');
+  });
+  document.getElementById('tab-list').addEventListener('click', () => {
+    document.getElementById('content-add').style.display = 'none';
+    document.getElementById('content-list').style.display = 'block';
+    document.getElementById('tab-add').classList.remove('active');
+    document.getElementById('tab-list').classList.add('active');
+    carregarLista();
+  });
+
+  // PREVIEW FOTOS
+  document.getElementById('p-fotos').addEventListener('change', function() {
+    const preview = document.getElementById('foto-preview');
     preview.innerHTML = '';
-    selectedFiles.forEach((file, i) => {
-      const reader = new FileReader();
-      reader.onload = ev => {
-        const wrap = document.createElement('div');
-        wrap.style.cssText = 'position:relative;display:inline-block;';
-        const img = document.createElement('img');
-        img.src = ev.target.result;
-        img.className = 'photo-preview';
-        const badge = document.createElement('span');
-        badge.textContent = i === 0 ? '★' : i + 1;
-        badge.style.cssText = 'position:absolute;top:2px;left:2px;background:#C9A84C;color:#0a0a0a;font-size:9px;padding:2px 5px;font-family:Space Mono,monospace;';
-        wrap.appendChild(img);
-        wrap.appendChild(badge);
-        preview.appendChild(wrap);
-      };
-      reader.readAsDataURL(file);
+    Array.from(this.files).slice(0,5).forEach(file => {
+      const img = document.createElement('img');
+      img.src = URL.createObjectURL(file);
+      img.style.cssText = 'width:80px;height:80px;object-fit:cover;border-radius:8px;border:1px solid #3f3f46;';
+      preview.appendChild(img);
     });
-  };
+  });
 
-  window.salvarProduto = async function() {
-    const nome = document.getElementById('prod-nome').value.trim();
-    const categoria = document.getElementById('prod-categoria').value;
-    if (!nome || !categoria) { showToast('Preencha nome e categoria!'); return; }
-    if (selectedFiles.length === 0) { showToast('Adicione pelo menos 1 foto!'); return; }
-    showLoading(true);
-    try {
-      const fotos = [];
-      for (const file of selectedFiles) {
-        const storageRef = ref(storage, `produtos/${Date.now()}_${file.name}`);
-        await uploadBytes(storageRef, file);
-        const url = await getDownloadURL(storageRef);
-        fotos.push(url);
-      }
-      const preco = document.getElementById('prod-preco').value.trim();
-      await addDoc(collection(db, 'produtos'), {
-        nome,
-        categoria,
-        tamanho: document.getElementById('prod-tamanho').value.trim(),
-        preco: preco ? `R$ ${preco}` : 'SOB CONSULTA',
-        status: document.getElementById('prod-status').value,
-        descricao: document.getElementById('prod-descricao').value.trim(),
-        autoral: document.getElementById('prod-autoral').checked,
-        destaque: document.getElementById('prod-destaque').checked,
-        fotos,
-        criadoEm: serverTimestamp()
-      });
-      showToast('Produto publicado com sucesso!');
-      limparFormulario();
-    } catch(e) {
-      console.error(e);
-      showToast('Erro ao salvar. Tente novamente.');
-    }
-    showLoading(false);
-  };
-
-  window.carregarProdutos = async function() {
-    const grid = document.getElementById('products-grid');
-    grid.innerHTML = '<p style="font-family:Space Mono,monospace;font-size:11px;color:rgba(255,255,255,0.3);">Carregando...</p>';
-    try {
-      const snap = await getDocs(collection(db, 'produtos'));
-      if (snap.empty) {
-        grid.innerHTML = '<p style="font-family:Space Mono,monospace;font-size:11px;color:rgba(255,255,255,0.3);">Nenhum produto cadastrado.</p>';
-        return;
-      }
-      grid.innerHTML = '';
-      snap.forEach(docSnap => {
-        const p = docSnap.data();
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.innerHTML = `
-          <img src="${p.fotos?.[0] || ''}" style="width:100%;height:160px;object-fit:cover;margin-bottom:12px;" />
-          <p style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.2em;color:#C9A84C;text-transform:uppercase;">${p.categoria}</p>
-          <p style="font-family:'Bebas Neue',cursive;font-size:20px;color:#fff;margin:4px 0;">${p.nome}</p>
-          <p style="font-family:'Space Mono',monospace;font-size:11px;color:rgba(255,255,255,0.5);">${p.preco} · ${p.tamanho || '—'}</p>
-          <p style="font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,0.3);margin-top:4px;">${p.status}</p>
-          <button class="btn-danger" style="margin-top:12px;width:100%;" onclick="deletarProduto('${docSnap.id}')">REMOVER</button>
-        `;
-        grid.appendChild(card);
-      });
-    } catch(e) {
-      grid.innerHTML = '<p style="font-family:Space Mono,monospace;font-size:11px;color:rgba(255,80,80,0.6);">Erro ao carregar.</p>';
-    }
-  };
-
-  window.deletarProduto = async function(id) {
-    if (!confirm('Remover este produto?')) return;
-    showLoading(true);
-    await deleteDoc(doc(db, 'produtos', id));
-    showToast('Produto removido.');
-    carregarProdutos();
-    showLoading(false);
-  };
-
-  function limparFormulario() {
-    ['prod-nome','prod-tamanho','prod-preco','prod-descricao'].forEach(id => document.getElementById(id).value = '');
-    document.getElementById('prod-categoria').value = '';
-    document.getElementById('prod-status').value = 'disponivel';
-    document.getElementById('prod-autoral').checked = true;
-    document.getElementById('prod-destaque').checked = false;
-    document.getElementById('fotos-preview').innerHTML = '';
-    selectedFiles = [];
-  }
-
-  function showToast(msg) {
+  // TOAST
+  function toast(msg) {
     const t = document.getElementById('toast');
     t.textContent = msg;
     t.style.display = 'block';
     setTimeout(() => t.style.display = 'none', 3000);
   }
 
-  function showLoading(show) {
-    document.getElementById('loading-overlay').style.display = show ? 'flex' : 'none';
+  // LOADING
+  function setLoading(on) {
+    document.getElementById('loading-overlay').style.display = on ? 'flex' : 'none';
   }
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Enter' && document.getElementById('login-screen').style.display !== 'none') loginAdmin();
+  // SALVAR PRODUTO
+  document.getElementById('btn-salvar').addEventListener('click', async () => {
+    const nome = document.getElementById('p-nome').value.trim();
+    if (!nome) { toast('⚠️ Digite o nome do produto!'); return; }
+    setLoading(true);
+    try {
+      const files = document.getElementById('p-fotos').files;
+      const fotosURL = [];
+      for (let i = 0; i < Math.min(files.length, 5); i++) {
+        const storageRef = ref(storage, 'produtos/' + Date.now() + '_' + files[i].name);
+        await uploadBytes(storageRef, files[i]);
+        const url = await getDownloadURL(storageRef);
+        fotosURL.push(url);
+      }
+      const precoRaw = document.getElementById('p-preco').value.trim();
+      await addDoc(collection(db, 'produtos'), {
+        nome,
+        categoria: document.getElementById('p-categoria').value,
+        tamanho: document.getElementById('p-tamanho').value.trim() || 'Único',
+        preco: precoRaw ? parseFloat(precoRaw) : null,
+        sob_consulta: !precoRaw,
+        descricao: document.getElementById('p-descricao').value.trim(),
+        status: document.getElementById('p-status').value,
+        autoral: document.getElementById('p-autoral').checked,
+        destaque: document.getElementById('p-destaque').checked,
+        fotos: fotosURL,
+        criadoEm: serverTimestamp()
+      });
+      toast('✅ Produto salvo com sucesso!');
+      // limpar form
+      ['p-nome','p-tamanho','p-preco','p-descricao'].forEach(id => document.getElementById(id).value = '');
+      document.getElementById('p-autoral').checked = false;
+      document.getElementById('p-destaque').checked = false;
+      document.getElementById('foto-preview').innerHTML = '';
+      document.getElementById('p-fotos').value = '';
+    } catch(e) {
+      console.error(e);
+      toast('❌ Erro ao salvar: ' + e.message);
+    }
+    setLoading(false);
   });
-</script>
 
+  // CARREGAR LISTA
+  async function carregarLista() {
+    const container = document.getElementById('lista-produtos');
+    container.innerHTML = '<p style="color:#a1a1aa;">Carregando...</p>';
+    try {
+      const snap = await getDocs(collection(db, 'produtos'));
+      if (snap.empty) { container.innerHTML = '<p style="color:#a1a1aa;">Nenhum produto cadastrado ainda.</p>'; return; }
+      container.innerHTML = '';
+      snap.forEach(d => {
+        const p = d.data();
+        const card = document.createElement('div');
+        card.style.cssText = 'background:#18181b;border:1px solid #3f3f46;border-radius:12px;padding:16px;';
+        card.innerHTML = `
+          ${p.fotos?.[0] ? `<img src="${p.fotos[0]}" style="width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:12px;" />` : ''}
+          <p style="font-weight:700;color:#C9A84C;margin-bottom:4px;">${p.nome}</p>
+          <p style="font-size:.75rem;color:#a1a1aa;margin-bottom:4px;">${p.categoria} • ${p.tamanho || 'Único'}</p>
+          <p style="font-size:.85rem;margin-bottom:12px;">${p.sob_consulta ? 'Sob Consulta' : 'R$ ' + Number(p.preco).toFixed(2)}</p>
+          <button onclick="window._deletar('${d.id}')" style="background:#ef4444;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-family:'Space Mono',monospace;font-size:.8rem;width:100%;">🗑 EXCLUIR</button>
+        `;
+        container.appendChild(card);
+      });
+    } catch(e) {
+      container.innerHTML = '<p style="color:#f87171;">Erro ao carregar: ' + e.message + '</p>';
+    }
+  }
+
+  window._deletar = async function(id) {
+    if (!confirm('Excluir este produto?')) return;
+    try {
+      await deleteDoc(doc(db, 'produtos', id));
+      toast('🗑 Produto excluído!');
+      carregarLista();
+    } catch(e) {
+      toast('❌ Erro: ' + e.message);
+    }
+  };
+</script>
 </body>
 </html>
