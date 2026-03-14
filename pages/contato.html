@@ -97,7 +97,13 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            padding: 80px 20px;
+            padding: 40px 20px;
+        }
+
+        @media (min-width: 768px) {
+            .contact-grid {
+                padding: 80px 20px;
+            }
         }
 
         .contact-card {
@@ -341,7 +347,7 @@
 
 
     <!-- HERO Section -->
-    <section class="hero-contato px-6 pt-32" style="background: linear-gradient(to bottom, rgba(5,5,5,0.90) 0%, rgba(5,5,5,0.65) 40%, rgba(5,5,5,0.90) 100%), linear-gradient(to right, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.40) 50%, rgba(5,5,5,0.95) 100%), url('../assets/images/Feira%20Exu.jpg') center/cover fixed no-repeat;">
+    <section class="hero-contato px-6 pt-20 md:pt-32" style="background: linear-gradient(to bottom, rgba(5,5,5,0.90) 0%, rgba(5,5,5,0.65) 40%, rgba(5,5,5,0.90) 100%), linear-gradient(to right, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.40) 50%, rgba(5,5,5,0.95) 100%), url('../assets/images/Feira%20Exu.jpg') center/cover fixed no-repeat;">
         <h1 class="font-bebas text-6xl md:text-9xl tracking-tighter mb-6">FALE COM A PRETA</h1>
         <p class="font-playfair italic text-[#C9A84C] text-xl max-w-2xl">
             "Fale com a Preta"
@@ -405,8 +411,8 @@
     </div>
 
     <!-- Footer Simple -->
-    <footer class="bg-[#111111] border-t border-[#1a1a1a] pt-16 pb-0">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-12 pb-16">
+    <footer class="bg-[#111111] border-t border-[#1a1a1a] pt-10 md:pt-16 pb-0">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-12 pb-10 md:pb-16">
             <!-- Column 1: Brand -->
             <div class="flex flex-col gap-6">
                 <p class="font-space italic text-[13px] text-primary tracking-[0.25em] uppercase mb-1">Nossa Imagem, Nosso Espaço</p>
