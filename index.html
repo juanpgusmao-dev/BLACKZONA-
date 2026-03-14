@@ -461,7 +461,7 @@
                 const lista = data.produtos || [];
                 const destaques = lista.filter(p => p.destaque === true);
                 const normais = lista.filter(p => p.destaque !== true);
-                todosProdutos = [...destaques, ...normais].slice(0, 6);
+                todosProdutos = [...destaques, ...normais].slice(0, 8);
                 renderizarProdutos(todosProdutos);
             } catch (error) {
                 console.error('Erro ao carregar produtos:', error);
@@ -511,8 +511,10 @@
 
                 const delayAttr = index < 4 ? `data-aos="fade-up" data-aos-delay="${(index + 1) * 100}"` : '';
 
+                const responsiveClass = index >= 6 ? 'hidden md:flex' : 'flex';
+
                 return `
-                <div class="product-card group relative flex flex-col h-full bg-[#111] border border-white/5 rounded-2xl overflow-hidden transition-all duration-500 hover:border-primary/50 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(201,168,76,0.15)]" ${delayAttr}
+                <div class="product-card group relative ${responsiveClass} flex-col h-full bg-[#111] border border-white/5 rounded-2xl overflow-hidden transition-all duration-500 hover:border-primary/50 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(201,168,76,0.15)]" ${delayAttr}
                      data-tilt data-tilt-max="7" data-tilt-speed="400" data-tilt-perspective="1000" data-tilt-glare data-tilt-max-glare="0.15">
                     <div class="relative aspect-[4/5] overflow-hidden">
                         <img
