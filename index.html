@@ -153,29 +153,7 @@
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-[999] bg-[#0a0a0a]/98 backdrop-blur-xl 
-            flex flex-col items-center justify-center gap-8 
-            opacity-0 invisible transition-all duration-500">
-        <button id="menu-close" class="absolute top-6 right-6 text-primary hover:text-white 
-                   transition-colors p-2">
-            <span class="material-symbols-outlined text-3xl">close</span>
-        </button>
-        <a href="index.html" class="font-space text-[13px] uppercase tracking-[0.3em] 
-              text-primary transition-colors">AXÉ</a>
-        <a href="pages/catalogo.html" class="font-space text-[13px] uppercase tracking-[0.3em] 
-              text-white hover:text-primary transition-colors">A GRIFE</a>
-        <a href="pages/sobre.html" class="font-space text-[13px] uppercase tracking-[0.3em] 
-              text-white hover:text-primary transition-colors">A AFROSUBVERSIVA</a>
-        <a href="pages/pontos.html" class="font-space text-[13px] uppercase tracking-[0.3em] 
-              text-white hover:text-primary transition-colors">PONTOS DE ENCONTRO</a>
-        <a href="pages/contato.html" class="mt-4 flex items-center gap-2 bg-primary text-black 
-              font-space text-[11px] uppercase tracking-[0.2em] 
-              px-8 py-4 rounded-full font-bold">
-            <i class="fa-brands fa-whatsapp"></i>
-            Fale com a Preta
-        </a>
-    </div>
+
 
     <section id="hero" class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-20 px-6">
         <div id="hero-bg" style="position: absolute; inset: 0; background-image: url('assets/images/fundo-grafite-afro.jpg'); background-size: cover; background-position: center 0px; filter: grayscale(1) contrast(1.1); z-index: 0; will-change: transform;"></div>
@@ -712,16 +690,27 @@
                 target="_blank">
                 <i class="fa-brands fa-whatsapp text-[28px]"></i>
             </a>
-            <a class="text-pri    <!-- Scripts -->
+            <a class="text-primary transition-transform hover:scale-110" href="https://instagram.com/blackzona_"
+                target="_blank">
+                <i class="fa-brands fa-instagram text-[28px]"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="scripts/main.js"></script>
-</body>
-
-</html>
-    // VanillaTilt.init(document.querySelectorAll(".product-card"));
-        document.addEventListener('aos:in:catalogo', () => {
-            // Se necessário forçar re-init após AOS
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof VanillaTilt !== 'undefined') {
+                VanillaTilt.init(document.querySelectorAll(".product-card"), {
+                    max: 7,
+                    speed: 400,
+                    glare: true,
+                    "max-glare": 0.15
+                });
+            }
         });
     </script>
 </body>

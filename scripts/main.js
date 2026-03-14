@@ -34,6 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileMenuBtn && mobileOverlay) {
         mobileMenuBtn.addEventListener('click', toggleMenu);
         
+        // Suporte explícito ao botão de fechar interno
+        const menuCloseBtn = document.getElementById('menu-close');
+        if (menuCloseBtn) {
+            menuCloseBtn.addEventListener('click', toggleMenu);
+        }
+        
         // Fechar menu ao clicar em links
         const navLinks = mobileOverlay.querySelectorAll('a');
         navLinks.forEach(link => {
