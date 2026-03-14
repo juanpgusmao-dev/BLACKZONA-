@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>SEED — BlackZona</title>
+  <style>
+    body { background:#0a0a0a; color:#f0ece4; font-family:monospace; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; gap:16px; }
+    button { background:#C9A84C; color:#000; font-weight:700; padding:16px 40px; border:none; border-radius:8px; font-size:1.1rem; cursor:pointer; }
+    #log { max-width:600px; width:100%; background:#18181b; border-radius:8px; padding:16px; font-size:.8rem; line-height:1.8; max-height:400px; overflow-y:auto; display:none; }
+  </style>
+</head>
+<body>
+  <h1 style="color:#C9A84C;font-size:2rem;">SEED — BLACKZONA</h1>
+  <p>Clique para importar todos os produtos para o Firestore</p>
+  <button onclick="importar()">🚀 IMPORTAR TODOS OS PRODUTOS</button>
+  <div id="log"></div>
+
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+  import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCWteZvOtgY4EPiPsLcUihEAdyIhcWOs-M",
+    authDomain: "blackzona-739bb.firebaseapp.com",
+    projectId: "blackzona-739bb",
+    storageBucket: "blackzona-739bb.firebasestorage.app",
+    messagingSenderId: "674389629970",
+    appId: "1:674389629970:web:380e5b143eb201a7490ccb"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const produtos = [
+    {
+      nome: "Bolsa Candace Clássica",
+      categoria: "candaces",
+      tamanho: "M/G",
+      preco: 145.00,
+      sob_consulta: false,
+      status: "disponivel",
+      autoral: true,
+      destaque: true,
+      descricao: "Bolsa icônica de design autoral afrobrasileiro. Sucesso de público com estampas afro e couro de alta qualidade.",
+      fotos: ["assets/images/catalogo_candace1.png"]
+    },
+    {
+      nome: "Bolsa Candace Estampada",
+      categoria: "candaces",
+      tamanho: "M/G",
+      preco: 145.00,
+      sob_consulta: false,
+      status: "disponivel",
+      autoral: true,
+      destaque: false,
+      descricao: "Bolsa Candace with estampas afrocentradas exclusivas. Design autoral com tecidos e couro selecionados.",
+      fotos: ["assets/images/catalogo_candace2.png"]
+    },
+    {
+      nome: "Mochila Quilombo",
+      categoria: "mochilas",
+      tamanho: "Único",
+      preco: 170.00,
+      sob_consulta: false,
+      status: "disponivel",
+      autoral: true,
+      destaque: true,
+      descricao: "Mochila artesanal de couro legítimo com alta capacidade. Reforço nas costuras para uso cotidiano intenso.",
+      fotos: ["assets/images/catalogo_mochila1.png"]
+    },
+    {
+      nome: "Mochila Gegê Dupla",
+      categoria: "mochilas",
+      tamanho: "Único",
+      preco: 134.00,
+      sob_consulta: false,
+      status: "disponivel",
+      autoral: true,
+      destaque: false,
+      descricao: "Mochila em promoção com design exclusivo. Couro legítimo, durabilidade e reforço nas costuras.",
+      fotos: ["assets/images/catalogo_mochila2.png"]
+    },
+    {
+      nome: "Cartucheira Oxum",
+      categoria: "cartucheiras",
+      tamanho: "Ajustável",
+      preco: 65.00,
+      sob_consulta: false,
+      status: "disponivel",
+      autoral: true,
+      destaque: true,
+      descricao: "Cartucheira compacta e ajustável ao corpo. Ideal para shows, eventos e festivais. Praticidade e segurança.",
+      fotos: ["assets/images/catalogo_cartucheira1.png"]
+    },
+    {
+      nome: "Cartucheira Festival",
+      categoria: "cartucheiras",
+      tamanho: "Ajustável",
+      preco: 65.00,
+      sob_consulta: false,
+      status: "disponivel",
+      autoral: true,
+      destaque: false,
+      descricao: "Cartucheira versátil para festivais e eventos. Design afrocentrado com foco em praticidade.",
+      fotos: ["assets/images/catalogo_cartucheira2.png"]
+    },
+    {
+      nome: "Bolsa Criação — Edição Especial",
+      categoria: "criacao",
+      tamanho: "Exclusivo",
+      preco: 155.00,
+      sob_consulta: false,
+      status: "encomenda",
+      autoral: true,
+      destaque: true,
+      descricao: "Bolsa de edição especial com produção artesanal. Foco em detalhes afetivos e manuais. Peça única.",
+      fotos: ["assets/images/catalogo_criacao1.png"]
+    },
+    {
+      nome: "Pochete Carnaval",
+      categoria: "pochetes",
+      tamanho: "Único",
+      preco: null,
+      sob_consulta: true,
+      status: "encomenda",
+      autoral: true,
+      destaque: false,
+      descricao: "Pochete de pequeno porte com estampas vibrantes. Ideal para Carnaval e eventos sazonais.",
+      fotos: ["assets/images/catalogo_pochete1.png"]
+    },
+    {
+      nome: "Brincos Afro Ancestral",
+      categoria: "adornos",
+      tamanho: "Único",
+      preco: null,
+      sob_consulta: true,
+      status: "disponivel",
+      autoral: true,
+      destaque: false,
+      descricao: "Brincos de joalheria afrocentrada para compor o visual. Tamanhos variados com design autoral.",
+      fotos: ["assets/images/catalogo_adorno1.png"]
+    }
+  ];
+
+  window.importar = async function() {
+    const log = document.getElementById('log');
+    log.style.display = 'block';
+    log.innerHTML = '⏳ Iniciando importação...<br>';
+    let ok = 0, erro = 0;
+    for (const p of produtos) {
+      try {
+        await addDoc(collection(db, 'produtos'), { ...p, criadoEm: serverTimestamp() });
+        log.innerHTML += `✅ ${p.nome}<br>`;
+        ok++;
+      } catch(e) {
+        log.innerHTML += `❌ ${p.nome} — ${e.message}<br>`;
+        erro++;
+      }
+      log.scrollTop = log.scrollHeight;
+    }
+    log.innerHTML += `<br><strong>✅ ${ok} importados | ❌ ${erro} erros</strong>`;
+  };
+</script>
+</body>
+</html>

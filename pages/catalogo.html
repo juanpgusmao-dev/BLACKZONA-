@@ -283,26 +283,61 @@
     </footer>
 
     <!-- Lógica do Catálogo -->
-    <script>
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+        import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCWteZvOtgY4EPiPsLcUihEAdyIhcWOs-M",
+            authDomain: "blackzona-739bb.firebaseapp.com",
+            projectId: "blackzona-739bb",
+            storageBucket: "blackzona-739bb.firebasestorage.app",
+            messagingSenderId: "674389629970",
+            appId: "1:674389629970:web:380e5b143eb201a7490ccb"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
         const grid = document.getElementById('product-grid');
         const filterBtns = document.querySelectorAll('.filter-btn');
         let allProducts = [];
 
         async function loadProducts() {
             try {
-                const response = await fetch('../data/produtos.json?v=' + Date.now());
-                const data = await response.json();
-                allProducts = data.produtos;
+                grid.innerHTML = `<div class="col-span-full py-20 text-center text-white/30 font-space">Carregando peças...</div>`;
+                const snap = await getDocs(collection(db, 'produtos'));
+                allProducts = [];
+                snap.forEach(d => {
+                    const p = d.data();
+                    allProducts.push({
+                        id: d.id,
+                        nome: p.nome || '',
+                        categoria: p.categoria || '',
+                        colecao: p.categoria || '',
+                        foto_url: p.fotos?.[0] || '',
+                        fotos: p.fotos || [],
+                        preco: p.preco || null,
+                        sob_consulta: p.sob_consulta || false,
+                        tamanho: p.tamanho || 'Único',
+                        selo_autoral: p.autoral || false,
+                        encomienda: p.status === 'encomenda',
+                        destaque: p.destaque || false,
+                        descricao: p.descricao || ''
+                    });
+                });
+                const destaques = allProducts.filter(p => p.destaque);
+                const normais = allProducts.filter(p => !p.destaque);
+                allProducts = [...destaques, ...normais];
                 renderProducts(allProducts);
             } catch (error) {
                 console.error("Erro ao carregar produtos:", error);
-                grid.innerHTML = `<div class="col-span-full py-20 text-center text-red-500 font-space">Erro ao carregar os produtos. Por favor, tente novamente.</div>`;
+                grid.innerHTML = `<div class="col-span-full py-20 text-center text-red-500 font-space">Erro ao carregar os produtos. Tente novamente.</div>`;
             }
         }
 
         function renderProducts(products) {
             grid.innerHTML = "";
-            
+
             if (products.length === 0) {
                 grid.innerHTML = `<div class="col-span-full py-20 text-center text-white/30 font-space">Nenhuma peça encontrada nessa categoria.</div>`;
                 return;
@@ -313,16 +348,16 @@
                 card.className = 'product-card';
                 card.style.animationDelay = `${index * 0.1}s`;
 
-                const precoFormatado = prod.sob_consulta 
-                    ? "Preço sob Consulta" 
-                    : `R$ ${prod.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+                const precoFormatado = prod.sob_consulta
+                    ? "Preço sob Consulta"
+                    : `R$ ${Number(prod.preco).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
 
-                // Monta o link do WhatsApp
                 const waText = encodeURIComponent(`Olá Preta Lu! Tenho interesse na peça: ${prod.nome} - Coleção ${prod.colecao}. Pode me passar mais informações?`);
                 const waUrl = `https://wa.me/5598984421124?text=${waText}`;
 
-                // Caminho da imagem (local ou instagram)
-                const fotoPath = prod.foto_url.startsWith('http') ? prod.foto_url : '../' + prod.foto_url;
+                const fotoPath = prod.foto_url.startsWith('http')
+                    ? prod.foto_url
+                    : '../' + prod.foto_url;
 
                 card.innerHTML = `
                     <div class="product-img-wrapper">
@@ -334,7 +369,6 @@
                         <div class="product-collection">${prod.colecao}</div>
                         <h3 class="product-name font-bebas uppercase">${prod.nome}</h3>
                         <div class="product-meta">
-                            ${prod.cor && prod.cor !== 'undefined' ? `<span>Cor: ${prod.cor}</span><br>` : ''}
                             <span>Tamanho: ${prod.tamanho}</span>
                         </div>
                         <div class="product-price font-space text-[var(--gold)]">
@@ -347,15 +381,11 @@
             });
         }
 
-        // Sistema de Filtros
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // UI Toggle
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
                 const filter = btn.getAttribute('data-filter');
-                
                 let filtered = [];
                 if (filter === 'all') {
                     filtered = allProducts;
@@ -366,14 +396,12 @@
                 } else if (filter === 'cartucheiras') {
                     filtered = allProducts.filter(p => p.categoria === 'cartucheiras' || p.categoria === 'pochetes');
                 } else if (filter === 'adornos') {
-                    filtered = allProducts.filter(p => p.categoria === 'adornos' || p.categoria === 'adornos afro');
+                    filtered = allProducts.filter(p => p.categoria === 'adornos');
                 }
-
                 renderProducts(filtered);
             });
         });
 
-        // Inicializar
         loadProducts();
     </script>
     <a href="https://wa.me/5598984421124" target="_blank" class="fixed bottom-8 right-8 z-50 group">
