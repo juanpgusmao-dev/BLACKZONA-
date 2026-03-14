@@ -1,0 +1,331 @@
+- generic [ref=e11]:
+  - generic [ref=e13]:
+    - link "Instagram" [ref=e16] [cursor=pointer]:
+      - /url: /
+      - img "Instagram" [ref=e19]
+    - generic [ref=e24]:
+      - link "Entrar" [ref=e26] [cursor=pointer]:
+        - /url: /accounts/login/?next=%2Fp%2FDVg3ZYxkWHc%2F%3Fimg_index%3D1&source=desktop_nav
+      - link "Cadastre-se" [ref=e28] [cursor=pointer]:
+        - /url: /accounts/emailsignup/
+  - main [ref=e29]:
+    - dialog [ref=e34]:
+      - generic [ref=e35]:
+        - button "Fechar" [ref=e37] [cursor=pointer]:
+          - img "Fechar" [ref=e39]
+        - generic [ref=e43]:
+          - generic [ref=e44]:
+            - link "Foto do perfil de blackzona_" [ref=e46] [cursor=pointer]:
+              - img "Foto do perfil de blackzona_" [ref=e47]
+            - generic [ref=e49]:
+              - generic [ref=e50]: Não perca nenhum post de blackzona_
+              - generic [ref=e52]: Cadastre-se no Instagram para ficar por dentro das novidades.
+              - generic [ref=e54]:
+                - text: Ao continuar, você concorda com os
+                - link "Termos de Uso" [ref=e55] [cursor=pointer]:
+                  - /url: https://help.instagram.com/581066165581870/?locale=pt_BR
+                - text: e a
+                - link "Política de Privacidade" [ref=e56] [cursor=pointer]:
+                  - /url: https://privacycenter.instagram.com/policy/
+                - text: do Instagram.
+          - generic [ref=e57]:
+            - link "Cadastre-se" [ref=e60] [cursor=pointer]:
+              - /url: /accounts/emailsignup/
+            - link "Entrar" [ref=e63] [cursor=pointer]:
+              - /url: /accounts/login/?source=desktop_dynamic_landing_dialog
+    - generic [ref=e64]:
+      - generic [ref=e66]:
+        - button [ref=e71]:
+          - generic [ref=e78]:
+            - list [ref=e80]:
+              - listitem [ref=e81]
+              - listitem [ref=e82]:
+                - img [ref=e89]
+              - listitem [ref=e91]:
+                - group [ref=e103]:
+                  - button [ref=e105] [cursor=pointer]:
+                    - img [ref=e107]
+            - button [ref=e109] [cursor=pointer]
+        - generic [ref=e112]:
+          - generic [ref=e114]:
+            - button "Foto do perfil de blackzona_" [disabled] [ref=e116]:
+              - link "Foto do perfil de blackzona_" [disabled] [ref=e118] [cursor=pointer]:
+                - img "Foto do perfil de blackzona_" [ref=e119]
+            - generic [ref=e122]:
+              - link "blackzona_" [ref=e126] [cursor=pointer]:
+                - /url: /blackzona_/
+                - generic [ref=e129]: blackzona_
+              - generic [ref=e130]:
+                - generic [ref=e132]: •
+                - button "Seguir" [ref=e133] [cursor=pointer]
+            - button "Mais opções" [ref=e136] [cursor=pointer]:
+              - img "Mais opções" [ref=e139]
+          - separator [ref=e143]
+          - generic [ref=e145]:
+            - generic [ref=e147]:
+              - link "Foto do perfil de blackzona_" [ref=e149] [cursor=pointer]:
+                - /url: /blackzona_/
+                - img "Foto do perfil de blackzona_" [ref=e150]
+              - generic [ref=e154]:
+                - generic [ref=e155]:
+                  - link "blackzona_" [ref=e156] [cursor=pointer]:
+                    - /url: /blackzona_/
+                    - generic [ref=e159]: blackzona_
+                  - time [ref=e161]: 1 sem
+                - generic [ref=e162]:
+                  - text: Graciosidade d+... amooo. facilitamos a entrega.
+                  - text: Cartucheira q combina com tudooo..
+                  - text: 989 84421124
+                  - text: Valor 65
+            - button "Carregar mais comentários" [ref=e164] [cursor=pointer]:
+              - img "Carregar mais comentários" [ref=e166]
+            - generic [ref=e168]:
+              - generic [ref=e171]:
+                - link "Foto do perfil de 9estevao6martins8" [ref=e174] [cursor=pointer]:
+                  - /url: /9estevao6martins8/
+                  - img "Foto do perfil de 9estevao6martins8" [ref=e175]
+                - generic [ref=e177]:
+                  - generic [ref=e179]:
+                    - generic [ref=e180]:
+                      - link "9estevao6martins8" [ref=e182] [cursor=pointer]:
+                        - /url: /9estevao6martins8/
+                        - generic [ref=e185]: 9estevao6martins8
+                      - link "6 d" [ref=e187] [cursor=pointer]:
+                        - /url: /p/DVg3ZYxkWHc/c/17896777230261949/
+                        - time [ref=e188]: 6 d
+                    - generic [ref=e190]: 😍😍😍😍😍😍
+                  - generic [ref=e191]:
+                    - button "Curtir" [ref=e192] [cursor=pointer]:
+                      - generic [ref=e193]: Curtir
+                    - button "Responder" [ref=e194] [cursor=pointer]:
+                      - generic [ref=e196]: Responder
+              - generic [ref=e199]:
+                - link "Foto do perfil de _enguelss" [ref=e202] [cursor=pointer]:
+                  - /url: /_enguelss/
+                  - img "Foto do perfil de _enguelss" [ref=e203]
+                - generic [ref=e205]:
+                  - generic [ref=e207]:
+                    - generic [ref=e208]:
+                      - link "_enguelss" [ref=e210] [cursor=pointer]:
+                        - /url: /_enguelss/
+                        - generic [ref=e213]: _enguelss
+                      - link "6 d" [ref=e215] [cursor=pointer]:
+                        - /url: /p/DVg3ZYxkWHc/c/17875869756537504/
+                        - time [ref=e216]: 6 d
+                    - generic [ref=e218]: 😍😍😍😍
+                  - generic [ref=e219]:
+                    - button "Curtir" [ref=e220] [cursor=pointer]:
+                      - generic [ref=e221]: Curtir
+                    - button "Responder" [ref=e222] [cursor=pointer]:
+                      - generic [ref=e224]: Responder
+              - generic [ref=e227]:
+                - link "Foto do perfil de dinizlima44" [ref=e230] [cursor=pointer]:
+                  - /url: /dinizlima44/
+                  - img "Foto do perfil de dinizlima44" [ref=e231]
+                - generic [ref=e233]:
+                  - generic [ref=e235]:
+                    - generic [ref=e236]:
+                      - link "dinizlima44" [ref=e238] [cursor=pointer]:
+                        - /url: /dinizlima44/
+                        - generic [ref=e241]: dinizlima44
+                      - link "1 sem" [ref=e243] [cursor=pointer]:
+                        - /url: /p/DVg3ZYxkWHc/c/18057248417421114/
+                        - time [ref=e244]: 1 sem
+                    - generic [ref=e246]: 🔥🔥❤️❤️ show como sempre!!!!!
+                  - generic [ref=e247]:
+                    - button "Curtir" [ref=e248] [cursor=pointer]:
+                      - generic [ref=e249]: Curtir
+                    - button "Responder" [ref=e250] [cursor=pointer]:
+                      - generic [ref=e252]: Responder
+          - generic [ref=e253]:
+            - generic [ref=e254]:
+              - generic [ref=e255]:
+                - button "Curtir" [ref=e258] [cursor=pointer]:
+                  - img "Curtir" [ref=e261]
+                - button "17" [ref=e263] [cursor=pointer]
+                - button "Comentar" [ref=e265] [cursor=pointer]:
+                  - img "Comentar" [ref=e267]
+                - button "3" [ref=e269] [cursor=pointer]
+                - button "Compartilhar" [ref=e270] [cursor=pointer]:
+                  - img "Compartilhar" [ref=e271]
+              - button "Salvar" [ref=e275] [cursor=pointer]:
+                - img "Salvar" [ref=e277]
+            - link "há 7 dias" [ref=e281] [cursor=pointer]:
+              - /url: /blackzona_/p/DVg3ZYxkWHc/
+              - time [ref=e283]: há 7 dias
+          - generic [ref=e288]:
+            - link "Entrar" [ref=e289] [cursor=pointer]:
+              - /url: /accounts/login/?next=%2Fp%2FDVg3ZYxkWHc%2F&source=post_comment_input
+            - text: para curtir ou comentar.
+      - separator [ref=e291]
+      - generic [ref=e292]:
+        - generic [ref=e294]:
+          - text: Mais posts de
+          - link "blackzona_" [ref=e295] [cursor=pointer]:
+            - /url: /blackzona_/
+        - generic [ref=e298]:
+          - generic [ref=e299]:
+            - link "Estamos no São Luís shopping hj ate as 10 da noite Carrossel" [ref=e405] [cursor=pointer]:
+              - /url: /blackzona_/p/DVlgBJ0EcBl/
+              - img "Estamos no São Luís shopping hj ate as 10 da noite" [ref=e406]
+              - generic:
+                - generic:
+                  - generic:
+                    - img "Carrossel"
+            - link "Passando com essa duas mochilas lindíssimas e lembrando que a entrega é grátis. 989 84421124 Carrossel" [ref=e407] [cursor=pointer]:
+              - /url: /blackzona_/p/DVTdfxmESqp/
+              - img "Passando com essa duas mochilas lindíssimas e lembrando que a entrega é grátis. 989 84421124" [ref=e408]
+              - generic:
+                - generic:
+                  - generic:
+                    - img "Carrossel"
+            - link "Photo by Loja BLACKZONA ✊🏿 on February 27, 2026. May be an image of one or more people, necklace and text." [ref=e409] [cursor=pointer]:
+              - /url: /blackzona_/p/DVRhaqOEZ91/
+              - img "Photo by Loja BLACKZONA ✊🏿 on February 27, 2026. May be an image of one or more people, necklace and text." [ref=e410]
+          - generic [ref=e315]:
+            - 'link "Mochilas em promoção amores 🥰, Todo mês de fevereiro 20% De desconto Somente retirada no shopping Rio Anil e feirinha São Luís aos domingos Ainda parcela no cartão 2x... aproveita Valor: de 170.00 Por 134.00 Mais informações 989 84421124 Carrossel" [ref=e411] [cursor=pointer]':
+              - /url: /blackzona_/p/DUIo7_bkYlw/
+              - 'img "Mochilas em promoção amores 🥰, Todo mês de fevereiro 20% De desconto Somente retirada no shopping Rio Anil e feirinha São Luís aos domingos Ainda parcela no cartão 2x... aproveita Valor: de 170.00 Por 134.00 Mais informações 989 84421124" [ref=e412]'
+              - generic:
+                - generic:
+                  - generic:
+                    - img "Carrossel"
+            - link "Linda né? Em várias cores vc encontra todas no shopping Rio Anil 1° piso. Entrega ga pelo 98984421124 Carrossel" [ref=e413] [cursor=pointer]:
+              - /url: /blackzona_/p/DT_v_RtkTpj/
+              - img "Linda né? Em várias cores vc encontra todas no shopping Rio Anil 1° piso. Entrega ga pelo 98984421124" [ref=e414]
+              - generic:
+                - generic:
+                  - generic:
+                    - img "Carrossel"
+            - link "Estamos de volta. Shopping Rio Anil. Loja da Feira Preta. Com muitas novidades nesse espaço ok lindo e aconchegante. Axé...... 🥰🌹💋 Carrossel" [ref=e415] [cursor=pointer]:
+              - /url: /blackzona_/p/DT5q_j3kdYM/
+              - img "Estamos de volta. Shopping Rio Anil. Loja da Feira Preta. Com muitas novidades nesse espaço ok lindo e aconchegante. Axé...... 🥰🌹💋" [ref=e416]
+              - generic:
+                - generic:
+                  - generic:
+                    - img "Carrossel"
+          - generic [ref=e331]:
+            - link "Se foi sucesso agente repete, só q melhor. Bolsas CANDACES, nova coleção Entrega grátis 989 84421124 Valor 145. Carrossel" [ref=e417] [cursor=pointer]:
+              - /url: /blackzona_/p/DTsW-UwEQTl/
+              - img "Se foi sucesso agente repete, só q melhor. Bolsas CANDACES, nova coleção Entrega grátis 989 84421124 Valor 145." [ref=e418]
+              - generic:
+                - generic:
+                  - generic:
+                    - img "Carrossel"
+            - link "Seu carnaval mais alegre com as pochetes blackzona Estamos na feirinha de domingo, praça João Lisboa ao lado da igreja do Carmo Combinamos entrega pelo. 98 984421124 Carrossel" [ref=e419] [cursor=pointer]:
+              - /url: /blackzona_/p/DTfpzdGkQIc/
+              - img "Seu carnaval mais alegre com as pochetes blackzona Estamos na feirinha de domingo, praça João Lisboa ao lado da igreja do Carmo Combinamos entrega pelo. 98 984421124" [ref=e420]
+              - generic:
+                - generic:
+                  - generic:
+                    - img "Carrossel"
+        - generic [ref=e343]:
+          - link "Ver mais posts" [ref=e345] [cursor=pointer]:
+            - /url: /blackzona_/
+            - generic [ref=e346]: Ver mais posts
+          - separator [ref=e347]
+  - contentinfo [ref=e348]:
+    - generic [ref=e349]:
+      - generic [ref=e351]:
+        - link "Meta" [ref=e353] [cursor=pointer]:
+          - /url: https://about.meta.com/
+          - generic [ref=e354]: Meta
+        - link "Sobre" [ref=e356] [cursor=pointer]:
+          - /url: https://about.instagram.com/
+          - generic [ref=e357]: Sobre
+        - link "Blog" [ref=e359] [cursor=pointer]:
+          - /url: https://about.instagram.com/blog/
+          - generic [ref=e360]: Blog
+        - link "Carreiras" [ref=e362] [cursor=pointer]:
+          - /url: https://about.instagram.com/about-us/careers
+          - generic [ref=e363]: Carreiras
+        - link "Ajuda" [ref=e365] [cursor=pointer]:
+          - /url: https://help.instagram.com/
+          - generic [ref=e366]: Ajuda
+        - link "API" [ref=e368] [cursor=pointer]:
+          - /url: https://developers.facebook.com/docs/instagram
+          - generic [ref=e369]: API
+        - link "Privacidade" [ref=e371] [cursor=pointer]:
+          - /url: /legal/privacy/
+          - generic [ref=e372]: Privacidade
+        - link "Termos" [ref=e374] [cursor=pointer]:
+          - /url: /legal/terms/
+          - generic [ref=e375]: Termos
+        - link "Localizações" [ref=e377] [cursor=pointer]:
+          - /url: /explore/locations/
+          - generic [ref=e378]: Localizações
+        - link "Instagram Lite" [ref=e380] [cursor=pointer]:
+          - /url: /web/lite/
+          - generic [ref=e381]: Instagram Lite
+        - link "Meta AI" [ref=e383] [cursor=pointer]:
+          - /url: https://www.meta.ai/?utm_source=foa_web_footer
+          - generic [ref=e384]: Meta AI
+        - link "Threads" [ref=e386] [cursor=pointer]:
+          - /url: https://www.threads.com/
+          - generic [ref=e387]: Threads
+        - link "Upload de contatos e não usuários" [ref=e389] [cursor=pointer]:
+          - /url: https://www.facebook.com/help/instagram/261704639352628
+          - generic [ref=e390]: Upload de contatos e não usuários
+        - link "Meta Verified" [ref=e392] [cursor=pointer]:
+          - /url: /accounts/meta_verified/?entrypoint=web_footer
+          - generic [ref=e393]: Meta Verified
+      - generic [ref=e394]:
+        - generic [ref=e395] [cursor=pointer]:
+          - generic [ref=e396]:
+            - generic [ref=e397]: Português (Brasil)
+            - img "Ícone de seta para baixo" [ref=e400]
+          - combobox "Trocar idioma de exibição" [ref=e402]:
+            - option "Afrikaans"
+            - option "العربية"
+            - option "Čeština"
+            - option "Dansk"
+            - option "Deutsch"
+            - option "Ελληνικά"
+            - option "English"
+            - option "English (UK)"
+            - option "Español (España)"
+            - option "Español"
+            - option "فارسی"
+            - option "Suomi"
+            - option "Français"
+            - option "עברית"
+            - option "Bahasa Indonesia"
+            - option "Italiano"
+            - option "日本語"
+            - option "한국어"
+            - option "Bahasa Melayu"
+            - option "Norsk"
+            - option "Nederlands"
+            - option "Polski"
+            - option "Português (Brasil)" [selected]
+            - option "Português (Portugal)"
+            - option "Русский"
+            - option "Svenska"
+            - option "ภาษาไทย"
+            - option "Filipino"
+            - option "Türkçe"
+            - option "中文(简体)"
+            - option "中文(台灣)"
+            - option "বাংলা"
+            - option "ગુજરાતી"
+            - option "हिन्दी"
+            - option "Hrvatski"
+            - option "Magyar"
+            - option "ಕನ್ನಡ"
+            - option "മലയാളം"
+            - option "मराठी"
+            - option "नेपाली"
+            - option "ਪੰਜਾਬੀ"
+            - option "සිංහල"
+            - option "Slovenčina"
+            - option "தமிழ்"
+            - option "తెలుగు"
+            - option "اردو"
+            - option "Tiếng Việt"
+            - option "中文(香港)"
+            - option "Български"
+            - option "Français (Canada)"
+            - option "Română"
+            - option "Српски"
+            - option "Українська"
+        - generic [ref=e404]: © 2026 Instagram from Meta

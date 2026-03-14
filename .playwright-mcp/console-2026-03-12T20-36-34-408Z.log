@@ -1,0 +1,7 @@
+[     174ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
+[     356ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/pages/assets/images/produto-01-bolsa-candace-classica.jpg:0
+[     357ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/pages/assets/images/produto-02-pochete-quilombo-estampada.jpg:0
+[     357ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/pages/assets/images/produto-03-cartucheira-gege-dupla.jpg:0
+[     358ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/pages/assets/images/produto-04-adorno-afro-ancestral.jpg:0
+[     361ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/pages/assets/images/produto-05-mochila-quilombo-urbana.jpg:0
+[     361ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/pages/assets/images/produto-06-bolsa-candace-mini.jpg:0

@@ -1,0 +1,33 @@
+{
+  "config": {
+    "whatsapp": "5598984421124",
+    "instagram": "blackzona_",
+    "email": "preta-lu@hotmail.com",
+    "endereco": "Shopping Rio Anil, 1º Piso – Loja da Feira Preta",
+    "cidade": "São Luís, MA – Brasil",
+    "fundadora": "Luciana Costa Correa",
+    "apelido": "Preta Lu",
+    "slogan": "Nossa Imagem, Nosso Espaço",
+    "parcelamento": "Em até 2x no cartão",
+    "tempo_resposta": "Respondemos em até 2 horas",
+    "horario": "Segunda a Sábado, 9h às 20h"
+  },
+  "produtos": [
+    { "id": 1, "nome": "Mochila Quilombo Estampada", "categoria": "mochilas", "colecao": "Mochilas e Resistência", "foto_url": "assets/images/produto-02-mochila-quilombo-estampada.jpg", "tamanho": "G", "preco": 0, "sob_consulta": true, "encomienda": false, "selo_autoral": true, "disponivel": true },
+    { "id": 2, "nome": "Mochila Gegê Dupla", "categoria": "mochilas", "colecao": "Mochilas e Resistência", "foto_url": "assets/images/produto-03-mochila-gege-dupla.jpg", "tamanho": "G", "preco": 0, "sob_consulta": true, "encomienda": false, "selo_autoral": true, "disponivel": true },
+    { "id": 3, "nome": "Bolsa Quilombo Urbana", "categoria": "candaces", "colecao": "Coleção CANDACES", "foto_url": "assets/images/produto-05-bolsa-quilombo-urbana.jpg", "tamanho": "M", "preco": 0, "sob_consulta": true, "encomienda": false, "selo_autoral": true, "disponivel": true },
+    { "id": 4, "nome": "Bolsa Afro Ancestral", "categoria": "candaces", "colecao": "Coleção CANDACES", "foto_url": "assets/images/produto-04-bolsa-afro-ancestral.jpg", "tamanho": "M", "preco": 0, "sob_consulta": true, "encomienda": false, "selo_autoral": true, "disponivel": true },
+    { "id": 5, "nome": "Bolsa Candace Mini", "categoria": "candaces", "colecao": "Coleção CANDACES", "foto_url": "assets/images/produto-06-bolsa-candace-mini.jpg", "tamanho": "P", "preco": 0, "sob_consulta": true, "encomienda": false, "selo_autoral": true, "disponivel": true },
+    { "id": 7, "nome": "Mochila Quilombo Simples", "categoria": "mochilas", "colecao": "Mochilas e Resistência", "foto_url": "assets/images/produto-07-mochila-quilombo-simples.jpg", "tamanho": "M", "preco": 0, "sob_consulta": true, "encomienda": false, "selo_autoral": true, "disponivel": true },
+    { "id": 8, "nome": "Cartucheira Transversal", "categoria": "cartucheiras", "colecao": "Cartucheiras e Pochetes", "foto_url": "assets/images/produto-08-cartucheira-transversal-encomenda.jpg", "tamanho": "U", "preco": 0, "sob_consulta": true, "encomienda": true, "selo_autoral": true, "disponivel": true },
+    { "id": 10, "nome": "Adorno de Cabeça Blackzona", "categoria": "adornos", "colecao": "Adornos Afro", "foto_url": "assets/images/produto-10-adorno-de-cabeca-blackzona.jpg", "tamanho": "U", "preco": 0, "sob_consulta": true, "encomienda": false, "selo_autoral": true, "disponivel": true },
+    { "id": 11, "nome": "Bolsa de Ombro Candaces", "categoria": "candaces", "colecao": "Coleção CANDACES", "foto_url": "assets/images/produto-11-bolsa-de-ombro-candaces.jpg", "tamanho": "G", "preco": 0, "sob_consulta": true, "encomienda": false, "selo_autoral": true, "disponivel": true },
+    { "id": 13, "nome": "Bolsa de Mão Candaces", "categoria": "candaces", "colecao": "Coleção CANDACES", "foto_url": "assets/images/produto-13-bolsa-de-mao-candace.jpg", "tamanho": "M", "preco": 0, "sob_consulta": true, "encomienda": false, "selo_autoral": true, "disponivel": true },
+    { "id": 14, "nome": "Mochila Quilombo Estampada II", "categoria": "mochilas", "colecao": "Mochilas e Resistência", "foto_url": "assets/images/produto-14-mochila-quilombo-estampada.jpg", "tamanho": "G", "preco": 0, "sob_consulta": true, "encomienda": false, "selo_autoral": true, "disponivel": true },
+    { "id": 15, "nome": "Adorno Color Afro", "categoria": "adornos", "colecao": "Adornos Afro", "foto_url": "assets/images/produto-15-adorno-colar-afro.jpg", "tamanho": "U", "preco": 0, "sob_consulta": true, "encomienda": false, "selo_autoral": true, "disponivel": true },
+    { "id": 16, "nome": "Mochila Quilombo Estampada III", "categoria": "mochilas", "colecao": "Mochilas e Resistência", "foto_url": "assets/images/produto-16-mochila-quilombo-estampada.jpg", "tamanho": "G", "preco": 0, "sob_consulta": true, "encomienda": false, "selo_autoral": true, "disponivel": true },
+    { "id": 17, "nome": "Pochete Slim Quilombo", "categoria": "cartucheiras", "colecao": "Cartucheiras e Pochetes", "foto_url": "assets/images/produto-17-pochete-slim-quilombo.jpg", "tamanho": "U", "preco": 0, "sob_consulta": true, "encomienda": false, "selo_autoral": true, "disponivel": true },
+    { "id": 18, "nome": "Mochila Candace Grande", "categoria": "mochilas", "colecao": "Mochilas e Resistência", "foto_url": "assets/images/produto-18-mochila-candace-grande.jpg", "tamanho": "G", "preco": 0, "sob_consulta": true, "encomienda": false, "selo_autoral": true, "disponivel": true },
+    { "id": 19, "nome": "Mochila Ancestralidade", "categoria": "mochilas", "colecao": "Mochilas e Resistência", "foto_url": "assets/images/produto-19-mochila-ancestralidade.jpg", "tamanho": "G", "preco": 0, "sob_consulta": true, "encomienda": false, "selo_autoral": true, "disponivel": true }
+  ]
+}

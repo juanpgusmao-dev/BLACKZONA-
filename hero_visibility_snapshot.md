@@ -1,0 +1,323 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "BlackZona Logo BLACKZONA" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - img "BlackZona Logo" [ref=e6]
+        - generic [ref=e7]: BLACKZONA
+      - navigation [ref=e8]:
+        - link "AXÉ" [ref=e9] [cursor=pointer]:
+          - /url: index.html
+        - button "A GRIFE expand_more" [ref=e11] [cursor=pointer]:
+          - text: A GRIFE
+          - generic [ref=e12]: expand_more
+        - link "A AFROSUBVERSIVA" [ref=e13] [cursor=pointer]:
+          - /url: pages/sobre.html
+        - link "PONTOS DE ENCONTRO" [ref=e14] [cursor=pointer]:
+          - /url: pages/pontos.html
+      - link " Fale com a Preta" [ref=e16] [cursor=pointer]:
+        - /url: pages/contato.html
+        - generic [ref=e17]: 
+        - text: Fale com a Preta
+  - generic [ref=e18]:
+    - generic [ref=e21]:
+      - img "Blackzona Logo" [ref=e24]
+      - heading "NOSSA IMAGEM" [level=1] [ref=e26]
+      - heading "NOSSO ESPAÇO" [level=2] [ref=e28]
+      - paragraph [ref=e29]: BOLSAS AFRO ARTESANAIS FEITAS À MÃO POR PRETA LU. 🌟🖤
+      - generic [ref=e30]:
+        - link "VER CATÁLOGO" [ref=e31] [cursor=pointer]:
+          - /url: pages/catalogo.html
+        - link "FALAR NO WHATSAPP" [ref=e32] [cursor=pointer]:
+          - /url: https://wa.me/5598984421124?text=Ol%C3%A1%20Preta%20Lu!%20Vim%20pelo%20site%20da%20BLACKZONA.
+    - generic [ref=e33]:
+      - generic [ref=e34]: Scroll
+      - generic [ref=e35]: expand_more
+  - generic [ref=e36]:
+    - generic [ref=e37]:
+      - generic [ref=e38]: 🌟 BOLSAS AFRO ARTESANAIS • ENTREGA PARA TODO O BRASIL • FEITO À MÃO COM AMOR • NOSSA IMAGEM, NOSSO ESPAÇO • BLACK-OWNED BUSINESS • SÃO LUÍS, MA • 🖤
+      - generic [ref=e39]: 🌟 BOLSAS AFRO ARTESANAIS • ENTREGA PARA TODO O BRASIL • FEITO À MÃO COM AMOR • NOSSA IMAGEM, NOSSO ESPAÇO • BLACK-OWNED BUSINESS • SÃO LUÍS, MA • 🖤
+    - generic [ref=e40]:
+      - generic [ref=e41]: 🌟 BOLSAS AFRO ARTESANAIS • ENTREGA PARA TODO O BRASIL • FEITO À MÃO COM AMOR • NOSSA IMAGEM, NOSSO ESPAÇO • BLACK-OWNED BUSINESS • SÃO LUÍS, MA • 🖤
+      - generic [ref=e42]: 🌟 BOLSAS AFRO ARTESANAIS • ENTREGA PARA TODO O BRASIL • FEITO À MÃO COM AMOR • NOSSA IMAGEM, NOSSO ESPAÇO • BLACK-OWNED BUSINESS • SÃO LUÍS, MA • 🖤
+  - generic [ref=e43]:
+    - generic [ref=e44]:
+      - generic [ref=e45]:
+        - heading "CATÁLOGO" [level=2] [ref=e46]
+        - paragraph [ref=e47]: Peças exclusivas e limitadas
+      - generic [ref=e48]:
+        - button "Todos" [ref=e49] [cursor=pointer]
+        - button "Candaces" [ref=e50] [cursor=pointer]
+        - button "Mochilas" [ref=e51] [cursor=pointer]
+        - button "Cartucheiras" [ref=e52] [cursor=pointer]
+        - button "Adornos" [ref=e53] [cursor=pointer]
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - img "Mochila Quilombo Estampada" [ref=e57]
+          - generic [ref=e58]: Mochilas e Resistência
+          - generic [ref=e60]: 🖤 AUTORAL
+        - generic [ref=e61]:
+          - heading "Mochila Quilombo Estampada" [level=3] [ref=e62]
+          - paragraph [ref=e63]: TAM. G
+          - generic [ref=e64]:
+            - paragraph [ref=e65]: Sob Consulta
+            - link "Quero essa peça! 🖤" [ref=e66] [cursor=pointer]:
+              - /url: "https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *Mochila Quilombo Estampada* - Mochilas e Resistência. Pode me passar mais informações?"
+              - generic [ref=e67]: Quero essa peça! 🖤
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - img "Mochila Gegê Dupla" [ref=e70]
+          - generic [ref=e71]: Mochilas e Resistência
+          - generic [ref=e73]: 🖤 AUTORAL
+        - generic [ref=e74]:
+          - heading "Mochila Gegê Dupla" [level=3] [ref=e75]
+          - paragraph [ref=e76]: TAM. G
+          - generic [ref=e77]:
+            - paragraph [ref=e78]: Sob Consulta
+            - link "Quero essa peça! 🖤" [ref=e79] [cursor=pointer]:
+              - /url: "https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *Mochila Gegê Dupla* - Mochilas e Resistência. Pode me passar mais informações?"
+              - generic [ref=e80]: Quero essa peça! 🖤
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - img "Bolsa Quilombo Urbana" [ref=e83]
+          - generic [ref=e84]: Coleção CANDACES
+          - generic [ref=e86]: 🖤 AUTORAL
+        - generic [ref=e87]:
+          - heading "Bolsa Quilombo Urbana" [level=3] [ref=e88]
+          - paragraph [ref=e89]: TAM. M
+          - generic [ref=e90]:
+            - paragraph [ref=e91]: Sob Consulta
+            - link "Quero essa peça! 🖤" [ref=e92] [cursor=pointer]:
+              - /url: "https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *Bolsa Quilombo Urbana* - Coleção CANDACES. Pode me passar mais informações?"
+              - generic [ref=e93]: Quero essa peça! 🖤
+      - generic [ref=e94]:
+        - generic [ref=e95]:
+          - img "Bolsa Afro Ancestral" [ref=e96]
+          - generic [ref=e97]: Coleção CANDACES
+          - generic [ref=e99]: 🖤 AUTORAL
+        - generic [ref=e100]:
+          - heading "Bolsa Afro Ancestral" [level=3] [ref=e101]
+          - paragraph [ref=e102]: TAM. M
+          - generic [ref=e103]:
+            - paragraph [ref=e104]: Sob Consulta
+            - link "Quero essa peça! 🖤" [ref=e105] [cursor=pointer]:
+              - /url: "https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *Bolsa Afro Ancestral* - Coleção CANDACES. Pode me passar mais informações?"
+              - generic [ref=e106]: Quero essa peça! 🖤
+      - generic [ref=e107]:
+        - generic [ref=e108]:
+          - img "Bolsa Candace Mini" [ref=e109]
+          - generic [ref=e110]: Coleção CANDACES
+          - generic [ref=e112]: 🖤 AUTORAL
+        - generic [ref=e113]:
+          - heading "Bolsa Candace Mini" [level=3] [ref=e114]
+          - paragraph [ref=e115]: TAM. P
+          - generic [ref=e116]:
+            - paragraph [ref=e117]: Sob Consulta
+            - link "Quero essa peça! 🖤" [ref=e118] [cursor=pointer]:
+              - /url: "https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *Bolsa Candace Mini* - Coleção CANDACES. Pode me passar mais informações?"
+              - generic [ref=e119]: Quero essa peça! 🖤
+      - generic [ref=e120]:
+        - generic [ref=e121]:
+          - img "Mochila Quilombo Simples" [ref=e122]
+          - generic [ref=e123]: Mochilas e Resistência
+          - generic [ref=e125]: 🖤 AUTORAL
+        - generic [ref=e126]:
+          - heading "Mochila Quilombo Simples" [level=3] [ref=e127]
+          - paragraph [ref=e128]: TAM. M
+          - generic [ref=e129]:
+            - paragraph [ref=e130]: Sob Consulta
+            - link "Quero essa peça! 🖤" [ref=e131] [cursor=pointer]:
+              - /url: "https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *Mochila Quilombo Simples* - Mochilas e Resistência. Pode me passar mais informações?"
+              - generic [ref=e132]: Quero essa peça! 🖤
+      - generic [ref=e133]:
+        - generic [ref=e134]:
+          - img "Cartucheira Transversal" [ref=e135]
+          - generic [ref=e136]: Cartucheiras e Pochetes
+          - generic [ref=e137]:
+            - generic [ref=e138]: 🖤 AUTORAL
+            - generic [ref=e139]: ⭐ ENCOMENDA
+        - generic [ref=e140]:
+          - heading "Cartucheira Transversal" [level=3] [ref=e141]
+          - paragraph [ref=e142]: TAM. U
+          - generic [ref=e143]:
+            - paragraph [ref=e144]: Sob Consulta
+            - link "Quero essa peça! 🖤" [ref=e145] [cursor=pointer]:
+              - /url: "https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *Cartucheira Transversal* - Cartucheiras e Pochetes. Pode me passar mais informações?"
+              - generic [ref=e146]: Quero essa peça! 🖤
+      - generic [ref=e147]:
+        - generic [ref=e148]:
+          - img "Adorno de Cabeça Blackzona" [ref=e149]
+          - generic [ref=e150]: Adornos Afro
+          - generic [ref=e152]: 🖤 AUTORAL
+        - generic [ref=e153]:
+          - heading "Adorno de Cabeça Blackzona" [level=3] [ref=e154]
+          - paragraph [ref=e155]: TAM. U
+          - generic [ref=e156]:
+            - paragraph [ref=e157]: Sob Consulta
+            - link "Quero essa peça! 🖤" [ref=e158] [cursor=pointer]:
+              - /url: "https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *Adorno de Cabeça Blackzona* - Adornos Afro. Pode me passar mais informações?"
+              - generic [ref=e159]: Quero essa peça! 🖤
+      - generic [ref=e160]:
+        - generic [ref=e161]:
+          - img "Bolsa de Ombro Candaces" [ref=e162]
+          - generic [ref=e163]: Coleção CANDACES
+          - generic [ref=e165]: 🖤 AUTORAL
+        - generic [ref=e166]:
+          - heading "Bolsa de Ombro Candaces" [level=3] [ref=e167]
+          - paragraph [ref=e168]: TAM. G
+          - generic [ref=e169]:
+            - paragraph [ref=e170]: Sob Consulta
+            - link "Quero essa peça! 🖤" [ref=e171] [cursor=pointer]:
+              - /url: "https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *Bolsa de Ombro Candaces* - Coleção CANDACES. Pode me passar mais informações?"
+              - generic [ref=e172]: Quero essa peça! 🖤
+      - generic [ref=e173]:
+        - generic [ref=e174]:
+          - img "Bolsa de Mão Candaces" [ref=e175]
+          - generic [ref=e176]: Coleção CANDACES
+          - generic [ref=e178]: 🖤 AUTORAL
+        - generic [ref=e179]:
+          - heading "Bolsa de Mão Candaces" [level=3] [ref=e180]
+          - paragraph [ref=e181]: TAM. M
+          - generic [ref=e182]:
+            - paragraph [ref=e183]: Sob Consulta
+            - link "Quero essa peça! 🖤" [ref=e184] [cursor=pointer]:
+              - /url: "https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *Bolsa de Mão Candaces* - Coleção CANDACES. Pode me passar mais informações?"
+              - generic [ref=e185]: Quero essa peça! 🖤
+      - generic [ref=e186]:
+        - generic [ref=e187]:
+          - img "Mochila Quilombo Estampada II" [ref=e188]
+          - generic [ref=e189]: Mochilas e Resistência
+          - generic [ref=e191]: 🖤 AUTORAL
+        - generic [ref=e192]:
+          - heading "Mochila Quilombo Estampada II" [level=3] [ref=e193]
+          - paragraph [ref=e194]: TAM. G
+          - generic [ref=e195]:
+            - paragraph [ref=e196]: Sob Consulta
+            - link "Quero essa peça! 🖤" [ref=e197] [cursor=pointer]:
+              - /url: "https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *Mochila Quilombo Estampada II* - Mochilas e Resistência. Pode me passar mais informações?"
+              - generic [ref=e198]: Quero essa peça! 🖤
+      - generic [ref=e199]:
+        - generic [ref=e200]:
+          - img "Adorno Color Afro" [ref=e201]
+          - generic [ref=e202]: Adornos Afro
+          - generic [ref=e204]: 🖤 AUTORAL
+        - generic [ref=e205]:
+          - heading "Adorno Color Afro" [level=3] [ref=e206]
+          - paragraph [ref=e207]: TAM. U
+          - generic [ref=e208]:
+            - paragraph [ref=e209]: Sob Consulta
+            - link "Quero essa peça! 🖤" [ref=e210] [cursor=pointer]:
+              - /url: "https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *Adorno Color Afro* - Adornos Afro. Pode me passar mais informações?"
+              - generic [ref=e211]: Quero essa peça! 🖤
+      - generic [ref=e212]:
+        - generic [ref=e213]:
+          - img "Mochila Quilombo Estampada III" [ref=e214]
+          - generic [ref=e215]: Mochilas e Resistência
+          - generic [ref=e217]: 🖤 AUTORAL
+        - generic [ref=e218]:
+          - heading "Mochila Quilombo Estampada III" [level=3] [ref=e219]
+          - paragraph [ref=e220]: TAM. G
+          - generic [ref=e221]:
+            - paragraph [ref=e222]: Sob Consulta
+            - link "Quero essa peça! 🖤" [ref=e223] [cursor=pointer]:
+              - /url: "https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *Mochila Quilombo Estampada III* - Mochilas e Resistência. Pode me passar mais informações?"
+              - generic [ref=e224]: Quero essa peça! 🖤
+      - generic [ref=e225]:
+        - generic [ref=e226]:
+          - img "Pochete Slim Quilombo" [ref=e227]
+          - generic [ref=e228]: Cartucheiras e Pochetes
+          - generic [ref=e230]: 🖤 AUTORAL
+        - generic [ref=e231]:
+          - heading "Pochete Slim Quilombo" [level=3] [ref=e232]
+          - paragraph [ref=e233]: TAM. U
+          - generic [ref=e234]:
+            - paragraph [ref=e235]: Sob Consulta
+            - link "Quero essa peça! 🖤" [ref=e236] [cursor=pointer]:
+              - /url: "https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *Pochete Slim Quilombo* - Cartucheiras e Pochetes. Pode me passar mais informações?"
+              - generic [ref=e237]: Quero essa peça! 🖤
+      - generic [ref=e238]:
+        - generic [ref=e239]:
+          - img "Mochila Candace Grande" [ref=e240]
+          - generic [ref=e241]: Mochilas e Resistência
+          - generic [ref=e243]: 🖤 AUTORAL
+        - generic [ref=e244]:
+          - heading "Mochila Candace Grande" [level=3] [ref=e245]
+          - paragraph [ref=e246]: TAM. G
+          - generic [ref=e247]:
+            - paragraph [ref=e248]: Sob Consulta
+            - link "Quero essa peça! 🖤" [ref=e249] [cursor=pointer]:
+              - /url: "https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *Mochila Candace Grande* - Mochilas e Resistência. Pode me passar mais informações?"
+              - generic [ref=e250]: Quero essa peça! 🖤
+      - generic [ref=e251]:
+        - generic [ref=e252]:
+          - img "Mochila Ancestralidade" [ref=e253]
+          - generic [ref=e254]: Mochilas e Resistência
+          - generic [ref=e256]: 🖤 AUTORAL
+        - generic [ref=e257]:
+          - heading "Mochila Ancestralidade" [level=3] [ref=e258]
+          - paragraph [ref=e259]: TAM. G
+          - generic [ref=e260]:
+            - paragraph [ref=e261]: Sob Consulta
+            - link "Quero essa peça! 🖤" [ref=e262] [cursor=pointer]:
+              - /url: "https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *Mochila Ancestralidade* - Mochilas e Resistência. Pode me passar mais informações?"
+              - generic [ref=e263]: Quero essa peça! 🖤
+    - link "Ver Todos os Produtos" [ref=e265] [cursor=pointer]:
+      - /url: catalogo.html
+      - text: Ver Todos os Produtos
+      - img [ref=e266]
+  - contentinfo [ref=e268]:
+    - generic [ref=e269]:
+      - generic [ref=e270]:
+        - paragraph [ref=e271]: Nossa Imagem, Nosso Espaço
+        - paragraph [ref=e272]: Bolsas afro artesanais feitas à mão por Preta Lu. Entrega para todo o Brasil.
+        - generic [ref=e273]:
+          - link "" [ref=e274] [cursor=pointer]:
+            - /url: https://instagram.com/blackzona_
+            - generic [ref=e275]: 
+          - link "" [ref=e276] [cursor=pointer]:
+            - /url: https://www.facebook.com/blackzona.oficial/
+            - generic [ref=e277]: 
+          - link "" [ref=e278] [cursor=pointer]:
+            - /url: https://wa.me/5598984421124
+            - generic [ref=e279]: 
+      - generic [ref=e280]:
+        - heading "Navegação" [level=4] [ref=e281]
+        - list [ref=e282]:
+          - listitem [ref=e283]:
+            - link "Início" [ref=e284] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=e285]:
+            - link "Catálogo" [ref=e286] [cursor=pointer]:
+              - /url: pages/catalogo.html
+          - listitem [ref=e287]:
+            - link "Sobre a Marca" [ref=e288] [cursor=pointer]:
+              - /url: pages/sobre.html
+          - listitem [ref=e289]:
+            - link "Contato" [ref=e290] [cursor=pointer]:
+              - /url: pages/contato.html
+      - generic [ref=e291]:
+        - heading "Contato" [level=4] [ref=e292]
+        - list [ref=e293]:
+          - listitem [ref=e294]:
+            - generic [ref=e295]: 
+            - link "(98) 98442-1124" [ref=e296] [cursor=pointer]:
+              - /url: https://wa.me/5598984421124
+          - listitem [ref=e297]:
+            - generic [ref=e298]: 
+            - link "preta-lu@hotmail.com" [ref=e299] [cursor=pointer]:
+              - /url: mailto:preta-lu@hotmail.com
+          - listitem [ref=e300]:
+            - generic [ref=e301]: 
+            - generic [ref=e302]: São Luís, MA — Brasil
+          - listitem [ref=e303]:
+            - generic [ref=e304]: 
+            - generic [ref=e305]: Respondemos em até 2 horas ⚡
+    - generic [ref=e307]:
+      - generic [ref=e308]: © 2026 BLACKZONA — Todos os direitos reservados.
+      - generic [ref=e309]: Feito com 🖤 em São Luís, MA
+      - generic [ref=e310]: Nossa Imagem, Nosso Espaço
+  - link "Fale com a BlackZona!" [ref=e311] [cursor=pointer]:
+    - /url: https://wa.me/5598984421124
+    - generic: Fale com a BlackZona!
+    - img [ref=e315]

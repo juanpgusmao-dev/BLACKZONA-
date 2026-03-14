@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | BlackZona - Estilo & Identidade</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <!-- Library Styles -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#C9A84C',
+                        'primary-dark': '#B08D3E',
+                        background: {
+                            dark: '#0a0a0a',
+                            light: '#111111'
+                        }
+                    },
+                    fontFamily: {
+                        bebas: ['Bebas Neue', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                        space: ['Space Mono', 'monospace'],
+                        inter: ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'logo-pulse': 'logo-pulse 3s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body class="bg-background-dark font-display text-slate-100 selection:bg-primary selection:text-background-dark overflow-x-hidden">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="grain"></div>
+    <div class="adinkra-overlay"></div>
+
+    <!-- Sticky Header -->
+    <header class="fixed top-0 left-0 z-[1000] w-full transition-all duration-500" id="main-header">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="../index.html" class="flex items-center gap-4 group">
+                <div class="relative size-12 rounded-full border-2 border-primary/30 p-0.5 
+                        group-hover:border-primary transition-all duration-500 bg-white 
+                        animate-logo-pulse">
+                    <img src="../assets/logo/Logo-BlackZona.png" alt="BlackZona Logo"
+                        class="w-full h-full object-contain rounded-full">
+                </div>
+                <span class="font-bebas text-2xl tracking-[0.2em] text-white 
+                         group-hover:text-primary transition-colors duration-300">
+                    BLACKZONA
+                </span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-12">
+                <a href="../index.html" class="font-space text-[13px] font-bold uppercase tracking-[0.2em] 
+                      text-white hover:text-primary transition-colors duration-300">
+                    AXÉ
+                </a>
+
+                <!-- Dropdown A GRIFE -->
+                <div class="relative group">
+                    <button class="font-space text-[13px] font-bold uppercase tracking-[0.2em] 
+                               text-primary transition-colors duration-300 
+                               flex items-center gap-1">
+                        A GRIFE
+                        <span class="material-symbols-outlined text-sm 
+                                 transition-transform duration-300 group-hover:rotate-180">
+                            expand_more
+                        </span>
+                    </button>
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[280px] 
+                            bg-[#1a1a1a] border border-primary/30 rounded-xl p-2 
+                            shadow-2xl z-50 opacity-0 invisible 
+                            group-hover:opacity-100 group-hover:visible 
+                            transition-all duration-300">
+                        <a href="catalogo.html#candaces" class="flex items-center gap-3 px-4 py-3 rounded-lg 
+                              text-white hover:text-primary hover:bg-white/5 
+                              border-l-2 border-transparent hover:border-primary 
+                              transition-all duration-200">
+                            <i class="fa-solid fa-crown text-primary text-sm"></i>
+                            <span class="font-space text-[13px] font-bold uppercase tracking-[0.15em]">
+                                Coleção CANDACES
+                            </span>
+                        </a>
+                        <a href="catalogo.html#mochilas" class="flex items-center gap-3 px-4 py-3 rounded-lg 
+                              text-white hover:text-primary hover:bg-white/5 
+                              border-l-2 border-transparent hover:border-primary 
+                              transition-all duration-200">
+                            <i class="fa-solid fa-shopping-bag text-primary text-sm"></i>
+                            <span class="font-space text-[13px] font-bold uppercase tracking-[0.15em]">
+                                Mochilas e Resistência
+                            </span>
+                        </a>
+                        <a href="catalogo.html#cartucheiras" class="flex items-center gap-3 px-4 py-3 rounded-lg 
+                              text-white hover:text-primary hover:bg-white/5 
+                              border-l-2 border-transparent hover:border-primary 
+                              transition-all duration-200">
+                            <i class="fa-solid fa-circle text-primary text-[10px]"></i>
+                            <span class="font-space text-[13px] font-bold uppercase tracking-[0.15em]">
+                                Cartucheiras e Pochetes
+                            </span>
+                        </a>
+                        <a href="catalogo.html#adornos" class="flex items-center gap-3 px-4 py-3 rounded-lg 
+                              text-white hover:text-primary hover:bg-white/5 
+                              border-l-2 border-transparent hover:border-primary 
+                              transition-all duration-200">
+                            <i class="fa-solid fa-gem text-primary text-sm"></i>
+                            <span class="font-space text-[13px] font-bold uppercase tracking-[0.15em]">
+                                Adornos Afro
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="sobre.html" class="font-space text-[13px] font-bold uppercase tracking-[0.2em] 
+                      text-white hover:text-primary transition-colors duration-300">
+                    A AFROSUBVERSIVA
+                </a>
+                <a href="pontos.html" class="font-space text-[13px] font-bold uppercase tracking-[0.2em] 
+                      text-white hover:text-primary transition-colors duration-300">
+                    PONTOS DE ENCONTRO
+                </a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-6">
+                <a href="contato.html" class="hidden md:flex items-center gap-2 bg-primary hover:bg-white 
+                      text-black font-space text-[13px] uppercase tracking-[0.2em] 
+                      px-6 py-3 font-bold transition-all duration-300" style="clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+                      box-shadow: 3px 3px 0px #000;">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    Fale com a Preta
+                </a>
+                <button id="menu-toggle" class="lg:hidden text-primary hover:text-white transition-colors p-2">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <!-- Header Section -->
+    <header class="pt-32 pb-16 text-center border-b border-white/5" style="background: linear-gradient(to bottom, rgba(5,5,5,0.90) 0%, rgba(5,5,5,0.65) 40%, rgba(5,5,5,0.90) 100%), linear-gradient(to right, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.40) 50%, rgba(5,5,5,0.95) 100%), url('../assets/images/Feira%20Exu.jpg') center/cover fixed no-repeat;">
+        <h1 class="font-bebas text-6xl md:text-8xl tracking-tighter mb-4">CATÁLOGO</h1>
+        <p class="font-playfair italic text-[#C9A84C] text-lg">"Nossa Imagem, Nosso Espaço"</p>
+    </header>
+
+    <!-- Seção de Catálogo -->
+    <main class="catalog-container">
+        
+        <!-- Filtros -->
+        <div class="filter-bar" id="filter-bar">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="candaces">Coleção CANDACES</button>
+            <button class="filter-btn" data-filter="mochilas">Mochilas e Resistência</button>
+            <button class="filter-btn" data-filter="cartucheiras">Cartucheiras e Pochetes</button>
+            <button class="filter-btn" data-filter="adornos">Adornos Afro</button>
+        </div>
+
+        <!-- Grid de Produtos -->
+        <div class="product-grid" id="product-grid">
+            <!-- Os cards serão inseridos aqui pelo JavaScript -->
+            <div class="col-span-full py-20 text-center text-white/30 font-space text-sm">
+                Carregando o axé da nossa curadoria...
+            </div>
+        </div>
+
+    </main>
+
+    <div class="ticker-wrap mt-20">
+        <div class="ticker">
+            <div class="ticker-item"><i class="fas fa-hand-holding-heart"></i> Artesanato Autoral</div>
+            <div class="ticker-item"><i class="fas fa-crown"></i> Ancestralidade</div>
+            <div class="ticker-item"><i class="fas fa-bolt"></i> Afro-Subversão</div>
+            <div class="ticker-item"><i class="fas fa-gem"></i> Feito à Mão em São Luís</div>
+            <div class="ticker-item"><i class="fas fa-star"></i> Blackzona</div>
+            <div class="ticker-item"><i class="fas fa-fire"></i> Nossa Imagem, Nosso Espaço</div>
+            <div class="ticker-item"><i class="fas fa-paint-brush"></i> Arte Negra</div>
+            <div class="ticker-item"><i class="fas fa-heart"></i> Resistência e Amor</div>
+            <!-- Duplicação para loop infinito -->
+            <div class="ticker-item"><i class="fas fa-hand-holding-heart"></i> Artesanato Autoral</div>
+            <div class="ticker-item"><i class="fas fa-crown"></i> Ancestralidade</div>
+            <div class="ticker-item"><i class="fas fa-bolt"></i> Afro-Subversão</div>
+            <div class="ticker-item"><i class="fas fa-gem"></i> Feito à Mão em São Luís</div>
+            <div class="ticker-item"><i class="fas fa-star"></i> Blackzona</div>
+            <div class="ticker-item"><i class="fas fa-fire"></i> Nossa Imagem, Nosso Espaço</div>
+            <div class="ticker-item"><i class="fas fa-paint-brush"></i> Arte Negra</div>
+            <div class="ticker-item"><i class="fas fa-heart"></i> Resistência e Amor</div>
+        </div>
+    </div>
+
+    <!-- Footer Simple -->
+    <footer class="bg-[#111111] border-t border-[#1a1a1a] pt-16 pb-0">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-12 pb-16">
+            <!-- Column 1: Brand -->
+            <div class="flex flex-col gap-6">
+                <p class="font-space italic text-[13px] text-primary tracking-[0.25em] uppercase mb-1">Nossa Imagem, Nosso Espaço</p>
+                <p class="font-space text-[12px] text-slate-400 leading-loose tracking-[0.08em]">Bolsas afro artesanais feitas à mão por Preta Lu.<br/>Entrega para todo o Brasil.</p>
+                <div class="flex gap-[16px] items-center">
+                    <a class="transition-all duration-300 hover:scale-[1.2] hover:drop-shadow-[0_0_8px_rgba(201,168,76,0.6)]"
+                        href="https://instagram.com/blackzona_" target="_blank">
+                        <i class="fa-brands fa-instagram text-[24px] text-[#c9a84c]"></i>
+                    </a>
+                    <a class="transition-all duration-300 hover:scale-[1.2] hover:drop-shadow-[0_0_8px_rgba(201,168,76,0.6)]"
+                        href="https://www.facebook.com/blackzona.oficial/" target="_blank">
+                        <i class="fa-brands fa-facebook text-[24px] text-[#c9a84c]"></i>
+                    </a>
+                    <a class="transition-all duration-300 hover:scale-[1.2] hover:drop-shadow-[0_0_8px_rgba(201,168,76,0.6)]"
+                        href="https://wa.me/5598984421124" target="_blank">
+                        <i class="fa-brands fa-whatsapp text-[24px] text-[#c9a84c]"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Column 2: Navigation -->
+            <div>
+                <h4 class="text-[#c9a84c] font-bebas tracking-widest text-lg mb-8 uppercase">Navegação</h4>
+                <ul class="flex flex-col gap-4">
+                    <li><a class="text-slate-300 hover:text-[#c9a84c] text-[12px] font-space uppercase tracking-[0.2em] transition-colors"
+                            href="../index.html">Início</a></li>
+                    <li><a class="text-slate-300 hover:text-[#c9a84c] text-[12px] font-space uppercase tracking-[0.2em] transition-colors"
+                            href="catalogo.html">Catálogo</a></li>
+                    <li><a class="text-slate-300 hover:text-[#c9a84c] text-[12px] font-space uppercase tracking-[0.2em] transition-colors"
+                            href="sobre.html">Sobre a Marca</a></li>
+                    <li><a class="text-slate-300 hover:text-[#c9a84c] text-[12px] font-space uppercase tracking-[0.2em] transition-colors"
+                            href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <!-- Column 3: Contact -->
+            <div>
+                <h4 class="text-[#c9a84c] font-bebas tracking-widest text-lg mb-8 uppercase">Contato</h4>
+                <ul class="flex flex-col gap-4 text-slate-300 text-sm font-space">
+                    <li class="flex items-center gap-[10px] text-[#aaaaaa]">
+                        <i class="fa-brands fa-whatsapp text-[16px] text-[#25D366] w-5 text-center"></i>
+                        <a href="https://wa.me/5598984421124" target="_blank"><span>(98) 98442-1124</span></a>
+                    </li>
+                    <li class="flex items-center gap-[10px] text-[#aaaaaa]">
+                        <i class="fas fa-envelope text-[16px] text-[#c9a84c] w-5 text-center"></i>
+                        <a href="mailto:preta-lu@hotmail.com"><span>preta-lu@hotmail.com</span></a>
+                    </li>
+                    <li class="flex items-center gap-[10px] text-[#aaaaaa]">
+                        <i class="fas fa-map-marker-alt text-[16px] text-[#c9a84c] w-5 text-center"></i>
+                        <span>São Luís, MA — Brasil</span>
+                    </li>
+                    <li
+                        class="flex items-center gap-[10px] mt-4 pt-4 border-t border-white/5 italic font-medium text-[#aaaaaa]">
+                        <i class="fas fa-clock text-[16px] text-[#c9a84c] w-5 text-center"></i>
+                        <span>Respondemos em até 2 horas ⚡</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Bottom Bar -->
+        <div class="border-t border-[#c9a84c] bg-[#0a0a0a]">
+            <div
+                class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 text-[#666] text-[10px] font-space uppercase tracking-[0.15em]">
+                <span>© 2026 BLACKZONA — Todos os direitos reservados.</span>
+                <span>Feito com 🖤 em São Luís, MA · Site por <a href="#" class="text-primary hover:text-white transition-colors">Juan Gusmão</a></span>
+                <span class="italic tracking-[0.3em]">Nossa Imagem, Nosso Espaço</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lógica do Catálogo -->
+    <script>
+        const grid = document.getElementById('product-grid');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        let allProducts = [];
+
+        async function loadProducts() {
+            try {
+                const response = await fetch('../data/produtos.json?v=' + Date.now());
+                const data = await response.json();
+                allProducts = data.produtos;
+                renderProducts(allProducts);
+            } catch (error) {
+                console.error("Erro ao carregar produtos:", error);
+                grid.innerHTML = `<div class="col-span-full py-20 text-center text-red-500 font-space">Erro ao carregar os produtos. Por favor, tente novamente.</div>`;
+            }
+        }
+
+        function renderProducts(products) {
+            grid.innerHTML = "";
+            
+            if (products.length === 0) {
+                grid.innerHTML = `<div class="col-span-full py-20 text-center text-white/30 font-space">Nenhuma peça encontrada nessa categoria.</div>`;
+                return;
+            }
+
+            products.forEach((prod, index) => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.style.animationDelay = `${index * 0.1}s`;
+
+                const precoFormatado = prod.sob_consulta 
+                    ? "Preço sob Consulta" 
+                    : `R$ ${prod.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+
+                // Monta o link do WhatsApp
+                const waText = encodeURIComponent(`Olá Preta Lu! Tenho interesse na peça: ${prod.nome} - Coleção ${prod.colecao}. Pode me passar mais informações?`);
+                const waUrl = `https://wa.me/5598984421124?text=${waText}`;
+
+                // Caminho da imagem (local ou instagram)
+                const fotoPath = prod.foto_url.startsWith('http') ? prod.foto_url : '../' + prod.foto_url;
+
+                card.innerHTML = `
+                    <div class="product-img-wrapper">
+                        ${prod.encomienda ? '<div class="badge-encomenda">ENCOMENDA</div>' : ''}
+                        ${prod.selo_autoral ? '<div class="selo-autoral">Pelas mãos de Preta Lu 🖤</div>' : ''}
+                        <img src="${fotoPath}" alt="${prod.nome}" class="product-img" loading="lazy" onerror="this.src='https://placehold.co/600x600/1a1a1a/C9A84C?text=BLACKZONA'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-collection">${prod.colecao}</div>
+                        <h3 class="product-name font-bebas uppercase">${prod.nome}</h3>
+                        <div class="product-meta">
+                            ${prod.cor && prod.cor !== 'undefined' ? `<span>Cor: ${prod.cor}</span><br>` : ''}
+                            <span>Tamanho: ${prod.tamanho}</span>
+                        </div>
+                        <div class="product-price font-space text-[var(--gold)]">
+                            ${precoFormatado}
+                        </div>
+                        <a href="${waUrl}" target="_blank" class="whatsapp-btn">QUERO ESSA PEÇA! 🖤</a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Sistema de Filtros
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // UI Toggle
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+                
+                let filtered = [];
+                if (filter === 'all') {
+                    filtered = allProducts;
+                } else if (filter === 'candaces') {
+                    filtered = allProducts.filter(p => p.categoria === 'candaces');
+                } else if (filter === 'mochilas') {
+                    filtered = allProducts.filter(p => p.categoria === 'mochilas');
+                } else if (filter === 'cartucheiras') {
+                    filtered = allProducts.filter(p => p.categoria === 'cartucheiras' || p.categoria === 'pochetes');
+                } else if (filter === 'adornos') {
+                    filtered = allProducts.filter(p => p.categoria === 'adornos' || p.categoria === 'adornos afro');
+                }
+
+                renderProducts(filtered);
+            });
+        });
+
+        // Inicializar
+        loadProducts();
+    </script>
+    <a href="https://wa.me/5598984421124" target="_blank" class="fixed bottom-8 right-8 z-50 group">
+        <div
+            class="absolute -top-12 right-0 bg-primary text-background-dark px-4 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none uppercase tracking-widest">
+            Fale com a BlackZona!
+        </div>
+        <div class="relative">
+            <div class="absolute inset-0 bg-primary/40 rounded-full animate-ping scale-150"></div>
+            <div
+                class="relative bg-primary size-16 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(201,168,76,0.5)] hover:scale-110 transition-transform">
+                <svg class="size-8 text-background-dark" fill="currentColor" viewbox="0 0 24 24">
+                    <path
+                        d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.522-2.961-2.638-.086-.117-.718-.955-.718-1.818 0-.863.454-1.287.616-1.453.162-.167.353-.208.469-.208.117 0 .234.001.334.005.107.004.252-.04.394.302.144.347.49 1.196.533 1.281.043.085.071.184.014.298-.057.114-.085.184-.17.284-.085.1-.178.223-.255.302-.085.085-.174.178-.075.347.099.169.44 0.725.945 1.175.651.58 1.2.76 1.37.85s.267.067.366-.05c.099-.117.426-.496.54-.666.114-.169.227-.142.383-.085.156.057 1.001.472 1.171.557s.284.128.326.203c.042.075.042.434-.102.839z">
+                    </path>
+                    <path
+                        d="M12 2C6.477 2 2 6.477 2 12c0 2.17.684 4.18 1.848 5.823L2.015 22l4.31-.914A9.954 9.954 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"
+                        fill-rule="evenodd"></path>
+                </svg>
+            </div>
+        </div>
+    </a>
+
+    <div id="mobile-overlay" class="fixed inset-0 z-[2000] bg-[#0a0a0a] flex flex-col p-10 opacity-0 invisible transition-all duration-500 overflow-y-auto">
+        <div class="flex justify-end mb-12">
+            <button class="text-primary" id="mobile-menu-btn">
+                <span class="material-symbols-outlined text-4xl">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-8">
+            <a class="font-bebas text-4xl text-[#f5f5f0] tracking-widest" href="../index.html">BLACKZONA</a>
+            <div class="flex flex-col gap-4">
+                <a class="font-bebas text-4xl text-primary tracking-widest" href="catalogo.html">A GRIFE</a>
+                <div class="flex flex-col gap-4 pl-6">
+                    <a class="text-[#f5f5f0] text-lg font-medium" href="catalogo.html#candaces">Coleção CANDACES</a>
+                    <a class="text-[#f5f5f0] text-lg font-medium" href="catalogo.html#mochilas">Mochilas e Resistência</a>
+                    <a class="text-[#f5f5f0] text-lg font-medium" href="catalogo.html#cartucheiras">Cartucheiras e Pochetes</a>
+                    <a class="text-[#f5f5f0] text-lg font-medium" href="catalogo.html#adornos">Adornos Afro</a>
+                </div>
+            </div>
+            <a class="font-bebas text-4xl text-[#f5f5f0] tracking-widest" href="sobre.html">A AFROSUBVERSIVA</a>
+            <a class="font-bebas text-4xl text-[#f5f5f0] tracking-widest" href="pontos.html">PONTOS DE ENCONTRO</a>
+            <a class="font-bebas text-4xl text-[#f5f5f0] tracking-widest" href="contato.html">FALE COM A PRETA</a>
+        </nav>
+        <div class="mt-auto flex justify-center gap-10">
+            <a class="text-primary transition-transform hover:scale-110" href="https://wa.me/5598984421124" target="_blank">
+                <i class="fa-brands fa-whatsapp text-[28px]"></i>
+            </a>
+            <a class="text-primary transition-transform hover:scale-110" href="https://instagram.com/blackzona_" target="_blank">
+                <i class="fa-brands fa-instagram text-[28px]"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../scripts/main.js"></script>
+</body>
+</html>

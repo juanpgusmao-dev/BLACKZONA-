@@ -1,0 +1,15 @@
+[     179ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/?plugins=forms,container-queries:63
+[     460ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8080/favicon.ico:0
+[     504ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8080/assets/images/produto-01-bolsa-candace-classica.jpg:0
+[     504ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8080/assets/images/produto-16-cartucheira-de-perna-gege.jpg:0
+[     505ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8080/assets/images/produto-05-mochila-quilombo-urbana.jpg:0
+[     505ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8080/assets/images/produto-09-mochila-customizada-gege.jpg:0
+[     536ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8080/assets/images/produto-12-mochila-quilombo-couro-e-tecido.jpg:0
+[   25662ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8080/assets/images/produto-05-mochila-quilombo-urbana.jpg:0
+[   25662ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8080/assets/images/produto-09-mochila-customizada-gege.jpg:0
+[   25662ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8080/assets/images/produto-12-mochila-quilombo-couro-e-tecido.jpg:0
+[   44296ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8080/assets/images/produto-01-bolsa-candace-classica.jpg:0
+[   44297ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8080/assets/images/produto-16-cartucheira-de-perna-gege.jpg:0
+[   44297ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8080/assets/images/produto-05-mochila-quilombo-urbana.jpg:0
+[   44297ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8080/assets/images/produto-09-mochila-customizada-gege.jpg:0
+[   44298ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8080/assets/images/produto-12-mochila-quilombo-couro-e-tecido.jpg:0

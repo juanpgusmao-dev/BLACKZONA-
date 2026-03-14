@@ -1,0 +1,141 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Blackzona Logo" [ref=e4] [cursor=pointer]:
+        - /url: "#top"
+        - img "Blackzona Logo" [ref=e6]
+      - navigation [ref=e7]:
+        - link "AXÉ" [ref=e8] [cursor=pointer]:
+          - /url: "#top"
+        - button "A GRIFE expand_more" [ref=e10] [cursor=pointer]:
+          - text: A GRIFE
+          - generic [ref=e11]: expand_more
+        - link "A AFROSUBVERSIVA" [ref=e12] [cursor=pointer]:
+          - /url: "#about"
+        - link "PONTOS DE ENCONTRO" [ref=e13] [cursor=pointer]:
+          - /url: "#locations"
+      - link " Fale com a Preta" [ref=e15] [cursor=pointer]:
+        - /url: https://wa.me/5598984421124
+        - generic [ref=e16]: 
+        - text: Fale com a Preta
+  - generic [ref=e17]:
+    - generic [ref=e20]:
+      - img "Blackzona Logo" [ref=e23]
+      - heading "NOSSA IMAGEM NOSSO ESPAÇO" [level=1] [ref=e24]:
+        - generic [ref=e25]: NOSSA IMAGEM
+        - generic [ref=e26]: NOSSO ESPAÇO
+      - paragraph [ref=e27]: Bolsas afro artesanais feitas à mão por Preta Lu. Entrega para todo o Brasil. ✊🖤
+      - generic [ref=e28]:
+        - button "Ver Catálogo" [ref=e29] [cursor=pointer]
+        - button "Falar no WhatsApp" [ref=e30] [cursor=pointer]
+    - generic [ref=e31]:
+      - generic [ref=e32]: Scroll
+      - generic [ref=e33]: expand_more
+  - generic [ref=e35]:
+    - generic [ref=e36]:
+      - generic [ref=e37]: ✊ BOLSAS AFRO ARTESANAIS • ENTREGA PARA TODO O BRASIL • FEITO À MÃO COM AMOR • NOSSA IMAGEM, NOSSO ESPAÇO • BLACK-OWNED BUSINESS • SÃO LUÍS, MA • 🖤
+      - generic [ref=e38]: ✊ BOLSAS AFRO ARTESANAIS • ENTREGA PARA TODO O BRASIL • FEITO À MÃO COM AMOR • NOSSA IMAGEM, NOSSO ESPAÇO • BLACK-OWNED BUSINESS • SÃO LUÍS, MA • 🖤
+    - generic [ref=e39]:
+      - generic [ref=e40]: ✊ BOLSAS AFRO ARTESANAIS • ENTREGA PARA TODO O BRASIL • FEITO À MÃO COM AMOR • NOSSA IMAGEM, NOSSO ESPAÇO • BLACK-OWNED BUSINESS • SÃO LUÍS, MA • 🖤
+      - generic [ref=e41]: ✊ BOLSAS AFRO ARTESANAIS • ENTREGA PARA TODO O BRASIL • FEITO À MÃO COM AMOR • NOSSA IMAGEM, NOSSO ESPAÇO • BLACK-OWNED BUSINESS • SÃO LUÍS, MA • 🖤
+  - generic [ref=e42]:
+    - generic [ref=e43]:
+      - generic [ref=e44]:
+        - heading "CATÁLOGO" [level=2] [ref=e45]
+        - paragraph [ref=e46]: Peças exclusivas e limitadas
+      - generic [ref=e47]:
+        - button "Todos" [ref=e48] [cursor=pointer]
+        - button "Candaces" [ref=e49] [cursor=pointer]
+        - button "Mochilas e Resistência" [ref=e50] [cursor=pointer]
+        - button "Cartucheiras e Pochetes" [ref=e51] [cursor=pointer]
+        - button "Adornos Afro" [ref=e52] [cursor=pointer]
+        - button "⭐ Encomendas" [ref=e53] [cursor=pointer]:
+          - generic [ref=e54]: ⭐
+          - text: Encomendas
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - img [ref=e58]
+          - generic [ref=e59]: COLEÇÃO AXÉ
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - heading "Clutch Dandara" [level=3] [ref=e62]
+            - generic [ref=e63]: TAM. M
+          - generic [ref=e64]:
+            - paragraph [ref=e65]: R$ 120,00
+            - button "✊ Quero essa peça!" [ref=e66] [cursor=pointer]:
+              - generic [ref=e67]: ✊ Quero essa peça!
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - img [ref=e70]
+          - generic [ref=e71]: COLEÇÃO AXÉ
+        - generic [ref=e72]:
+          - generic [ref=e73]:
+            - heading "Tote Orum" [level=3] [ref=e74]
+            - generic [ref=e75]: TAM. G
+          - generic [ref=e76]:
+            - paragraph [ref=e77]: R$ 180,00
+            - button "✊ Quero essa peça!" [ref=e78] [cursor=pointer]:
+              - generic [ref=e79]: ✊ Quero essa peça!
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - img [ref=e82]
+          - generic [ref=e83]: COLEÇÃO AXÉ
+        - generic [ref=e84]:
+          - generic [ref=e85]:
+            - heading "Shoulder Zumbi" [level=3] [ref=e86]
+            - generic [ref=e87]: TAM. P
+          - generic [ref=e88]:
+            - paragraph [ref=e89]: R$ 95,00
+            - button "✊ Quero essa peça!" [ref=e90] [cursor=pointer]:
+              - generic [ref=e91]: ✊ Quero essa peça!
+  - contentinfo [ref=e92]:
+    - generic [ref=e93]:
+      - generic [ref=e94]:
+        - paragraph [ref=e95]: Nossa Imagem, Nosso Espaço
+        - paragraph [ref=e96]: Bolsas afro artesanais feitas à mão por Preta Lu. Entrega para todo o Brasil.
+        - generic [ref=e97]:
+          - link "" [ref=e98] [cursor=pointer]:
+            - /url: https://wa.me/5598984421124
+            - generic [ref=e99]: 
+          - link "" [ref=e100] [cursor=pointer]:
+            - /url: https://instagram.com/blackzona_
+            - generic [ref=e101]: 
+      - generic [ref=e102]:
+        - heading "Navegação" [level=4] [ref=e103]
+        - list [ref=e104]:
+          - listitem [ref=e105]:
+            - link "Catálogo" [ref=e106] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e107]:
+            - link "Coleções" [ref=e108] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e109]:
+            - link "Sobre" [ref=e110] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e111]:
+            - link "Contato" [ref=e112] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e113]:
+        - heading "Contato" [level=4] [ref=e114]
+        - list [ref=e115]:
+          - listitem [ref=e116]:
+            - generic [ref=e117]: 
+            - generic [ref=e118]: (98) 98442-1124
+          - listitem [ref=e119]:
+            - generic [ref=e120]: 
+            - generic [ref=e121]: "@blackzona_"
+          - listitem [ref=e122]:
+            - generic [ref=e123]: 
+            - generic [ref=e124]: São Luís, MA — Brasil
+          - listitem [ref=e125]:
+            - generic [ref=e126]: 
+            - generic [ref=e127]: Respondemos em até 2 horas ⚡
+    - generic [ref=e129]:
+      - generic [ref=e130]: © 2026 BLACKZONA — Todos os direitos reservados.
+      - generic [ref=e131]: Feito com 🖤 em São Luís, MA
+      - generic [ref=e132]: Nossa Imagem, Nosso Espaço
+  - generic [ref=e133]:
+    - generic: Fale com a Preta Lu!
+    - button [ref=e136] [cursor=pointer]:
+      - img [ref=e137]

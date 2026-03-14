@@ -1,0 +1,22 @@
+[     146ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/?plugins=forms,container-queries:63
+[     332ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/assets/images/produto-01-mochila-quilombo-estampada.jpg:0
+[     332ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/assets/images/produto-02-mochila-gege-dupla.jpg:0
+[     333ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/assets/images/produto-03-bolsa-quilombo-urbana.jpg:0
+[     333ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/assets/images/produto-05-bolsa-candace-mini.jpg:0
+[     333ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/assets/images/produto-13-bolsa-de-mao-candaces.jpg:0
+[     341ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/assets/images/produto-15-adorno-color-afro.jpg:0
+[  376593ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/?plugins=forms,container-queries:63
+[  376827ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/assets/images/produto-13-bolsa-de-mao-candaces.jpg:0
+[  376827ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/assets/images/produto-15-adorno-color-afro.jpg:0
+[  384549ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/?plugins=forms,container-queries:63
+[  384708ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/assets/images/produto-13-bolsa-de-mao-candaces.jpg:0
+[  384708ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/assets/images/produto-15-adorno-color-afro.jpg:0
+[  391080ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/?plugins=forms,container-queries:63
+[  391236ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/assets/images/produto-13-bolsa-de-mao-candaces.jpg:0
+[  391236ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/assets/images/produto-15-adorno-color-afro.jpg:0
+[  398921ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/?plugins=forms,container-queries:63
+[  399069ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/assets/images/produto-13-bolsa-de-mao-candaces.jpg:0
+[  399069ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/assets/images/produto-15-adorno-color-afro.jpg:0
+[  419458ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/?plugins=forms,container-queries:63
+[  419627ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/assets/images/produto-13-bolsa-de-mao-candaces.jpg:0
+[  419627ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:3000/assets/images/produto-15-adorno-color-afro.jpg:0

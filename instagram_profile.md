@@ -1,0 +1,707 @@
+- generic [ref=e1]:
+  - generic [ref=e11]:
+    - generic [ref=e13]:
+      - link [ref=e16] [cursor=pointer]:
+        - /url: /
+        - img [ref=e19]
+      - generic [ref=e24]:
+        - link [ref=e26] [cursor=pointer]:
+          - /url: /accounts/login/?next=%2Fblackzona_%2F&source=desktop_nav
+          - text: Entrar
+        - link [ref=e28] [cursor=pointer]:
+          - /url: /accounts/emailsignup/
+          - text: Cadastre-se
+    - main [ref=e29]:
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - button [disabled] [ref=e34]:
+            - link [disabled] [ref=e36]:
+              - img [ref=e37]
+          - generic [ref=e38]:
+            - generic [ref=e39]:
+              - heading [level=2] [ref=e41]: blackzona_
+              - button [ref=e43] [cursor=pointer]:
+                - img [ref=e45]
+            - generic [ref=e50]: Loja BLACKZONA ✊🏿
+            - list [ref=e52]:
+              - listitem [ref=e53]:
+                - link [ref=e55] [cursor=pointer]:
+                  - /url: "#"
+                  - generic [ref=e56]:
+                    - generic [ref=e57]: "602"
+                    - text: posts
+              - listitem [ref=e58]:
+                - link [ref=e60] [cursor=pointer]:
+                  - /url: "#"
+                  - generic [ref=e61]:
+                    - generic [ref=e62]: "3.877"
+                    - text: seguidores
+              - listitem [ref=e63]:
+                - link [ref=e65] [cursor=pointer]:
+                  - /url: "#"
+                  - generic [ref=e66]:
+                    - generic [ref=e67]: "1.010"
+                    - text: seguindo
+            - generic [ref=e69]:
+              - generic [ref=e71]: Produto/serviço
+              - generic [ref=e73]:
+                - generic [ref=e75]: Somos uma grife de bolsas afro artesanais, confeccionadas pelas mãos de Preta Lu. 🛒Fazemos entrega para todo o Brasil
+                - generic [ref=e76]:
+                  - text: ...
+                  - button [ref=e77] [cursor=pointer]:
+                    - generic [ref=e78]: mais
+              - heading [level=1] [ref=e79]: Rua da Malária, João Paulo, São Luís, Brazil 65030105.
+        - tablist [ref=e81]:
+          - link [ref=e83] [cursor=pointer]:
+            - /url: /blackzona_/
+            - img [ref=e85]
+          - link [ref=e96] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e98]
+          - link [ref=e101] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e103]
+        - generic [ref=e106]:
+          - article [ref=e107]:
+            - generic [ref=e109]:
+              - generic [ref=e110]:
+                - link [ref=e112] [cursor=pointer]:
+                  - /url: /blackzona_/p/DVlgBJ0EcBl/
+                  - img [ref=e115]
+                  - generic:
+                    - generic:
+                      - img
+                - link [ref=e118] [cursor=pointer]:
+                  - /url: /blackzona_/p/DVg3ZYxkWHc/
+                  - img [ref=e121]
+                  - generic:
+                    - generic:
+                      - img
+                - link [ref=e124] [cursor=pointer]:
+                  - /url: /blackzona_/p/DVTdfxmESqp/
+                  - img [ref=e127]
+                  - generic:
+                    - generic:
+                      - img
+              - generic [ref=e129]:
+                - link [ref=e131] [cursor=pointer]:
+                  - /url: /blackzona_/p/DVRhaqOEZ91/
+                  - img [ref=e134]
+                - link [ref=e137] [cursor=pointer]:
+                  - /url: /blackzona_/p/DUIo7_bkYlw/
+                  - img [ref=e140]
+                  - generic:
+                    - generic:
+                      - img
+                - link [ref=e143] [cursor=pointer]:
+                  - /url: /blackzona_/p/DT_v_RtkTpj/
+                  - img [ref=e146]
+                  - generic:
+                    - generic:
+                      - img
+              - generic [ref=e148]:
+                - link [ref=e150] [cursor=pointer]:
+                  - /url: /blackzona_/p/DT5q_j3kdYM/
+                  - img [ref=e153]
+                  - generic:
+                    - generic:
+                      - img
+                - link [ref=e156] [cursor=pointer]:
+                  - /url: /blackzona_/p/DTsW-UwEQTl/
+                  - img [ref=e159]
+                  - generic:
+                    - generic:
+                      - img
+                - link [ref=e162] [cursor=pointer]:
+                  - /url: /blackzona_/p/DTfpzdGkQIc/
+                  - img [ref=e165]
+                  - generic:
+                    - generic:
+                      - img
+              - generic [ref=e167]:
+                - link [ref=e169] [cursor=pointer]:
+                  - /url: /blackzona_/p/DSFiND1kYGn/
+                  - img [ref=e172]
+                  - generic:
+                    - generic:
+                      - img
+                - link [ref=e175] [cursor=pointer]:
+                  - /url: /blackzona_/p/DRUfhtTkTT5/
+                  - img [ref=e178]
+                  - generic:
+                    - generic:
+                      - img
+                - link [ref=e181] [cursor=pointer]:
+                  - /url: /blackzona_/p/DQ9-KyWEaFw/
+                  - img [ref=e184]
+                  - generic:
+                    - generic:
+                      - img
+          - button [ref=e186] [cursor=pointer]:
+            - generic [ref=e188]: Mostrar mais posts de blackzona_
+          - generic [ref=e189]:
+            - generic [ref=e190]:
+              - generic [ref=e192]: Contas relacionadas
+              - link [ref=e193] [cursor=pointer]:
+                - /url: /blackzona_/related_profiles/
+                - generic [ref=e194]: Ver tudo
+            - generic [ref=e196]:
+              - list [ref=e198]:
+                - listitem [ref=e199]
+                - listitem [ref=e200]:
+                  - button [ref=e203] [cursor=pointer]:
+                    - generic [ref=e204]:
+                      - button [ref=e205]
+                      - link [ref=e208]:
+                        - /url: /casadotambor_/
+                        - img [ref=e209]
+                      - generic [ref=e210]:
+                        - link [ref=e212]:
+                          - /url: /casadotambor_/
+                          - generic [ref=e213]: casadotambor_
+                        - generic [ref=e216]: Museu Casa do Tambor de Crioula
+                      - button [ref=e217]:
+                        - button [ref=e218]:
+                          - generic [ref=e220]: Seguir
+                - listitem [ref=e221]:
+                  - button [ref=e224] [cursor=pointer]:
+                    - generic [ref=e225]:
+                      - button [ref=e226]
+                      - link [ref=e229]:
+                        - /url: /cidadegriot/
+                        - img [ref=e230]
+                      - generic [ref=e231]:
+                        - link [ref=e233]:
+                          - /url: /cidadegriot/
+                          - generic [ref=e234]: cidadegriot
+                        - generic [ref=e237]: Cidade Griot - Turismo Cultural Maranhense
+                      - button [ref=e238]:
+                        - button [ref=e239]:
+                          - generic [ref=e241]: Seguir
+                - listitem [ref=e242]:
+                  - button [ref=e245] [cursor=pointer]:
+                    - generic [ref=e246]:
+                      - button [ref=e247]
+                      - link [ref=e250]:
+                        - /url: /cafua.ma/
+                        - img [ref=e251]
+                      - generic [ref=e252]:
+                        - link [ref=e254]:
+                          - /url: /cafua.ma/
+                          - generic [ref=e255]: cafua.ma
+                        - generic [ref=e258]: Cafua das Mercês
+                      - button [ref=e259]:
+                        - button [ref=e260]:
+                          - generic [ref=e262]: Seguir
+                - listitem [ref=e263]:
+                  - button [ref=e266] [cursor=pointer]:
+                    - generic [ref=e267]:
+                      - button [ref=e268]
+                      - link [ref=e271]:
+                        - /url: /mestrebigorna/
+                        - img [ref=e272]
+                      - generic [ref=e273]:
+                        - link [ref=e275]:
+                          - /url: /mestrebigorna/
+                          - generic [ref=e276]: mestrebigorna
+                        - generic [ref=e279]: Romildo Bigorna🎺
+                      - button [ref=e280]:
+                        - button [ref=e281]:
+                          - generic [ref=e283]: Seguir
+                - listitem [ref=e284]:
+                  - button [ref=e287] [cursor=pointer]:
+                    - generic [ref=e288]:
+                      - button [ref=e289]
+                      - link [ref=e292]:
+                        - /url: /willamebelfortofficial/
+                        - img [ref=e293]
+                      - generic [ref=e294]:
+                        - link [ref=e296]:
+                          - /url: /willamebelfortofficial/
+                          - generic [ref=e297]: willamebelfortofficial
+                        - generic [ref=e300]: Willame Belfort - Official
+                      - button [ref=e301]:
+                        - button [ref=e302]:
+                          - generic [ref=e304]: Seguir
+                - listitem [ref=e305]:
+                  - button [ref=e308] [cursor=pointer]:
+                    - generic [ref=e309]:
+                      - button [ref=e310]
+                      - link [ref=e313]:
+                        - /url: /asmariaslz/
+                        - img [ref=e314]
+                      - generic [ref=e315]:
+                        - link [ref=e317]:
+                          - /url: /asmariaslz/
+                          - generic [ref=e318]: asmariaslz
+                        - generic [ref=e321]: As Marias
+                      - button [ref=e322]:
+                        - button [ref=e323]:
+                          - generic [ref=e325]: Seguir
+                - listitem [ref=e326]:
+                  - button [ref=e329] [cursor=pointer]:
+                    - generic [ref=e330]:
+                      - button [ref=e331]
+                      - link [ref=e334]:
+                        - /url: /idealize_foto_produtos/
+                        - img [ref=e335]
+                      - generic [ref=e336]:
+                        - link [ref=e338]:
+                          - /url: /idealize_foto_produtos/
+                          - generic [ref=e339]: idealize_foto_produtos
+                        - generic [ref=e342]: Idealize Foto Produtos
+                      - button [ref=e343]:
+                        - button [ref=e344]:
+                          - generic [ref=e346]: Seguir
+                - listitem [ref=e347]:
+                  - button [ref=e350] [cursor=pointer]:
+                    - generic [ref=e351]:
+                      - button [ref=e352]
+                      - link [ref=e355]:
+                        - /url: /educacaosankofa/
+                        - img [ref=e356]
+                      - generic [ref=e357]:
+                        - link [ref=e359]:
+                          - /url: /educacaosankofa/
+                          - generic [ref=e360]: educacaosankofa
+                        - generic [ref=e363]: Espaço Cultural e Educacional Sankofa
+                      - button [ref=e364]:
+                        - button [ref=e365]:
+                          - generic [ref=e367]: Seguir
+                - listitem [ref=e368]:
+                  - button [ref=e371] [cursor=pointer]:
+                    - generic [ref=e372]:
+                      - button [ref=e373]
+                      - link [ref=e376]:
+                        - /url: /ceprama_setur/
+                        - img [ref=e377]
+                      - generic [ref=e378]:
+                        - link [ref=e380]:
+                          - /url: /ceprama_setur/
+                          - generic [ref=e381]: ceprama_setur
+                        - generic [ref=e384]: CEPRAMA Oficial
+                      - button [ref=e385]:
+                        - button [ref=e386]:
+                          - generic [ref=e388]: Seguir
+                - listitem [ref=e389]:
+                  - button [ref=e392] [cursor=pointer]:
+                    - generic [ref=e393]:
+                      - button [ref=e394]
+                      - link [ref=e397]:
+                        - /url: /nando_marley00/
+                        - img [ref=e398]
+                      - generic [ref=e399]:
+                        - link [ref=e401]:
+                          - /url: /nando_marley00/
+                          - generic [ref=e402]: nando_marley00
+                        - generic [ref=e405]: Nando Marley
+                      - button [ref=e406]:
+                        - button [ref=e407]:
+                          - generic [ref=e409]: Seguir
+                - listitem [ref=e410]:
+                  - button [ref=e413] [cursor=pointer]:
+                    - generic [ref=e414]:
+                      - button [ref=e415]
+                      - link [ref=e418]:
+                        - /url: /afro_omnira/
+                        - img [ref=e419]
+                      - generic [ref=e420]:
+                        - link [ref=e422]:
+                          - /url: /afro_omnira/
+                          - generic [ref=e423]: afro_omnira
+                        - generic [ref=e426]: Bloco Afro Omnirá
+                      - button [ref=e427]:
+                        - button [ref=e428]:
+                          - generic [ref=e430]: Seguir
+                - listitem [ref=e431]:
+                  - button [ref=e434] [cursor=pointer]:
+                    - generic [ref=e435]:
+                      - button [ref=e436]
+                      - link [ref=e439]:
+                        - /url: /coletivo.mulheresnegras/
+                        - img [ref=e440]
+                      - generic [ref=e441]:
+                        - link [ref=e443]:
+                          - /url: /coletivo.mulheresnegras/
+                          - generic [ref=e444]: coletivo.mulheresnegras
+                        - generic [ref=e447]: MULHERES NEGRAS DA PERIFERIA
+                      - button [ref=e448]:
+                        - button [ref=e449]:
+                          - generic [ref=e451]: Seguir
+                - listitem [ref=e452]:
+                  - button [ref=e455] [cursor=pointer]:
+                    - generic [ref=e456]:
+                      - button [ref=e457]
+                      - link [ref=e460]:
+                        - /url: /boideguimaraesofc/
+                        - img [ref=e461]
+                      - generic [ref=e462]:
+                        - link [ref=e464]:
+                          - /url: /boideguimaraesofc/
+                          - generic [ref=e465]: boideguimaraesofc
+                        - generic [ref=e468]: Boi de Guimarães
+                      - button [ref=e469]:
+                        - button [ref=e470]:
+                          - generic [ref=e472]: Seguir
+                - listitem [ref=e473]:
+                  - button [ref=e476] [cursor=pointer]:
+                    - generic [ref=e477]:
+                      - button [ref=e478]
+                      - link [ref=e481]:
+                        - /url: /transcricoespoeticas/
+                        - img [ref=e482]
+                      - generic [ref=e483]:
+                        - link [ref=e485]:
+                          - /url: /transcricoespoeticas/
+                          - generic [ref=e486]: transcricoespoeticas
+                        - generic [ref=e489]: Fátima Corrêa
+                      - button [ref=e490]:
+                        - button [ref=e491]:
+                          - generic [ref=e493]: Seguir
+                - listitem [ref=e494]:
+                  - button [ref=e497] [cursor=pointer]:
+                    - generic [ref=e498]:
+                      - button [ref=e499]
+                      - link [ref=e502]:
+                        - /url: /grupomaeandresa/
+                        - img [ref=e503]
+                      - generic [ref=e504]:
+                        - link [ref=e506]:
+                          - /url: /grupomaeandresa/
+                          - generic [ref=e507]: grupomaeandresa
+                        - generic [ref=e510]: Grupo M. Negras Mãe Andresa
+                      - button [ref=e511]:
+                        - button [ref=e512]:
+                          - generic [ref=e514]: Seguir
+                - listitem [ref=e515]:
+                  - button [ref=e518] [cursor=pointer]:
+                    - generic [ref=e519]:
+                      - button [ref=e520]
+                      - link [ref=e523]:
+                        - /url: /simonecalvetfotografia/
+                        - img [ref=e524]
+                      - generic [ref=e525]:
+                        - link [ref=e527]:
+                          - /url: /simonecalvetfotografia/
+                          - generic [ref=e528]: simonecalvetfotografia
+                        - generic [ref=e531]: Simone Calvet Fotografia
+                      - button [ref=e532]:
+                        - button [ref=e533]:
+                          - generic [ref=e535]: Seguir
+                - listitem [ref=e536]:
+                  - button [ref=e539] [cursor=pointer]:
+                    - generic [ref=e540]:
+                      - button [ref=e541]
+                      - link [ref=e544]:
+                        - /url: /lucasq.barbosa/
+                        - img [ref=e545]
+                      - generic [ref=e546]:
+                        - link [ref=e548]:
+                          - /url: /lucasq.barbosa/
+                          - generic [ref=e549]: lucasq.barbosa
+                        - generic [ref=e552]: lucas barbosa
+                      - button [ref=e553]:
+                        - button [ref=e554]:
+                          - generic [ref=e556]: Seguir
+                - listitem [ref=e557]:
+                  - button [ref=e560] [cursor=pointer]:
+                    - generic [ref=e561]:
+                      - button [ref=e562]
+                      - link [ref=e565]:
+                        - /url: /justicanostrilhos/
+                        - img [ref=e566]
+                      - generic [ref=e567]:
+                        - link [ref=e569]:
+                          - /url: /justicanostrilhos/
+                          - generic [ref=e570]: justicanostrilhos
+                        - generic [ref=e573]: Justiça nos Trilhos
+                      - button [ref=e574]:
+                        - button [ref=e575]:
+                          - generic [ref=e577]: Seguir
+                - listitem [ref=e578]:
+                  - button [ref=e581] [cursor=pointer]:
+                    - generic [ref=e582]:
+                      - button [ref=e583]
+                      - link [ref=e586]:
+                        - /url: /institutoyluguere/
+                        - img [ref=e587]
+                      - generic [ref=e588]:
+                        - link [ref=e590]:
+                          - /url: /institutoyluguere/
+                          - generic [ref=e591]: institutoyluguere
+                        - generic [ref=e594]: Instituto Ylúguerê
+                      - button [ref=e595]:
+                        - button [ref=e596]:
+                          - generic [ref=e598]: Seguir
+                - listitem [ref=e599]:
+                  - button [ref=e602] [cursor=pointer]:
+                    - generic [ref=e603]:
+                      - button [ref=e604]
+                      - link [ref=e607]:
+                        - /url: /museudoreggae/
+                        - img [ref=e608]
+                      - generic [ref=e609]:
+                        - link [ref=e611]:
+                          - /url: /museudoreggae/
+                          - generic [ref=e612]: museudoreggae
+                        - generic [ref=e615]: Museu do Reggae Maranhão
+                      - button [ref=e616]:
+                        - button [ref=e617]:
+                          - generic [ref=e619]: Seguir
+                - listitem [ref=e620]:
+                  - button [ref=e623] [cursor=pointer]:
+                    - generic [ref=e624]:
+                      - button [ref=e625]
+                      - link [ref=e628]:
+                        - /url: /aeipi/
+                        - img [ref=e629]
+                      - generic [ref=e630]:
+                        - link [ref=e632]:
+                          - /url: /aeipi/
+                          - generic [ref=e633]: aeipi
+                        - generic [ref=e636]: Associação dos Estudantes Ipiraenses
+                      - button [ref=e637]:
+                        - button [ref=e638]:
+                          - generic [ref=e640]: Seguir
+                - listitem [ref=e641]:
+                  - button [ref=e644] [cursor=pointer]:
+                    - generic [ref=e645]:
+                      - button [ref=e646]
+                      - link [ref=e649]:
+                        - /url: /feira.fequli/
+                        - img [ref=e650]
+                      - generic [ref=e651]:
+                        - link [ref=e653]:
+                          - /url: /feira.fequli/
+                          - generic [ref=e654]: feira.fequli
+                        - generic [ref=e657]: FEQULI
+                      - button [ref=e658]:
+                        - button [ref=e659]:
+                          - generic [ref=e661]: Seguir
+                - listitem [ref=e662]:
+                  - button [ref=e665] [cursor=pointer]:
+                    - generic [ref=e666]:
+                      - button [ref=e667]
+                      - link [ref=e670]:
+                        - /url: /reluzstorebrecho/
+                        - img [ref=e671]
+                      - generic [ref=e672]:
+                        - link [ref=e674]:
+                          - /url: /reluzstorebrecho/
+                          - generic [ref=e675]: reluzstorebrecho
+                        - generic [ref=e678]: RELUZ BRECHÓ
+                      - button [ref=e679]:
+                        - button [ref=e680]:
+                          - generic [ref=e682]: Seguir
+                - listitem [ref=e683]:
+                  - button [ref=e686] [cursor=pointer]:
+                    - generic [ref=e687]:
+                      - button [ref=e688]
+                      - link [ref=e691]:
+                        - /url: /obirimzo/
+                        - img [ref=e692]
+                      - generic [ref=e693]:
+                        - link [ref=e695]:
+                          - /url: /obirimzo/
+                          - generic [ref=e696]: obirimzo
+                        - generic [ref=e699]: Debora Melo
+                      - button [ref=e700]:
+                        - button [ref=e701]:
+                          - generic [ref=e703]: Seguir
+                - listitem [ref=e704]:
+                  - button [ref=e707] [cursor=pointer]:
+                    - generic [ref=e708]:
+                      - button [ref=e709]
+                      - link [ref=e712]:
+                        - /url: /minhavitrine.pro/
+                        - img [ref=e713]
+                      - generic [ref=e714]:
+                        - generic [ref=e715]:
+                          - link [ref=e716]:
+                            - /url: /minhavitrine.pro/
+                            - generic [ref=e717]: minhavitrine.pro
+                          - img [ref=e719]
+                        - generic [ref=e723]: MinhaVitrine.Pro
+                      - button [ref=e724]:
+                        - button [ref=e725]:
+                          - generic [ref=e727]: Seguir
+                - listitem [ref=e728]:
+                  - button [ref=e731] [cursor=pointer]:
+                    - generic [ref=e732]:
+                      - button [ref=e733]
+                      - link [ref=e736]:
+                        - /url: /realcegaleria/
+                        - img [ref=e737]
+                      - generic [ref=e738]:
+                        - link [ref=e740]:
+                          - /url: /realcegaleria/
+                          - generic [ref=e741]: realcegaleria
+                        - generic [ref=e744]: Galeria Realce
+                      - button [ref=e745]:
+                        - button [ref=e746]:
+                          - generic [ref=e748]: Seguir
+                - listitem [ref=e749]:
+                  - button [ref=e752] [cursor=pointer]:
+                    - generic [ref=e753]:
+                      - button [ref=e754]
+                      - link [ref=e757]:
+                        - /url: /edibruzacaphotos/
+                        - img [ref=e758]
+                      - generic [ref=e759]:
+                        - link [ref=e761]:
+                          - /url: /edibruzacaphotos/
+                          - generic [ref=e762]: edibruzacaphotos
+                        - generic [ref=e765]: Edi Bruzaca fotos
+                      - button [ref=e766]:
+                        - button [ref=e767]:
+                          - generic [ref=e769]: Seguir
+                - listitem [ref=e770]:
+                  - button [ref=e773] [cursor=pointer]:
+                    - generic [ref=e774]:
+                      - button [ref=e775]
+                      - link [ref=e778]:
+                        - /url: /luregina50/
+                        - img [ref=e779]
+                      - generic [ref=e780]:
+                        - link [ref=e782]:
+                          - /url: /luregina50/
+                          - generic [ref=e783]: luregina50
+                        - generic [ref=e786]: Lúcia Azevedo
+                      - button [ref=e787]:
+                        - button [ref=e788]:
+                          - generic [ref=e790]: Seguir
+                - listitem [ref=e791]:
+                  - button [ref=e794] [cursor=pointer]:
+                    - generic [ref=e795]:
+                      - button [ref=e796]
+                      - link [ref=e799]:
+                        - /url: /lika_guterres/
+                        - img [ref=e800]
+                      - generic [ref=e801]:
+                        - link [ref=e803]:
+                          - /url: /lika_guterres/
+                          - generic [ref=e804]: lika_guterres
+                        - generic [ref=e807]: Lika Guterres
+                      - button [ref=e808]:
+                        - button [ref=e809]:
+                          - generic [ref=e811]: Seguir
+                - listitem [ref=e812]:
+                  - button [ref=e815] [cursor=pointer]:
+                    - generic [ref=e816]:
+                      - button [ref=e817]
+                      - link [ref=e820]:
+                        - /url: /quilombourbanoliberdade/
+                        - img [ref=e821]
+                      - generic [ref=e822]:
+                        - link [ref=e824]:
+                          - /url: /quilombourbanoliberdade/
+                          - generic [ref=e825]: quilombourbanoliberdade
+                        - generic [ref=e828]: COLIBA Quilombo Urbano Liberdade
+                      - button [ref=e829]:
+                        - button [ref=e830]:
+                          - generic [ref=e832]: Seguir
+                - listitem [ref=e833]:
+                  - button [ref=e836] [cursor=pointer]:
+                    - generic [ref=e837]:
+                      - button [ref=e838]
+                      - link [ref=e841]:
+                        - /url: /franm_pereira/
+                        - img [ref=e842]
+                      - generic [ref=e843]:
+                        - link [ref=e845]:
+                          - /url: /franm_pereira/
+                          - generic [ref=e846]: franm_pereira
+                        - generic [ref=e849]: Fran Pereira
+                      - button [ref=e850]:
+                        - button [ref=e851]:
+                          - generic [ref=e853]: Seguir
+                - listitem [ref=e854]:
+                  - button [ref=e857] [cursor=pointer]:
+                    - generic [ref=e858]:
+                      - button [ref=e859]
+                      - link [ref=e862]:
+                        - /url: /salaoafroakony/
+                        - img [ref=e863]
+                      - generic [ref=e864]:
+                        - link [ref=e866]:
+                          - /url: /salaoafroakony/
+                          - generic [ref=e867]: salaoafroakony
+                        - generic [ref=e870]: 💆🏾‍♀️Salão Afro Akony 💁🏾‍♀️
+                      - button [ref=e871]:
+                        - button [ref=e872]:
+                          - generic [ref=e874]: Seguir
+              - button [ref=e875] [cursor=pointer]
+    - contentinfo [ref=e877]:
+      - generic [ref=e878]:
+        - generic [ref=e880]:
+          - link [ref=e882] [cursor=pointer]:
+            - /url: https://about.meta.com/
+            - generic [ref=e883]: Meta
+          - link [ref=e885] [cursor=pointer]:
+            - /url: https://about.instagram.com/
+            - generic [ref=e886]: Sobre
+          - link [ref=e888] [cursor=pointer]:
+            - /url: https://about.instagram.com/blog/
+            - generic [ref=e889]: Blog
+          - link [ref=e891] [cursor=pointer]:
+            - /url: https://about.instagram.com/about-us/careers
+            - generic [ref=e892]: Carreiras
+          - link [ref=e894] [cursor=pointer]:
+            - /url: https://help.instagram.com/
+            - generic [ref=e895]: Ajuda
+          - link [ref=e897] [cursor=pointer]:
+            - /url: https://developers.facebook.com/docs/instagram
+            - generic [ref=e898]: API
+          - link [ref=e900] [cursor=pointer]:
+            - /url: /legal/privacy/
+            - generic [ref=e901]: Privacidade
+          - link [ref=e903] [cursor=pointer]:
+            - /url: /legal/terms/
+            - generic [ref=e904]: Termos
+          - link [ref=e906] [cursor=pointer]:
+            - /url: /explore/locations/
+            - generic [ref=e907]: Localizações
+          - link [ref=e909] [cursor=pointer]:
+            - /url: /web/lite/
+            - generic [ref=e910]: Instagram Lite
+          - link [ref=e912] [cursor=pointer]:
+            - /url: https://www.meta.ai/?utm_source=foa_web_footer
+            - generic [ref=e913]: Meta AI
+          - link [ref=e915] [cursor=pointer]:
+            - /url: https://www.threads.com/
+            - generic [ref=e916]: Threads
+          - link [ref=e918] [cursor=pointer]:
+            - /url: https://www.facebook.com/help/instagram/261704639352628
+            - generic [ref=e919]: Upload de contatos e não usuários
+          - link [ref=e921] [cursor=pointer]:
+            - /url: /accounts/meta_verified/?entrypoint=web_footer
+            - generic [ref=e922]: Meta Verified
+        - generic [ref=e923]:
+          - generic [ref=e924] [cursor=pointer]:
+            - generic [ref=e925]:
+              - generic [ref=e926]: Português (Brasil)
+              - img [ref=e929]
+            - combobox [ref=e931]
+          - generic [ref=e933]: © 2026 Instagram from Meta
+  - dialog [ref=e946]:
+    - generic [ref=e949]:
+      - button "Fechar" [active] [ref=e951] [cursor=pointer]:
+        - img "Fechar" [ref=e953]
+      - generic [ref=e959]:
+        - generic [ref=e960]:
+          - link "Foto do perfil de blackzona_" [ref=e962]:
+            - img "Foto do perfil de blackzona_" [ref=e963]
+          - generic [ref=e965]: Ver mais conteúdo de blackzona_
+          - generic [ref=e967]: Veja fotos, vídeos e muito mais de Loja BLACKZONA ✊🏿.
+        - generic [ref=e968]:
+          - link "Cadastre-se no Instagram" [ref=e969] [cursor=pointer]:
+            - /url: /accounts/emailsignup/?next=%2Fblackzona_%2F
+          - button "Entrar" [ref=e970] [cursor=pointer]
+          - generic [ref=e972]:
+            - text: Ao continuar, você concorda com os
+            - link "Termos de Uso" [ref=e973] [cursor=pointer]:
+              - /url: https://help.instagram.com/581066165581870/?locale=pt_BR
+            - text: e a
+            - link "Política de Privacidade" [ref=e974] [cursor=pointer]:
+              - /url: https://privacycenter.instagram.com/policy/
+            - text: do Instagram.

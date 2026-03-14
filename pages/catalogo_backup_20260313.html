@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | BLACKZONA — Grife Afrosubversiva</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Tailwind CSS para base (seguindo index.html) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Estilo Principal -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#c9a84c",
+                        secondary: "#1a1a1a",
+                        accent: "#8b1d1d",
+                        gold: {
+                            light: "#dfc78d",
+                            DEFAULT: "#c9a84c",
+                            dark: "#a68a3d"
+                        }
+                    },
+                    fontFamily: {
+                        display: ["Outfit", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                        bebas: ["Bebas Neue", "cursive"]
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="../styles/main.css">
+
+    <style>
+        html {
+            font-size: 120%;
+        }
+
+        :root {
+            --gold: #C9A84C;
+            --dark-bg: #1a1a1a;
+            --white: #ffffff;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .font-bebas { font-family: 'Bebas Neue', sans-serif; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-space { font-family: 'Space Mono', monospace; }
+
+        /* Estilo da Seção de Catálogo */
+        .catalog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            color: var(--white);
+            padding: 8px 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--gold);
+            color: #000;
+            border-color: var(--gold);
+        }
+
+        /* Grid Responsivo 3-2-1 */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 968px) {
+            .product-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            .product-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Product Card */
+        .product-card {
+            background: #222;
+            border: 1px solid #333;
+            position: relative;
+            transition: transform 0.4s ease, border-color 0.4s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s forwards;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .product-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .product-img-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            background: #111;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+
+        /* Badges */
+        .badge-encomenda {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #000;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 4px 10px;
+            font-size: 0.7rem;
+            font-family: 'Space Mono';
+            z-index: 10;
+        }
+
+        .selo-autoral {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: var(--gold);
+            font-size: 0.7rem;
+            font-family: 'Playfair Display';
+            font-style: italic;
+            text-align: right;
+            text-shadow: 1px 1px 2px #000;
+            z-index: 10;
+            background: rgba(0,0,0,0.5);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-collection {
+            color: var(--gold);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .product-name {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+
+        .product-meta {
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-bottom: 15px;
+            font-family: 'Space Mono';
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .whatsapp-btn {
+            background: var(--gold);
+            color: #000;
+            text-align: center;
+            padding: 12px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+            margin-top: auto;
+            text-transform: uppercase;
+            border: 1px solid var(--gold);
+        }
+
+        .whatsapp-btn:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        /* Ticker Animado (Replicado do Index) */
+        .ticker-wrap {
+            width: 100%;
+            overflow: hidden;
+            background: var(--gold);
+            padding: 10px 0;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .ticker {
+            display: flex;
+            white-space: nowrap;
+            animation: ticker 30s linear infinite;
+        }
+
+        .ticker-item {
+            color: #000;
+            font-family: 'Bebas Neue';
+            font-size: 1.2rem;
+            margin-right: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Floating WhatsApp */
+        .floating-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+
+        .floating-wa:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-[#1a1a1a] text-white">
+    <div class="grain"></div>
+    <div class="adinkra-overlay"></div>
+
+    <header class="fixed top-0 left-0 z-[1000] w-full transition-all duration-500" id="main-header">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <!-- Logo Section -->
+            <a class="flex items-center group" href="../index.html">
+                <div class="relative size-14 rounded-full border-2 border-primary/30 p-1 group-hover:border-primary transition-all duration-500 bg-white">
+                    <img alt="BlackZona" class="w-full h-full object-contain rounded-full" src="../assets/logo/Logo-BlackZona.png">
+                </div>
+                <div class="ml-4">
+                    <h1 class="font-bebas text-2xl tracking-[0.2em] text-white flex flex-col leading-none">
+                        <span>BLACKZONA</span>
+                    </h1>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-10">
+                <a class="nav-link font-display text-[11px] font-bold tracking-[0.2em] text-[#ffffff] hover:text-primary transition-colors" href="../index.html">INÍCIO</a>
+                <a class="nav-link font-display text-[11px] font-bold tracking-[0.2em] text-primary transition-colors" href="catalogo.html">CATÁLOGO</a>
+                <a class="nav-link font-display text-[11px] font-bold tracking-[0.2em] text-[#ffffff] hover:text-primary transition-colors" href="sobre.html">A MARCA</a>
+                <a class="nav-link font-display text-[11px] font-bold tracking-[0.2em] text-[#ffffff] hover:text-primary transition-colors" href="pontos.html">PONTOS</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-6">
+                <a class="hidden md:flex bg-primary hover:bg-white text-black font-display text-[10px] font-black uppercase tracking-[0.2em] px-8 py-3.5 rounded-full transition-all duration-300" href="contato.html">
+                    Fale com a Preta
+                </a>
+                
+                <button class="lg:hidden text-primary hover:text-white transition-colors p-2" id="menu-toggle">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Header Section -->
+    <header class="pt-32 pb-16 text-center border-b border-white/5" style="background: linear-gradient(to bottom, rgba(5,5,5,0.90) 0%, rgba(5,5,5,0.65) 40%, rgba(5,5,5,0.90) 100%), linear-gradient(to right, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.40) 50%, rgba(5,5,5,0.95) 100%), url('../assets/images/Feira%20Exu.jpg') center/cover fixed no-repeat;">
+        <h1 class="text-6xl md:text-8xl tracking-tighter mb-4">CATÁLOGO</h1>
+        <p class="font-playfair italic text-[#C9A84C] text-lg">"Nossa Imagem, Nosso Espaço"</p>
+    </header>
+
+    <!-- Seção de Catálogo -->
+    <main class="catalog-container">
+        
+        <!-- Filtros -->
+        <div class="filter-bar" id="filter-bar">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="candaces">Coleção CANDACES</button>
+            <button class="filter-btn" data-filter="mochilas">Mochilas e Resistência</button>
+            <button class="filter-btn" data-filter="cartucheiras">Cartucheiras e Pochetes</button>
+            <button class="filter-btn" data-filter="adornos">Adornos Afro</button>
+        </div>
+
+        <!-- Grid de Produtos -->
+        <div class="product-grid" id="product-grid">
+            <!-- Os cards serão inseridos aqui pelo JavaScript -->
+            <div class="col-span-full py-20 text-center text-white/30 font-space text-sm">
+                Carregando o axé da nossa curadoria...
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Ticker Animado Replicado -->
+    <div class="ticker-wrap mt-20">
+        <div class="ticker">
+            <div class="ticker-item"><i class="fas fa-hand-holding-heart"></i> Artesanato Autoral</div>
+            <div class="ticker-item"><i class="fas fa-crown"></i> Ancestralidade</div>
+            <div class="ticker-item"><i class="fas fa-bolt"></i> Afro-Subversão</div>
+            <div class="ticker-item"><i class="fas fa-gem"></i> Feito à Mão em São Luís</div>
+            <!-- Duplicação para loop infinito -->
+            <div class="ticker-item"><i class="fas fa-hand-holding-heart"></i> Artesanato Autoral</div>
+            <div class="ticker-item"><i class="fas fa-crown"></i> Ancestralidade</div>
+            <div class="ticker-item"><i class="fas fa-bolt"></i> Afro-Subversão</div>
+            <div class="ticker-item"><i class="fas fa-gem"></i> Feito à Mão em São Luís</div>
+            <div class="ticker-item"><i class="fas fa-hand-holding-heart"></i> Artesanato Autoral</div>
+            <div class="ticker-item"><i class="fas fa-crown"></i> Ancestralidade</div>
+            <div class="ticker-item"><i class="fas fa-bolt"></i> Afro-Subversão</div>
+            <div class="ticker-item"><i class="fas fa-gem"></i> Feito à Mão em São Luís</div>
+        </div>
+    </div>
+
+    <footer class="bg-[#111111] border-t border-[#1a1a1a] pt-16 pb-0">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 pb-16">
+        <div class="flex flex-col gap-6">
+          <p class="italic text-slate-300 text-sm">Nossa Imagem, Nosso Espaço</p>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            BLACKZONA é uma grife maranhense que une o couro, o tecido e a 
+            ancestralidade em peças únicas e autorais.
+          </p>
+          <div class="flex gap-[16px] items-center">
+            <a class="transition-all duration-300 hover:scale-[1.2] hover:drop-shadow-[0_0_8px_rgba(201,168,76,0.6)]" 
+               href="https://instagram.com/blackzona_" target="_blank">
+              <i class="fa-brands fa-instagram text-[24px] text-[#c9a84c]"></i>
+            </a>
+            <a class="transition-all duration-300 hover:scale-[1.2] hover:drop-shadow-[0_0_8px_rgba(201,168,76,0.6)]" 
+               href="https://www.facebook.com/blackzona.oficial/" target="_blank">
+              <i class="fa-brands fa-facebook text-[24px] text-[#c9a84c]"></i>
+            </a>
+            <a class="transition-all duration-300 hover:scale-[1.2] hover:drop-shadow-[0_0_8px_rgba(201,168,76,0.6)]" 
+               href="https://wa.me/5598984421124" target="_blank">
+              <i class="fa-brands fa-whatsapp text-[24px] text-[#c9a84c]"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-[#c9a84c] font-bebas tracking-widest text-lg mb-8 uppercase">
+            Navegação
+          </h4>
+          <ul class="flex flex-col gap-4">
+            <li><a class="text-slate-300 hover:text-[#c9a84c] text-sm transition-colors" href="../index.html">Início</a></li>
+            <li><a class="text-[#c9a84c] text-sm" href="catalogo.html">Catálogo</a></li>
+            <li><a class="text-slate-300 hover:text-[#c9a84c] text-sm transition-colors" href="sobre.html">Sobre a Marca</a></li>
+            <li><a class="text-slate-300 hover:text-[#c9a84c] text-sm transition-colors" href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-[#c9a84c] font-bebas tracking-widest text-lg mb-8 uppercase">
+            Contato
+          </h4>
+          <ul class="flex flex-col gap-4 text-slate-300 text-sm">
+            <li class="flex items-center gap-[10px] text-[#aaaaaa]">
+              <i class="fa-brands fa-whatsapp text-[16px] text-[#25D366] w-5 text-center"></i>
+              <a href="https://wa.me/5598984421124" target="_blank">
+                <span>(98) 98442-1124</span>
+              </a>
+            </li>
+            <li class="flex items-center gap-[10px] text-[#aaaaaa]">
+              <i class="fas fa-envelope text-[16px] text-[#c9a84c] w-5 text-center"></i>
+              <a href="mailto:preta-lu@hotmail.com">
+                <span>preta-lu@hotmail.com</span>
+              </a>
+            </li>
+            <li class="flex items-center gap-[10px] text-[#aaaaaa]">
+              <i class="fas fa-map-marker-alt text-[16px] text-[#c9a84c] w-5 text-center"></i>
+              <span>São Luís, MA — Brasil</span>
+            </li>
+            <li class="flex items-center gap-[10px] mt-4 pt-4 border-t border-white/5 text-[#aaaaaa]">
+              <i class="fas fa-clock text-[16px] text-[#c9a84c] w-5 text-center"></i>
+              <span>Respondemos em até 2 horas ⚡</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-[#c9a84c] bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row 
+                    justify-between items-center gap-4 text-[#666] text-xs">
+          <span>© 2026 BLACKZONA — Todos os direitos reservados.</span>
+          <span>Feito com 🖤 em São Luís, MA</span>
+          <span class="italic">Nossa Imagem, Nosso Espaço</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Botão WhatsApp Flutuante -->
+    <a href="https://wa.me/5598984421124" class="floating-wa" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Lógica do Catálogo -->
+    <script>
+        const grid = document.getElementById('product-grid');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        let allProducts = [];
+
+        async function loadProducts() {
+            try {
+                const response = await fetch('../data/produtos.json?v=' + Date.now());
+                const data = await response.json();
+                allProducts = data.produtos;
+                renderProducts(allProducts);
+            } catch (error) {
+                console.error("Erro ao carregar produtos:", error);
+                grid.innerHTML = `<div class="col-span-full py-20 text-center text-red-500 font-space">Erro ao carregar os produtos. Por favor, tente novamente.</div>`;
+            }
+        }
+
+        function renderProducts(products) {
+            grid.innerHTML = "";
+            
+            if (products.length === 0) {
+                grid.innerHTML = `<div class="col-span-full py-20 text-center text-white/30 font-space">Nenhuma peça encontrada nessa categoria.</div>`;
+                return;
+            }
+
+            products.forEach((prod, index) => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.style.animationDelay = `${index * 0.1}s`;
+
+                const precoFormatado = prod.sob_consulta 
+                    ? "Preço sob Consulta" 
+                    : `R$ ${prod.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+
+                // Monta o link do WhatsApp
+                const waText = encodeURIComponent(`Olá Preta Lu! Tenho interesse na peça: ${prod.nome} - Coleção ${prod.colecao}. Pode me passar mais informações?`);
+                const waUrl = `https://wa.me/5598984421124?text=${waText}`;
+
+                // Caminho da imagem (local ou instagram)
+                const fotoPath = prod.foto_url.startsWith('http') ? prod.foto_url : '../' + prod.foto_url;
+
+                card.innerHTML = `
+                    <div class="product-img-wrapper">
+                        ${prod.encomienda ? '<div class="badge-encomenda">ENCOMENDA</div>' : ''}
+                        ${prod.selo_autoral ? '<div class="selo-autoral">Pelas mãos de Preta Lu 🖤</div>' : ''}
+                        <img src="${fotoPath}" alt="${prod.nome}" class="product-img" loading="lazy" onerror="this.src='https://placehold.co/600x600/1a1a1a/C9A84C?text=BLACKZONA'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-collection">${prod.colecao}</div>
+                        <h3 class="product-name font-bebas uppercase">${prod.nome}</h3>
+                        <div class="product-meta">
+                            ${prod.cor && prod.cor !== 'undefined' ? `<span>Cor: ${prod.cor}</span><br>` : ''}
+                            <span>Tamanho: ${prod.tamanho}</span>
+                        </div>
+                        <div class="product-price font-space text-[var(--gold)]">
+                            ${precoFormatado}
+                        </div>
+                        <a href="${waUrl}" target="_blank" class="whatsapp-btn">QUERO ESSA PEÇA! 🖤</a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Sistema de Filtros
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // UI Toggle
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+                
+                let filtered = [];
+                if (filter === 'all') {
+                    filtered = allProducts;
+                } else if (filter === 'candaces') {
+                    filtered = allProducts.filter(p => p.categoria === 'candaces');
+                } else if (filter === 'mochilas') {
+                    filtered = allProducts.filter(p => p.categoria === 'mochilas');
+                } else if (filter === 'cartucheiras') {
+                    filtered = allProducts.filter(p => p.categoria === 'cartucheiras' || p.categoria === 'pochetes');
+                } else if (filter === 'adornos') {
+                    filtered = allProducts.filter(p => p.categoria === 'adornos' || p.categoria === 'adornos afro');
+                }
+
+                renderProducts(filtered);
+            });
+        });
+
+        // Inicializar
+        loadProducts();
+    </script>
+    <a href="https://wa.me/5598984421124" target="_blank" class="fixed bottom-8 right-8 z-50 group">
+        <div class="absolute -top-12 right-0 bg-primary text-background-dark px-4 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none uppercase tracking-widest">
+            Fale com a BlackZona!
+        </div>
+        <div class="relative">
+            <div class="absolute inset-0 bg-primary/40 rounded-full animate-ping scale-150"></div>
+            <div class="relative bg-primary size-16 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(201,168,76,0.5)] hover:scale-110 transition-transform">
+                <svg class="size-8 text-background-dark" fill="currentColor" viewbox="0 0 24 24">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.522-2.961-2.638-.086-.117-.718-.955-.718-1.818 0-.863.454-1.287.616-1.453.162-.167.353-.208.469-.208.117 0 .234.001.334.005.107.004.252-.04.394.302.144.347.49 1.196.533 1.281.043.085.071.184.014.298-.057.114-.085.184-.17.284-.085.1-.178.223-.255.302-.085.085-.174.178-.075.347.099.169.44 0.725.945 1.175.651.58 1.2.76 1.37.85s.267.067.366-.05c.099-.117.426-.496.54-.666.114-.169.227-.142.383-.085.156.057 1.001.472 1.171.557s.284.128.326.203c.042.075.042.434-.102.839z"></path>
+                    <path d="M12 2C6.477 2 2 6.477 2 12c0 2.17.684 4.18 1.848 5.823L2.015 22l4.31-.914A9.954 9.954 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" fill-rule="evenodd"></path>
+                </svg>
+            </div>
+        </div>
+    </a>
+    <div class="fixed inset-0 z-[2000] bg-[#0a0a0a] flex flex-col p-10 opacity-0 invisible transition-all duration-500" id="mobile-overlay">
+        <div class="flex justify-end mb-12">
+            <button class="text-primary" id="menu-close">
+                <span class="material-symbols-outlined text-4xl">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-8">
+            <a class="mobile-nav-link font-bebas text-4xl text-[#f5f5f0] tracking-widest" href="../index.html">AXÉ</a>
+            <a class="mobile-nav-link font-bebas text-4xl text-primary tracking-widest" href="catalogo.html">A GRIFE</a>
+            <a class="mobile-nav-link font-bebas text-4xl text-[#f5f5f0] tracking-widest" href="sobre.html">A AFROSUBVERSIVA</a>
+            <a class="mobile-nav-link font-bebas text-4xl text-[#f5f5f0] tracking-widest" href="pontos.html">PONTOS DE ENCONTRO</a>
+            <a class="mobile-nav-link font-bebas text-4xl text-[#f5f5f0] tracking-widest" href="contato.html">FALE COM A PRETA</a>
+        </nav>
+        <div class="mt-auto flex justify-center gap-10">
+            <a class="text-primary transition-transform hover:scale-110" href="https://wa.me/5598984421124" target="_blank">
+                <i class="fa-brands fa-whatsapp text-[28px]"></i>
+            </a>
+            <a class="text-primary transition-transform hover:scale-110" href="https://instagram.com/blackzona_" target="_blank">
+                <i class="fa-brands fa-instagram text-[28px]"></i>
+            </a>
+        </div>
+    </div>
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+
+        function toggleMenu() {
+            mobileOverlay.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        }
+
+        if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
+        if (menuClose) menuClose.addEventListener('click', toggleMenu);
+
+        // Close menu on link click
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+    </script>
+</body>
+</html>

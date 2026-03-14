@@ -1,0 +1,20 @@
+[     175ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/?plugins=forms,container-queries:63
+[     504ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/favicon.ico:0
+[   84561ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
+[   84638ms] TypeError: Cannot read properties of null (reading 'querySelectorAll')
+    at http://localhost:8000/pages/sobre.html:219:23
+[   84706ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/assets/images/Feira%20Exu.jpg:0
+[  105470ms] TypeError: Cannot read properties of null (reading 'classList')
+    at HTMLButtonElement.<anonymous> (http://localhost:8000/pages/sobre.html:205:31)
+[  106745ms] TypeError: Cannot read properties of null (reading 'classList')
+    at HTMLButtonElement.<anonymous> (http://localhost:8000/pages/sobre.html:205:31)
+[  107760ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/?plugins=forms,container-queries:63
+[  108275ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
+[  108363ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/assets/images/Feira%20Exu.jpg:0
+[  108636ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
+[  108675ms] TypeError: Cannot read properties of null (reading 'querySelectorAll')
+    at http://localhost:8000/pages/sobre.html:219:23
+[  108707ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/assets/images/Feira%20Exu.jpg:0
+[  110889ms] TypeError: Cannot read properties of null (reading 'classList')
+    at HTMLButtonElement.<anonymous> (http://localhost:8000/pages/sobre.html:205:31)
+[  117367ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/?plugins=forms,container-queries:63

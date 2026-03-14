@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c9a84c",
+                        "background-light": "#f5f5f0",
+                        "background-dark": "#0a0a0a",
+                        "accent-green": "#2d5a27",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "bebas": ["Bebas Neue", "cursive"],
+                        "playfair": ["Playfair Display", "serif"],
+                        "mono": ["Space Mono", "monospace"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<link rel="stylesheet" href="styles/main.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/></head>
+<body class="bg-background-dark font-display text-slate-100 selection:bg-primary selection:text-background-dark overflow-x-hidden">
+<!-- Grain Texture Overlay -->
+<div class="fixed inset-0 pointer-events-none grain z-50"></div>
+<!-- Sticky Header -->
+<header class="fixed top-0 left-0 z-[1000] w-full transition-all duration-300" id="main-header">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<!-- LEFT: Logo -->
+<a class="flex items-center group" href="index.html">
+<img alt="Blackzona Logo" class="h-12 w-auto" src="BASE64_IMAGE"/>
+
+</a>
+<!-- CENTER: Menu -->
+<nav class="hidden lg:flex items-center gap-10">
+<a class="font-space text-[0.75rem] uppercase tracking-widest text-slate-300 hover:text-white transition-colors" href="index.html">AXÉÉ</a>
+<!-- Dropdown Trigger -->
+<div class="grife-dropdown relative group py-4">
+<button class="nav-link flex items-center gap-1 uppercase tracking-[2px]">
+                    A GRIFE
+                    <span class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
+</button>
+<!-- Dropdown Menu -->
+<div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 w-[260px] bg-[#1a1a1a] border border-primary/50 rounded-xl p-2 shadow-2xl z-50">
+<a class="flex items-center h-12 px-4 rounded-lg text-[#f5f5f0] hover:bg-[#2a2a2a] hover:text-primary border-l-0 hover:border-l-[3px] hover:border-primary transition-all group/item" href="pages/catalogo.html#candaces">
+<i class="fa-solid fa-crown text-[16px] text-[#c9a84c] mr-[10px]"></i>
+<span class="font-display text-sm font-medium">Coleção CANDACES</span>
+</a>
+<a class="flex items-center h-12 px-4 rounded-lg text-[#f5f5f0] hover:bg-[#2a2a2a] hover:text-primary border-l-0 hover:border-l-[3px] hover:border-primary transition-all group/item" href="pages/catalogo.html#mochilas">
+<i class="fa-solid fa-shopping-bag text-[16px] text-[#c9a84c] mr-[10px]"></i>
+<span class="font-display text-sm font-medium">Mochilas e Resistência</span>
+</a>
+<a class="flex items-center h-12 px-4 rounded-lg text-[#f5f5f0] hover:bg-[#2a2a2a] hover:text-primary border-l-0 hover:border-l-[3px] hover:border-primary transition-all group/item" href="pages/catalogo.html#cartucheiras">
+<i class="fa-solid fa-circle text-[10px] text-[#c9a84c] mr-[10px]"></i>
+<span class="font-display text-sm font-medium">Cartucheiras e Pochetes</span>
+</a>
+<a class="flex items-center h-12 px-4 rounded-lg text-[#f5f5f0] hover:bg-[#2a2a2a] hover:text-primary border-l-0 hover:border-l-[3px] hover:border-primary transition-all group/item" href="pages/catalogo.html#adornos">
+<i class="fa-solid fa-gem text-[16px] text-[#c9a84c] mr-[10px]"></i>
+<span class="font-display text-sm font-medium">Adornos Afro</span>
+</a>
+</div>
+</div>
+<a class="font-space text-[0.75rem] uppercase tracking-widest text-slate-300 hover:text-white transition-colors" href="pages/sobre.html">A AFROSUBVERSIVA</a>
+<a class="font-space text-[0.75rem] uppercase tracking-widest text-slate-300 hover:text-white transition-colors" href="pages/pontos.html">PONTOS DE ENCONTRO</a>
+</nav>
+<!-- RIGHT: CTA & Mobile Toggle -->
+<div class="flex items-center gap-6">
+            <a class="px-8 py-3 bg-[#C9A84C] text-black font-space text-[0.7rem] font-bold uppercase tracking-widest hover:bg-white hover:scale-105 transition-all" href="pages/contato.html">
+                Fale com a Preta
+            </a>
+<button class="lg:hidden text-primary" id="menu-toggle">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-20 px-6" style="background: linear-gradient(to bottom, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.65) 40%, rgba(10,10,10,0.85) 100%), linear-gradient(to right, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.35) 50%, rgba(10,10,10,0.92) 100%), url('assets/images/fundo-grafite-afro.jpg') center/cover fixed no-repeat;">
+<div class="absolute inset-0 adinkra-overlay"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 blur-[120px] rounded-full"></div>
+<div class="relative z-10 text-center max-w-5xl mx-auto">
+<div class="mb-12 inline-block relative">
+<div class="relative size-[180px] bg-background-dark border-4 border-primary rounded-full overflow-hidden shadow-2xl animate-logo-pulse">
+<img alt="Blackzona Logo" class="w-full h-full object-cover" src="BASE64_IMAGE"/>
+</div>
+</div>
+<h1 class="font-bebas text-7xl md:text-[120px] leading-[0.9] flex flex-col items-center mb-8">
+<span class="text-white">NOSSA IMAGEM</span>
+<span class="text-primary italic">NOSSO ESPAÇO</span>
+</h1>
+<p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light">
+                Bolsas afro artesanais feitas à mão por Preta Lu. Entrega para todo o Brasil. <span class="text-primary">✊🖤</span>
+</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="pages/catalogo.html" 
+                   class="w-full sm:w-auto px-8 py-[14px] bg-[#C9A84C] text-[#0a0a0a] font-bold rounded-xl transition-all duration-300 ease-in-out hover:bg-[#e0b84e] hover:scale-[1.03] uppercase tracking-widest text-center">
+                  Ver Catálogo
+                </a>
+                <a href="https://wa.me/5598984421124?text=Olá Preta Lu! Vim pelo site da BLACKZONA." 
+                   target="_blank"
+                   class="w-full sm:w-auto px-8 py-[14px] bg-transparent text-white border-2 border-[#C9A84C] rounded-xl transition-all duration-300 ease-in-out hover:bg-[#C9A84C] hover:text-[#0a0a0a] hover:scale-[1.03] uppercase tracking-widest text-center">
+                  Falar no WhatsApp
+                </a>
+</div>
+</div>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+<span class="text-primary font-mono text-[10px] uppercase tracking-widest opacity-50">Scroll</span>
+<span class="material-symbols-outlined text-primary animate-bounce-slow">expand_more</span>
+</div></section>
+<!-- Marquee -->
+<div class="bg-[#111111] border-y border-[#c9a84c] overflow-hidden flex items-center h-[56px]">
+<div class="animate-marquee whitespace-nowrap flex items-center">
+<div class="flex gap-12 items-center px-6">
+<span class="font-display font-semibold uppercase text-[#c9a84c] whitespace-nowrap text-[14px] tracking-[4px]">✊ BOLSAS AFRO ARTESANAIS • ENTREGA PARA TODO O BRASIL • FEITO À MÃO COM AMOR • NOSSA IMAGEM, NOSSO ESPAÇO • BLACK-OWNED BUSINESS • SÃO LUÍS, MA • 🖤 </span>
+<span class="font-display font-semibold uppercase text-[#c9a84c] whitespace-nowrap text-[14px] tracking-[4px]">✊ BOLSAS AFRO ARTESANAIS • ENTREGA PARA TODO O BRASIL • FEITO À MÃO COM AMOR • NOSSA IMAGEM, NOSSO ESPAÇO • BLACK-OWNED BUSINESS • SÃO LUÍS, MA • 🖤 </span>
+</div>
+<div class="flex gap-12 items-center px-6">
+<span class="font-display font-semibold uppercase text-[#c9a84c] whitespace-nowrap text-[14px] tracking-[4px]">✊ BOLSAS AFRO ARTESANAIS • ENTREGA PARA TODO O BRASIL • FEITO À MÃO COM AMOR • NOSSA IMAGEM, NOSSO ESPAÇO • BLACK-OWNED BUSINESS • SÃO LUÍS, MA • 🖤 </span>
+<span class="font-display font-semibold uppercase text-[#c9a84c] whitespace-nowrap text-[14px] tracking-[4px]">✊ BOLSAS AFRO ARTESANAIS • ENTREGA PARA TODO O BRASIL • FEITO À MÃO COM AMOR • NOSSA IMAGEM, NOSSO ESPAÇO • BLACK-OWNED BUSINESS • SÃO LUÍS, MA • 🖤 </span>
+</div>
+</div>
+</div>
+<!-- Catalog Section -->
+<section class="max-w-7xl mx-auto px-6 py-24">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+        <div class="border-l-[6px] border-primary pl-6">
+            <h2 class="font-bebas text-6xl text-white tracking-wider">CATÁLOGO</h2>
+            <p class="text-slate-400 mt-2 font-mono uppercase text-sm tracking-widest">Peças exclusivas e limitadas</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+            <button class="filtro-btn ativo rounded-[50px] font-display text-[13px] font-semibold px-[20px] py-[8px] bg-primary text-[#0a0a0a] border border-primary uppercase tracking-widest shadow-[0_0_20px_rgba(201,168,76,0.3)] transition-all" onclick="filtrarProdutos('todos')">Todos</button>
+            <button class="filtro-btn rounded-[50px] font-display text-[13px] font-semibold px-[20px] py-[8px] bg-transparent text-white border border-white/20 uppercase tracking-widest hover:border-primary hover:text-primary transition-all" onclick="filtrarProdutos('candaces')">Candaces</button>
+            <button class="filtro-btn rounded-[50px] font-display text-[13px] font-semibold px-[20px] py-[8px] bg-transparent text-white border border-white/20 uppercase tracking-widest hover:border-primary hover:text-primary transition-all" onclick="filtrarProdutos('mochilas')">Mochilas</button>
+            <button class="filtro-btn rounded-[50px] font-display text-[13px] font-semibold px-[20px] py-[8px] bg-transparent text-white border border-white/20 uppercase tracking-widest hover:border-primary hover:text-primary transition-all" onclick="filtrarProdutos('cartucheiras')">Cartucheiras</button>
+            <button class="filtro-btn rounded-[50px] font-display text-[13px] font-semibold px-[20px] py-[8px] bg-transparent text-white border border-white/20 uppercase tracking-widest hover:border-primary hover:text-primary transition-all" onclick="filtrarProdutos('adornos')">Adornos</button>
+        </div>
+    </div>
+
+    <!-- Container do Grid de Produtos -->
+    <div id="produtos-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+        <!-- Produtos serão carregados dinamicamente via JS -->
+    </div>
+
+    <!-- Botão Ver Todos -->
+    <div class="mt-20 text-center">
+        <a href="catalogo.html" class="inline-flex items-center gap-3 px-10 py-5 bg-white text-black font-black uppercase tracking-widest rounded-full hover:bg-primary transition-all duration-300 transform hover:scale-105">
+            Ver Todos os Produtos
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+        </a>
+    </div>
+</section>
+
+<script>
+    // Toggle mobile menu
+    (function() {
+        const header = document.getElementById('main-header');
+        const menuToggle = document.getElementById('menu-toggle');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) header.classList.add('header-scrolled');
+            else header.classList.remove('header-scrolled');
+        });
+    })();
+
+    // CATÁLOGO DINÂMICO
+    let todosProdutos = [];
+
+    async function carregarProdutos() {
+        try {
+            const response = await fetch('data/produtos.json?v=' + new Date().getTime());
+            const data = await response.json();
+            const lista = data.produtos || [];
+            const destaques = lista.filter(p => p.destaque === true);
+            const normais = lista.filter(p => p.destaque !== true);
+            todosProdutos = [...destaques, ...normais].slice(0, 16);
+            renderizarProdutos(todosProdutos);
+        } catch (error) {
+            console.error('Erro ao carregar produtos:', error);
+        }
+    }
+
+    function filtrarProdutos(categoria) {
+        // Reset nos botões
+        document.querySelectorAll('.filtro-btn').forEach(btn => {
+            btn.classList.remove('ativo', 'bg-primary', 'text-[#0a0a0a]', 'shadow-[0_0_20px_rgba(201,168,76,0.3)]');
+            btn.classList.add('bg-transparent', 'text-white', 'border-white/20');
+        });
+
+        // Ativa o botão atual
+        const btn = event.currentTarget;
+        btn.classList.add('ativo', 'bg-primary', 'text-[#0a0a0a]', 'shadow-[0_0_20px_rgba(201,168,76,0.3)]');
+        btn.classList.remove('bg-transparent', 'text-white', 'border-white/20');
+
+        if (categoria === 'todos') {
+            renderizarProdutos(todosProdutos);
+            return;
+        }
+
+        const filtrados = todosProdutos.filter(p => {
+            const cat = (p.categoria || "").toLowerCase();
+            const nome = (p.nome || "").toLowerCase();
+            const termo = categoria.toLowerCase();
+            return cat.includes(termo) || nome.includes(termo);
+        });
+        renderizarProdutos(filtrados);
+    }
+
+    function renderizarProdutos(produtos) {
+        const grid = document.getElementById('produtos-grid');
+
+        if (!produtos || produtos.length === 0) {
+            grid.innerHTML = '<p class="text-slate-400 col-span-4 text-center py-12 font-mono">Nenhum produto encontrado nesta categoria.</p>';
+            return;
+        }
+
+        grid.innerHTML = produtos.map(p => {
+            const precoFormatado = p.sob_consulta
+                ? 'Sob Consulta'
+                : `R$ ${Number(p.preco).toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+
+            const zapLink = `https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *${p.nome}* - ${p.colecao}. Pode me passar mais informações?`;
+
+            return `
+                <div class="group relative flex flex-col h-full bg-[#111] border border-primary/20 rounded-2xl overflow-hidden hover:border-primary/60 transition-all duration-500">
+                    <div class="relative aspect-[4/5] overflow-hidden">
+                        <img
+                            src="${p.foto_url}"
+                            alt="${p.nome}"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            onerror="this.src='assets/logo/Logo-BlackZona.png'"
+                        />
+                        <span class="absolute top-4 left-4 bg-primary text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                            ${p.colecao || ''}
+                        </span>
+                        <div class="absolute top-4 right-4 flex flex-col gap-2">
+                            ${p.selo_autoral ? '<span class="bg-white/90 backdrop-blur text-black text-[9px] font-bold px-2 py-1 rounded">🖤 AUTORAL</span>' : ''}
+                            ${p.encomienda ? '<span class="bg-primary/90 backdrop-blur text-black text-[9px] font-bold px-2 py-1 rounded">⭐ ENCOMENDA</span>' : ''}
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow text-left">
+                        <h3 class="font-playfair text-xl text-white font-bold leading-tight group-hover:text-primary transition-colors">
+                            ${p.nome}
+                        </h3>
+                        <p class="text-slate-400 text-[11px] font-mono uppercase tracking-widest mb-4">
+                            TAM. ${p.tamanho || 'Único'}
+                        </p>
+                        <div class="mt-auto pt-4 border-t border-white/5">
+                            <p class="font-bebas text-2xl text-primary tracking-wide mb-4">${precoFormatado}</p>
+                            <a href="${zapLink}" target="_blank"
+                               class="w-full flex items-center justify-center gap-2 bg-white hover:bg-primary text-black font-bold py-3 px-4 rounded-xl transition-all duration-300">
+                                <span class="text-sm uppercase tracking-tighter">Quero essa peça! 🖤</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', carregarProdutos);
+</script>
+<!-- Footer Simple -->
+<footer class="bg-[#111111] border-t border-[#1a1a1a] pt-16 pb-0">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 pb-16">
+<!-- Column 1: Brand -->
+<div class="flex flex-col gap-6">
+<p class="italic text-slate-300 text-sm">Nossa Imagem, Nosso Espaço</p>
+<p class="text-slate-400 text-sm leading-relaxed">Bolsas afro artesanais feitas à mão por Preta Lu. Entrega para todo o Brasil.</p>
+<div class="flex gap-[16px] items-center">
+<a class="transition-all duration-300 hover:scale-[1.2] hover:drop-shadow-[0_0_8px_rgba(201,168,76,0.6)]" href="https://instagram.com/blackzona_" target="_blank">
+<i class="fa-brands fa-instagram text-[24px] text-[#c9a84c]"></i>
+</a>
+<a class="transition-all duration-300 hover:scale-[1.2] hover:drop-shadow-[0_0_8px_rgba(201,168,76,0.6)]" href="https://www.facebook.com/blackzona.oficial/" target="_blank">
+<i class="fa-brands fa-facebook text-[24px] text-[#c9a84c]"></i>
+</a>
+<a class="transition-all duration-300 hover:scale-[1.2] hover:drop-shadow-[0_0_8px_rgba(201,168,76,0.6)]" href="https://wa.me/5598984421124" target="_blank">
+<i class="fa-brands fa-whatsapp text-[24px] text-[#c9a84c]"></i>
+</a>
+</div>
+</div>
+<!-- Column 2: Navigation -->
+<div>
+<h4 class="text-[#c9a84c] font-bebas tracking-widest text-lg mb-8 uppercase">Navegação</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="text-slate-300 hover:text-[#c9a84c] text-sm font-display transition-colors" href="index.html">Início</a></li>
+<li><a class="text-slate-300 hover:text-[#c9a84c] text-sm font-display transition-colors" href="pages/catalogo.html">Catálogo</a></li>
+<li><a class="text-slate-300 hover:text-[#c9a84c] text-sm font-display transition-colors" href="pages/sobre.html">Sobre a Marca</a></li>
+<li><a class="text-slate-300 hover:text-[#c9a84c] text-sm font-display transition-colors" href="pages/contato.html">Contato</a></li>
+</ul>
+</div>
+<!-- Column 3: Contact -->
+<div>
+<h4 class="text-[#c9a84c] font-bebas tracking-widest text-lg mb-8 uppercase">Contato</h4>
+<ul class="flex flex-col gap-4 text-slate-300 text-sm font-display"><li class="flex items-center gap-[10px] text-[#aaaaaa]">
+<i class="fa-brands fa-whatsapp text-[16px] text-[#25D366] w-5 text-center"></i>
+<a href="https://wa.me/5598984421124" target="_blank"><span>(98) 98442-1124</span></a>
+</li>
+                <li class="flex items-center gap-[10px] text-[#aaaaaa]">
+                    <i class="fas fa-envelope text-[16px] text-[#c9a84c] w-5 text-center"></i>
+                    <a href="mailto:preta-lu@hotmail.com"><span>preta-lu@hotmail.com</span></a>
+                </li>
+<li class="flex items-center gap-[10px] text-[#aaaaaa]">
+<i class="fas fa-map-marker-alt text-[16px] text-[#c9a84c] w-5 text-center"></i>
+<span>São Luís, MA — Brasil</span>
+</li>
+<li class="flex items-center gap-[10px] mt-4 pt-4 border-t border-white/5 italic font-medium text-[#aaaaaa]">
+<i class="fas fa-clock text-[16px] text-[#c9a84c] w-5 text-center"></i>
+<span>Respondemos em até 2 horas ⚡</span>
+</li></ul>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="border-t border-[#c9a84c] bg-[#0a0a0a]">
+<div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 text-[#666] text-xs font-display">
+<span>© 2026 BLACKZONA — Todos os direitos reservados.</span>
+<span>Feito com 🖤 em São Luís, MA</span>
+<span class="italic">Nossa Imagem, Nosso Espaço</span>
+</div>
+</div>
+</footer>
+<a href="https://wa.me/5598984421124" target="_blank" class="fixed bottom-8 right-8 z-50 group">
+    <div class="absolute -top-12 right-0 bg-primary text-background-dark px-4 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none uppercase tracking-widest">
+        Fale com a BlackZona!
+    </div>
+    <div class="relative">
+        <div class="absolute inset-0 bg-primary/40 rounded-full animate-ping scale-150"></div>
+        <div class="relative bg-primary size-16 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(201,168,76,0.5)] hover:scale-110 transition-transform">
+            <svg class="size-8 text-background-dark" fill="currentColor" viewbox="0 0 24 24">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.522-2.961-2.638-.086-.117-.718-.955-.718-1.818 0-.863.454-1.287.616-1.453.162-.167.353-.208.469-.208.117 0 .234.001.334.005.107.004.252-.04.394.302.144.347.49 1.196.533 1.281.043.085.071.184.014.298-.057.114-.085.184-.17.284-.085.1-.178.223-.255.302-.085.085-.174.178-.075.347.099.169.44 0.725.945 1.175.651.58 1.2.76 1.37.85s.267.067.366-.05c.099-.117.426-.496.54-.666.114-.169.227-.142.383-.085.156.057 1.001.472 1.171.557s.284.128.326.203c.042.075.042.434-.102.839z"></path>
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 2.17.684 4.18 1.848 5.823L2.015 22l4.31-.914A9.954 9.954 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" fill-rule="evenodd"></path>
+            </svg>
+        </div>
+    </div>
+</a>
+<div class="fixed inset-0 z-[2000] bg-[#0a0a0a] flex flex-col p-10" id="mobile-overlay">
+<div class="flex justify-end mb-12">
+<button class="text-primary" id="menu-close">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-8">
+<a class="mobile-nav-link font-bebas text-4xl text-[#f5f5f0] tracking-widest" href="index.html">AXÉÉ</a>
+<div class="flex flex-col gap-4">
+<a class="mobile-nav-link font-bebas text-4xl text-primary tracking-widest" href="pages/catalogo.html">A GRIFE</a>
+<div class="flex flex-col gap-4 pl-6">
+<a class="text-[#f5f5f0] text-lg font-medium" href="#">Coleção CANDACES</a>
+<a class="text-[#f5f5f0] text-lg font-medium" href="#">Mochilas e Resistência</a>
+<a class="text-[#f5f5f0] text-lg font-medium" href="#">Cartucheiras e Pochetes</a>
+<a class="text-[#f5f5f0] text-lg font-medium" href="#">Adornos Afro</a>
+</div>
+</div>
+<a class="mobile-nav-link font-bebas text-4xl text-[#f5f5f0] tracking-widest" href="pages/sobre.html">A AFROSUBVERSIVA</a>
+<a class="mobile-nav-link font-bebas text-4xl text-[#f5f5f0] tracking-widest" href="pages/pontos.html">PONTOS DE ENCONTRO</a>
+<a class="mobile-nav-link font-bebas text-4xl text-[#f5f5f0] tracking-widest" href="pages/contato.html">FALE COM A PRETA</a>
+</nav>
+<div class="mt-auto flex justify-center gap-10">
+<a class="text-primary transition-transform hover:scale-110" href="https://wa.me/5598984421124" target="_blank">
+<i class="fa-brands fa-whatsapp text-[28px]"></i>
+</a>
+<a class="text-primary transition-transform hover:scale-110" href="https://instagram.com/blackzona_" target="_blank">
+<i class="fa-brands fa-instagram text-[28px]"></i>
+</a>
+</div>
+</div><script>
+    (function() {
+        const header = document.getElementById('main-header');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const navLinks = document.querySelectorAll('.mobile-nav-link, .flex.flex-col.gap-4 pl-6 a');
+
+        // Scroll functionality
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Mobile menu functionality
+        const toggleMenu = () => {
+            mobileOverlay.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        };
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuClose.addEventListener('click', toggleMenu);
+
+        // Close menu on link click
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileOverlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+    })();
+</script>    
+</body></html>
