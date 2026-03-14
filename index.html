@@ -448,20 +448,56 @@
         </div>
     </section>
 
-    <script>
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+        import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 
+        const firebaseConfig = {
+            apiKey: "AIzaSyCWteZvOtgY4EPiPsLcUihEAdyIhcWOs-M",
+            authDomain: "blackzona-739bb.firebaseapp.com",
+            projectId: "blackzona-739bb",
+            storageBucket: "blackzona-739bb.firebasestorage.app",
+            messagingSenderId: "674389629970",
+            appId: "1:674389629970:web:380e5b143eb201a7490ccb"
+        };
 
-        // CATÁLOGO DINÂMICO
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
         let todosProdutos = [];
 
         async function carregarProdutos() {
             try {
-                const response = await fetch('data/produtos.json?v=' + new Date().getTime());
-                const data = await response.json();
-                const lista = data.produtos || [];
-                const destaques = lista.filter(p => p.destaque === true);
-                const normais = lista.filter(p => p.destaque !== true);
+                const snap = await getDocs(collection(db, 'produtos'));
+                const lista = [];
+                snap.forEach(doc => {
+                    const d = doc.data();
+                    lista.push({
+                        nome: d.nome || '',
+                        categoria: d.categoria || '',
+                        colecao: d.categoria || '',
+                        foto_url: d.fotos?.[0] || 'assets/logo/Logo-BlackZona.png',
+                        fotos: d.fotos || [],
+                        preco: d.preco || 'SOB CONSULTA',
+                        sob_consulta: !d.preco || d.preco === 'SOB CONSULTA',
+                        tamanho: d.tamanho || 'Único',
+                        selo_autoral: d.autoral || false,
+                        encomienda: d.status === 'encomenda',
+                        destaque: d.destaque || false,
+                        descricao: d.descricao || ''
+                    });
+                });
+                const destaques = lista.filter(p => p.destaque);
+                const normais = lista.filter(p => !p.destaque);
                 todosProdutos = [...destaques, ...normais].slice(0, 8);
+
+                if (todosProdutos.length === 0) {
+                    const response = await fetch('data/produtos.json?v=' + new Date().getTime());
+                    const data = await response.json();
+                    const local = data.produtos || [];
+                    todosProdutos = [...local.filter(p => p.destaque), ...local.filter(p => !p.destaque)].slice(0, 8);
+                }
+
+                window.todosProdutos = todosProdutos;
                 renderizarProdutos(todosProdutos);
             } catch (error) {
                 console.error('Erro ao carregar produtos:', error);
@@ -469,98 +505,61 @@
         }
 
         function filtrarProdutos(categoria) {
-            // Reset nos botões
             document.querySelectorAll('.filtro-btn').forEach(btn => {
                 btn.classList.remove('ativo', 'bg-primary', 'text-[#0a0a0a]', 'shadow-[0_0_20px_rgba(201,168,76,0.3)]');
                 btn.classList.add('bg-transparent', 'text-white', 'border-white/20');
             });
-
-            // Ativa o botão atual
             const btn = event.currentTarget;
             btn.classList.add('ativo', 'bg-primary', 'text-[#0a0a0a]', 'shadow-[0_0_20px_rgba(201,168,76,0.3)]');
             btn.classList.remove('bg-transparent', 'text-white', 'border-white/20');
-
-            if (categoria === 'todos') {
-                renderizarProdutos(todosProdutos);
-                return;
-            }
-
-            const filtrados = todosProdutos.filter(p => {
-                const cat = (p.categoria || "").toLowerCase();
-                const nome = (p.nome || "").toLowerCase();
-                const termo = categoria.toLowerCase();
-                return cat.includes(termo) || nome.includes(termo);
-            });
+            if (categoria === 'todos') { renderizarProdutos(window.todosProdutos); return; }
+            const filtrados = (window.todosProdutos || []).filter(p =>
+                (p.categoria || '').toLowerCase().includes(categoria.toLowerCase())
+            );
             renderizarProdutos(filtrados);
         }
 
         function renderizarProdutos(produtos) {
             const grid = document.getElementById('produtos-grid');
-
             if (!produtos || produtos.length === 0) {
                 grid.innerHTML = '<p class="text-slate-400 col-span-4 text-center py-12 font-mono">Nenhum produto encontrado nesta categoria.</p>';
                 return;
             }
-
             grid.innerHTML = produtos.map((p, index) => {
-                const precoFormatado = p.sob_consulta
-                    ? 'Sob Consulta'
-                    : `R$ ${Number(p.preco).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
-
-                const zapLink = `https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *${p.nome}* - ${p.colecao}. Pode me passar mais informações?`;
-
+                const precoFormatado = p.sob_consulta ? 'SOB CONSULTA' : p.preco;
+                const zapLink = `https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *${p.nome}*. Pode me passar mais informações?`;
                 const delayAttr = index < 4 ? `data-aos="fade-up" data-aos-delay="${(index + 1) * 100}"` : '';
-
                 const responsiveClass = index >= 6 ? 'hidden md:flex' : 'flex';
-
                 return `
                 <div class="product-card group relative ${responsiveClass} flex-col h-full bg-[#111] border border-white/5 rounded-2xl overflow-hidden transition-all duration-500 hover:border-primary/50 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(201,168,76,0.15)]" ${delayAttr}
                      data-tilt data-tilt-max="7" data-tilt-speed="400" data-tilt-perspective="1000" data-tilt-glare data-tilt-max-glare="0.15">
                     <div class="relative aspect-[4/5] overflow-hidden">
-                        <img
-                            src="${p.foto_url}"
-                            alt="${p.nome}"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            onerror="this.src='assets/logo/Logo-BlackZona.png'"
-                        />
-                        <!-- Overlay dourado no hover -->
+                        <img src="${p.foto_url}" alt="${p.nome}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" onerror="this.src='assets/logo/Logo-BlackZona.png'" />
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <span class="absolute top-4 left-4 bg-primary text-black text-[10px] font-bebas px-3 py-1 uppercase tracking-widest">
-                            ${p.colecao || ''}
-                        </span>
+                        <span class="absolute top-4 left-4 bg-primary text-black text-[10px] font-bebas px-3 py-1 uppercase tracking-widest">${p.colecao || ''}</span>
                         <div class="absolute top-4 right-4 flex flex-col gap-2">
                             ${p.selo_autoral ? '<span class="bg-white/90 backdrop-blur-sm text-black text-[9px] font-bold px-2 py-1 uppercase tracking-wider">🖤 AUTORAL</span>' : ''}
                             ${p.encomienda ? '<span class="bg-primary/90 backdrop-blur-sm text-black text-[9px] font-bold px-2 py-1 uppercase tracking-wider">⭐ ENCOMENDA</span>' : ''}
                         </div>
-                        <!-- Botão rápido que aparece no hover -->
                         <div class="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-400">
-                            <a href="${zapLink}" target="_blank"
-                               class="w-full flex items-center justify-center gap-2 bg-primary text-black font-bebas text-lg tracking-widest py-3 transition-all duration-300 hover:bg-white"
-                               style="clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);">
+                            <a href="${zapLink}" target="_blank" class="w-full flex items-center justify-center gap-2 bg-primary text-black font-bebas text-lg tracking-widest py-3 transition-all duration-300 hover:bg-white" style="clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);">
                                 QUERO ESSA PEÇA 🖤
                             </a>
                         </div>
                     </div>
                     <div class="p-5 flex flex-col flex-grow text-left">
-                        <h3 class="font-bebas text-2xl text-white tracking-wide leading-tight group-hover:text-primary transition-colors duration-300">
-                            ${p.nome}
-                        </h3>
-                        <p class="text-white/30 text-[10px] font-space uppercase tracking-[0.2em] mb-4">
-                            TAM. ${p.tamanho || 'Único'}
-                        </p>
+                        <h3 class="font-bebas text-2xl text-white tracking-wide leading-tight group-hover:text-primary transition-colors duration-300">${p.nome}</h3>
+                        <p class="text-white/30 text-[10px] font-space uppercase tracking-[0.2em] mb-4">TAM. ${p.tamanho || 'Único'}</p>
                         <div class="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
                             <p class="font-bebas text-2xl text-primary tracking-wide">${precoFormatado}</p>
-                            <a href="${zapLink}" target="_blank"
-                               class="font-space text-[10px] uppercase tracking-[0.15em] text-white/40 hover:text-primary transition-colors duration-300">
-                                Ver detalhes →
-                            </a>
+                            <a href="${zapLink}" target="_blank" class="font-space text-[10px] uppercase tracking-[0.15em] text-white/40 hover:text-primary transition-colors duration-300">Ver detalhes →</a>
                         </div>
                     </div>
-                </div>
-            `;
+                </div>`;
             }).join('');
         }
 
+        window.filtrarProdutos = filtrarProdutos;
         document.addEventListener('DOMContentLoaded', carregarProdutos);
     </script>
     <!-- Footer Simple -->
