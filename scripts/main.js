@@ -179,6 +179,36 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => ripple.remove(), 600);
         }
     });
+
+    // 8. Visibilidade do Botão WhatsApp (Scroll-Triggered)
+    const whatsappBtn = document.querySelector('a[href*="wa.me"].fixed');
+    const heroSection = document.getElementById('hero');
+
+    if (whatsappBtn && heroSection) {
+        // Inicialmente oculto com transição suave
+        whatsappBtn.style.opacity = '0';
+        whatsappBtn.style.visibility = 'hidden';
+        whatsappBtn.style.transform = 'scale(0.5) translateY(20px)';
+        whatsappBtn.style.transition = 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+
+        const whatsappObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    // Aparece quando o hero sai da tela
+                    whatsappBtn.style.opacity = '1';
+                    whatsappBtn.style.visibility = 'visible';
+                    whatsappBtn.style.transform = 'scale(1) translateY(0)';
+                } else {
+                    // Desaparece quando o hero está visível
+                    whatsappBtn.style.opacity = '0';
+                    whatsappBtn.style.visibility = 'hidden';
+                    whatsappBtn.style.transform = 'scale(0.5) translateY(20px)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        whatsappObserver.observe(heroSection);
+    }
 });
 
 // Parallax Hero

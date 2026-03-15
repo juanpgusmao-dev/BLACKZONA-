@@ -530,34 +530,70 @@
                 const zapLink = `https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça: *${p.nome}*. Pode me passar mais informações?`;
                 const delayAttr = index < 4 ? `data-aos="fade-up" data-aos-delay="${(index + 1) * 100}"` : '';
                 const responsiveClass = index >= 6 ? 'hidden md:flex' : 'flex';
+                
+                // Converter fotos para string JSON segura para o atributo
+                const productData = encodeURIComponent(JSON.stringify(p));
+
                 return `
                 <div class="product-card group relative ${responsiveClass} flex-col h-full bg-[#111] border border-white/5 rounded-2xl overflow-hidden transition-all duration-500 hover:border-primary/50 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(201,168,76,0.15)]" ${delayAttr}
                      data-tilt data-tilt-max="7" data-tilt-speed="400" data-tilt-perspective="1000" data-tilt-glare data-tilt-max-glare="0.15">
-                    <div class="relative aspect-[4/5] overflow-hidden">
-                        <img src="${p.foto_url}" alt="${p.nome}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" onerror="this.src='assets/logo/Logo-BlackZona.png'" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative aspect-[4/5] overflow-hidden bg-[#1a1a1a] cursor-zoom-in" onclick="abrirQuickView('${productData}')">
+                        <img src="${p.foto_url}" alt="${p.nome}" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" onerror="this.src='assets/logo/Logo-BlackZona.png'" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <span class="absolute top-4 left-4 bg-primary text-black text-[10px] font-bebas px-3 py-1 uppercase tracking-widest">${p.colecao || ''}</span>
                         <div class="absolute top-4 right-4 flex flex-col gap-2">
                             ${p.selo_autoral ? '<span class="bg-white/90 backdrop-blur-sm text-black text-[9px] font-bold px-2 py-1 uppercase tracking-wider">🖤 AUTORAL</span>' : ''}
                             ${p.encomienda ? '<span class="bg-primary/90 backdrop-blur-sm text-black text-[9px] font-bold px-2 py-1 uppercase tracking-wider">⭐ ENCOMENDA</span>' : ''}
                         </div>
                         <div class="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-400">
-                            <a href="${zapLink}" target="_blank" class="w-full flex items-center justify-center gap-2 bg-primary text-black font-bebas text-lg tracking-widest py-3 transition-all duration-300 hover:bg-white" style="clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);">
-                                QUERO ESSA PEÇA 🖤
-                            </a>
+                            <span class="w-full flex items-center justify-center gap-2 bg-primary text-black font-bebas text-lg tracking-widest py-3 transition-all duration-300 hover:bg-white" style="clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);">
+                                VER DETALHES 🖤
+                            </span>
                         </div>
                     </div>
                     <div class="p-5 flex flex-col flex-grow text-left">
-                        <h3 class="font-bebas text-2xl text-white tracking-wide leading-tight group-hover:text-primary transition-colors duration-300">${p.nome}</h3>
+                        <h3 class="font-bebas text-2xl text-white tracking-wide leading-tight group-hover:text-primary transition-colors duration-300 pointer-events-none">${p.nome}</h3>
                         <p class="text-white/30 text-[10px] font-space uppercase tracking-[0.2em] mb-4">TAM. ${p.tamanho || 'Único'}</p>
                         <div class="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
                             <p class="font-bebas text-2xl text-primary tracking-wide">${precoFormatado}</p>
-                            <a href="${zapLink}" target="_blank" class="font-space text-[10px] uppercase tracking-[0.15em] text-white/40 hover:text-primary transition-colors duration-300">Ver detalhes →</a>
+                            <button onclick="abrirQuickView('${productData}')" class="font-space text-[10px] uppercase tracking-[0.15em] text-white/40 hover:text-primary transition-colors duration-300">Expandir imagem →</button>
                         </div>
                     </div>
                 </div>`;
             }).join('');
         }
+
+        // Função Global para o Quick View
+        window.abrirQuickView = function(encodedData) {
+            const prod = JSON.parse(decodeURIComponent(encodedData));
+            const modal = document.getElementById('quick-view-modal');
+            const img = document.getElementById('qv-img');
+            const title = document.getElementById('qv-title');
+            const collection = document.getElementById('qv-collection');
+            const price = document.getElementById('qv-price');
+            const desc = document.getElementById('qv-desc');
+            const zapLink = document.getElementById('qv-zap-link');
+
+            img.src = prod.foto_url;
+            title.innerText = prod.nome;
+            collection.innerText = prod.colecao || 'BlackZona';
+            price.innerText = prod.sob_consulta ? 'SOB CONSULTA' : prod.preco;
+            desc.innerText = prod.descricao || 'Peça artesanal exclusiva feita pelas mãos de Preta Lu.';
+            zapLink.href = `https://wa.me/5598984421124?text=Olá Preta Lu! Tenho interesse na peça ampliada: *${prod.nome}*.`;
+
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.add('active'), 10);
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.fecharQuickView = function() {
+            const modal = document.getElementById('quick-view-modal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 500);
+        };
 
         window.filtrarProdutos = filtrarProdutos;
         document.addEventListener('DOMContentLoaded', carregarProdutos);
@@ -632,7 +668,7 @@
             </div>
         </div>
     </footer>
-    <a href="https://wa.me/5598984421124" target="_blank" class="fixed bottom-8 right-8 z-50 group">
+    <a id="floating-whatsapp" href="https://wa.me/5598984421124" target="_blank" class="fixed bottom-8 right-8 z-[2500] group opacity-0 translate-y-10 pointer-events-none transition-all duration-500">
         <div
             class="absolute -top-12 right-0 bg-primary text-background-dark px-4 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none uppercase tracking-widest">
             Fale com a BlackZona!
@@ -684,6 +720,62 @@
             </a>
         </div>
     </div>
+
+    <!-- Quick View Modal -->
+    <div id="quick-view-modal" class="fixed inset-0 z-[3000] hidden flex items-center justify-center p-4 md:p-6 transition-all duration-500">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="fecharQuickView()"></div>
+        
+        <!-- Modal Content -->
+        <div class="relative w-full max-w-5xl max-h-[90vh] bg-[#111] border border-white/10 rounded-2xl overflow-y-auto shadow-2xl flex flex-col md:flex-row transform scale-95 opacity-0 transition-all duration-500 qv-content">
+            <!-- Close Button -->
+            <button onclick="fecharQuickView()" class="absolute top-4 right-4 z-10 size-10 flex items-center justify-center bg-black/50 text-white rounded-full hover:bg-primary hover:text-black transition-all">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+
+            <!-- Image Side -->
+            <div class="w-full md:w-3/5 bg-[#0a0a0a] flex items-center justify-center p-4 min-h-[300px] md:min-h-[500px]">
+                <img id="qv-img" src="" alt="" class="max-w-full max-h-[50vh] md:max-h-[80vh] object-contain shadow-2xl">
+            </div>
+
+            <!-- Details Side -->
+            <div class="w-full md:w-2/5 p-8 md:p-12 flex flex-col gap-6 justify-center bg-[#111]">
+                <div>
+                    <span id="qv-collection" class="font-space text-xs uppercase tracking-[0.3em] text-primary mb-2 block">Coleção</span>
+                    <h2 id="qv-title" class="font-bebas text-5xl md:text-6xl text-white leading-tight">Nome do Produto</h2>
+                </div>
+                
+                <p id="qv-price" class="font-bebas text-4xl text-primary tracking-wider">R$ 0,00</p>
+                
+                <div class="h-px w-12 bg-white/10"></div>
+                
+                <p id="qv-desc" class="font-space text-sm text-white/60 leading-relaxed">
+                    Descrição do produto...
+                </p>
+
+                <div class="flex flex-col gap-4 mt-4">
+                    <a id="qv-zap-link" href="#" target="_blank" class="flex items-center justify-center gap-3 bg-primary text-black font-bebas text-xl tracking-widest py-4 rounded-lg hover:bg-white transition-all">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        PEDIR PELO WHATSAPP 🖤
+                    </a>
+                    <button onclick="fecharQuickView()" class="font-space text-[10px] uppercase tracking-[0.2em] text-white/30 hover:text-white transition-colors">
+                        Voltar ao catálogo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        #quick-view-modal.active {
+            opacity: 1;
+        }
+        #quick-view-modal.active .qv-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .cursor-zoom-in { cursor: zoom-in; }
+    </style>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>

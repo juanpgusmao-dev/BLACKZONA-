@@ -162,7 +162,7 @@
 
 
     <!-- Header Section -->
-    <header class="pt-20 md:pt-32 pb-10 md:pb-16 text-center border-b border-white/5" style="background: linear-gradient(to bottom, rgba(5,5,5,0.90) 0%, rgba(5,5,5,0.65) 40%, rgba(5,5,5,0.90) 100%), linear-gradient(to right, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.40) 50%, rgba(5,5,5,0.95) 100%), url('../assets/images/Feira%20Exu.jpg') center/cover fixed no-repeat;">
+    <header id="hero" class="pt-20 md:pt-32 pb-10 md:pb-16 text-center border-b border-white/5" style="background: linear-gradient(to bottom, rgba(5,5,5,0.90) 0%, rgba(5,5,5,0.65) 40%, rgba(5,5,5,0.90) 100%), linear-gradient(to right, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.40) 50%, rgba(5,5,5,0.95) 100%), url('../assets/images/Feira%20Exu.jpg') center/cover fixed no-repeat;">
         <h1 class="font-bebas text-6xl md:text-8xl tracking-tighter mb-4">CATÁLOGO</h1>
         <p class="font-playfair italic text-[#C9A84C] text-lg">"Nossa Imagem, Nosso Espaço"</p>
     </header>
@@ -211,7 +211,62 @@
         </div>
     </div>
 
-    <!-- Footer Simple -->
+    <!-- Quick View Modal -->
+    <div id="quick-view-modal" class="fixed inset-0 z-[3000] hidden flex items-center justify-center p-4 md:p-6 transition-all duration-500">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="fecharQuickView()"></div>
+        
+        <!-- Modal Content -->
+        <div class="relative w-full max-w-5xl max-h-[90vh] bg-[#111] border border-white/10 rounded-2xl overflow-y-auto shadow-2xl flex flex-col md:flex-row transform scale-95 opacity-0 transition-all duration-500 qv-content">
+            <!-- Close Button -->
+            <button onclick="fecharQuickView()" class="absolute top-4 right-4 z-10 size-10 flex items-center justify-center bg-black/50 text-white rounded-full hover:bg-primary hover:text-black transition-all">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+
+            <!-- Image Side -->
+            <div class="w-full md:w-3/5 bg-[#0a0a0a] flex items-center justify-center p-4 min-h-[300px] md:min-h-[500px]">
+                <img id="qv-img" src="" alt="" class="max-w-full max-h-[50vh] md:max-h-[80vh] object-contain shadow-2xl">
+            </div>
+
+            <!-- Details Side -->
+            <div class="w-full md:w-2/5 p-8 md:p-12 flex flex-col gap-6 justify-center bg-[#111]">
+                <div>
+                    <span id="qv-collection" class="font-space text-xs uppercase tracking-[0.3em] text-primary mb-2 block">Coleção</span>
+                    <h2 id="qv-title" class="font-bebas text-5xl md:text-6xl text-white leading-tight">Nome do Produto</h2>
+                </div>
+                
+                <p id="qv-price" class="font-bebas text-4xl text-primary tracking-wider">R$ 0,00</p>
+                
+                <div class="h-px w-12 bg-white/10"></div>
+                
+                <p id="qv-desc" class="font-space text-sm text-white/60 leading-relaxed">
+                    Descrição do produto...
+                </p>
+
+                <div class="flex flex-col gap-4 mt-4">
+                    <a id="qv-zap-link" href="#" target="_blank" class="flex items-center justify-center gap-3 bg-primary text-black font-bebas text-xl tracking-widest py-4 rounded-lg hover:bg-white transition-all">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        PEDIR PELO WHATSAPP 🖤
+                    </a>
+                    <button onclick="fecharQuickView()" class="font-space text-[10px] uppercase tracking-[0.2em] text-white/30 hover:text-white transition-colors">
+                        Voltar ao catálogo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        #quick-view-modal.active {
+            opacity: 1;
+        }
+        #quick-view-modal.active .qv-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .cursor-zoom-in { cursor: zoom-in; }
+    </style>
+
     <footer class="bg-[#111111] border-t border-[#1a1a1a] pt-10 md:pt-16 pb-0">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-12 pb-10 md:pb-16">
             <!-- Column 1: Brand -->
@@ -359,11 +414,13 @@
                     ? prod.foto_url
                     : '../' + prod.foto_url;
 
+                const productData = encodeURIComponent(JSON.stringify(prod));
+
                 card.innerHTML = `
-                    <div class="product-img-wrapper">
+                    <div class="product-img-wrapper cursor-zoom-in" onclick="abrirQuickView('${productData}')">
                         ${prod.encomienda ? '<div class="badge-encomenda">ENCOMENDA</div>' : ''}
                         ${prod.selo_autoral ? '<div class="selo-autoral">Pelas mãos de Preta Lu 🖤</div>' : ''}
-                        <img src="${fotoPath}" alt="${prod.nome}" class="product-img" loading="lazy" onerror="this.src='https://placehold.co/600x600/1a1a1a/C9A84C?text=BLACKZONA'">
+                        <img src="${fotoPath}" alt="${prod.nome}" class="product-img" loading="lazy" style="object-fit: contain; background: #0a0a0a;" onerror="this.src='https://placehold.co/600x600/1a1a1a/C9A84C?text=BLACKZONA'">
                     </div>
                     <div class="product-info">
                         <div class="product-collection">${prod.colecao}</div>
@@ -374,12 +431,56 @@
                         <div class="product-price font-space text-[var(--gold)]">
                             ${precoFormatado}
                         </div>
-                        <a href="${waUrl}" target="_blank" class="whatsapp-btn">QUERO ESSA PEÇA! 🖤</a>
+                        <div class="flex flex-col gap-2 mt-auto">
+                            <a href="${waUrl}" target="_blank" class="whatsapp-btn">QUERO ESSA PEÇA! 🖤</a>
+                            <button onclick="abrirQuickView('${productData}')" class="font-space text-[10px] uppercase tracking-[0.2em] text-white/30 hover:text-primary transition-all py-2">
+                                + Detalhes
+                            </button>
+                        </div>
                     </div>
                 `;
                 grid.appendChild(card);
             });
         }
+
+        // Função Global para o Quick View
+        window.abrirQuickView = function(encodedData) {
+            const prod = JSON.parse(decodeURIComponent(encodedData));
+            const modal = document.getElementById('quick-view-modal');
+            const img = document.getElementById('qv-img');
+            const title = document.getElementById('qv-title');
+            const collection = document.getElementById('qv-collection');
+            const price = document.getElementById('qv-price');
+            const desc = document.getElementById('qv-desc');
+            const zapLink = document.getElementById('qv-zap-link');
+
+            img.src = prod.foto_url.startsWith('http') ? prod.foto_url : '../' + prod.foto_url;
+            title.innerText = prod.nome;
+            collection.innerText = prod.colecao || 'BlackZona';
+            
+            const precoFormatado = prod.sob_consulta
+                ? "Preço sob Consulta"
+                : `R$ ${Number(prod.preco).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+            
+            price.innerText = precoFormatado;
+            desc.innerText = prod.descricao || 'Peça artesanal exclusiva feita pelas mãos de Preta Lu.';
+            
+            const waText = encodeURIComponent(`Olá Preta Lu! Tenho interesse na peça ampliada: ${prod.nome} - Coleção ${prod.colecao}. Pode me passar mais informações?`);
+            zapLink.href = `https://wa.me/5598984421124?text=${waText}`;
+
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.add('active'), 10);
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.fecharQuickView = function() {
+            const modal = document.getElementById('quick-view-modal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 500);
+        };
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -404,7 +505,8 @@
 
         loadProducts();
     </script>
-    <a href="https://wa.me/5598984421124" target="_blank" class="fixed bottom-8 right-8 z-50 group">
+    <!-- Botão WhatsApp Flutuante -->
+    <a id="floating-whatsapp" href="https://wa.me/5598984421124" target="_blank" class="fixed bottom-8 right-8 z-[2500] group opacity-0 translate-y-10 pointer-events-none transition-all duration-500">
         <div
             class="absolute -top-12 right-0 bg-primary text-background-dark px-4 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none uppercase tracking-widest">
             Fale com a BlackZona!
